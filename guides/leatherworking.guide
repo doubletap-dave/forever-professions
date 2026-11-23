@@ -1,0 +1,290 @@
+# Canonical route: the hide route. The cured hides and the Fine Leather
+# Belts are kept for the later rows that consume them (20 Cured Light
+# Hide for the Embossed Leather Pants, 20 Cured Medium Hide and 20 Fine
+# Leather Belt for the Dark Leather Belts, 15 Cured Heavy Hide for the
+# Barbaric Shoulders and 10 for the Guardian Gloves). The no-hide
+# alternatives, the pattern alternatives at 235 and 265, and the
+# specializations are tips, not steps.
+#
+# Trainer notes: Shelene Rhobart (Tirisfal Glades) and Chaw Stronghide
+# (Bloodhoof, Mulgore) are both confirmed in the Forever data's
+# Apprentice trainer lists, settling the two reads' disagreement. Expert
+# is Telonis (Darnassus) and Una (Thunder Bluff); Artisan is Drakk
+# Stonehand (Aerie Peak, The Hinterlands) and Hahrana Ironhide (Camp
+# Mojache, Feralas).
+#
+# Tanning Rack: the leveling guide names no Tanning Rack and no other
+# station. The Tanning Rack is a camp item (skill 125, blueprint from
+# Razorclaw the Butcher in Shadowfang Keep), not a leveling gate; it is
+# mentioned in one tip only.
+#
+# Spell/item ids resolved from professions.json (built from the Forever
+# client tables, build 1.60.1.70532), reagents cross-checked against the
+# page's own material lists. Pattern vendors confirmed in items.json.
+# Werg Thickblade has spawns in both Tirisfal Glades and Western
+# Plaguelands in the data; the page names Tirisfal Glades.
+guide forever-professions/leatherworking
+title Leatherworking 1-300
+category Professions
+coords era
+levels 1-60
+zone Azeroth
+
+# ---------------------------------------------------------------- Apprentice
+
+section Leatherworking 1-60
+
+step Learn Leatherworking
+  only Alliance
+  zone Stormwind City
+  tip Leatherworking takes a profession slot and pairs naturally with Skinning: skin what you kill and the materials come free. Randal Worth in Stormwind teaches Apprentice Leatherworking, at any character level. The starting trainer in Elwynn (Adele Fielder, by Crystal Lake, north-east of Goldshire) teaches it too, and Nadyia Maneweaver in Teldrassil; there is no trainer in Dun Morogh, so Dwarves and Gnomes come to Ironforge (Gretta Finespindle, at the Great Forge). Salt, thread and dyes come from the Leatherworking Supply vendor nearby.
+  train Leatherworking Apprentice npc 11096
+
+step Learn Leatherworking
+  only Horde
+  zone Orgrimmar
+  tip Leatherworking takes a profession slot and pairs naturally with Skinning: skin what you kill and the materials come free. Kamari in Orgrimmar teaches Apprentice Leatherworking, at any character level. The starting trainers are Shelene Rhobart in Brill (Tirisfal Glades) and Chaw Stronghide in Bloodhoof Village (Mulgore); there is no trainer in Durotar, so Orcs and Trolls come to Orgrimmar. Salt, thread and dyes come from the Leatherworking Supply vendor nearby (Tharynn Bouden and Abigail Shiel in Brill).
+  train Leatherworking Apprentice npc 5811
+
+step Leatherworking 1-60: vendor goods
+  tip Salt (20) for the Cured Light Hides and Coarse Thread (20) for the gloves, from any Leatherworking Supply vendor.
+  buy 4289 x20 nearest
+  buy 2320 x20 nearest
+
+step Leatherworking 1-60: Auction House
+  tip What 1-60 takes that the Auction House sells: 105 Ruined Leather Scraps and 20 Light Hide. The counts drop by what your bags, bank and mail hold.
+  auction 2934 x105
+  auction 783 x20
+
+step Leatherworking 1-60: skinning
+  tip Ruined Leather Scraps and Light Hides come from skinning beasts of level 1-15. Skin what you kill as you level, or take them from your bank.
+  collect 2934 x105 anywhere gather Skinning 1
+  collect 783 x20 anywhere gather Skinning 1
+
+step Light Leather (1-30)
+  tip Light Leather, 35 to 30: 3 Ruined Leather Scraps each. This is the only Light Leather you make from scraps: the rest of the route buys it or skins it.
+  learn 2881 "Light Leather"
+  craft 2881 "Light Leather" until 30
+
+step Cured Light Hide (30-50)
+  tip Cured Light Hide, 20 to 50: 1 Light Hide and 1 Salt each. Keep all 20: the Embossed Leather Pants at 60 take them. Without 20 Light Hides, make 24 Light Armor Kits (24 Light Leather) to 45, then 5 Embossed Leather Gloves (15 Light Leather, 10 Coarse Thread) to 50 instead.
+  learn 3816 "Cured Light Hide"
+  craft 3816 "Cured Light Hide" until 50
+
+step Embossed Leather Gloves (50-60)
+  tip Embossed Leather Gloves, 10 to 60: 3 Light Leather and 2 Coarse Thread each.
+  learn 3756 "Embossed Leather Gloves" npc 5564 only Alliance
+  learn 3756 "Embossed Leather Gloves" npc 3365 only Horde
+  craft 3756 "Embossed Leather Gloves" until 60
+
+# ---------------------------------------------------------------- Journeyman
+
+section Leatherworking 60-105
+
+step Journeyman Leatherworking
+  only Alliance
+  zone Stormwind City
+  tip Journeyman Leatherworking raises the cap to 150; it needs skill 50 and level 10. Simon Tanner in Stormwind teaches it (Fimble Finespindle in Ironforge and Faldron in Darnassus do too). Learn it before the Embossed Leather Pants: they take you to 80 but give no points past 75 without it, and the starting trainer only teaches recipes up to 50.
+  level 10
+  train Leatherworking Journeyman npc 5564
+
+step Journeyman Leatherworking
+  only Horde
+  zone Orgrimmar
+  tip Journeyman Leatherworking raises the cap to 150; it needs skill 50 and level 10. Karolek in Orgrimmar teaches it (Arthur Moore in Undercity and Tarn in Thunder Bluff do too). Learn it before the Embossed Leather Pants: they take you to 80 but give no points past 75 without it, and the starting trainer only teaches recipes up to 50.
+  level 10
+  train Leatherworking Journeyman npc 3365
+
+step Leatherworking 60-105: vendor goods
+  tip Coarse Thread (84) for the pants and belts, and Salt (20) for the Cured Medium Hides, from any Leatherworking Supply vendor.
+  buy 2320 x84 nearest
+  buy 4289 x20 nearest
+
+step Leatherworking 60-105: Auction House
+  tip What 60-105 takes that the Auction House sells: 247 Light Leather and 20 Medium Hide. The counts drop by what your bags, bank and mail hold.
+  auction 2318 x247
+  auction 4232 x20
+
+step Leatherworking 60-105: skinning
+  tip Light Leather comes from skinning beasts of level 1-15; Medium Hides from beasts of level 18-30. Skin what you kill as you level, or take them from your bank.
+  collect 2318 x247 anywhere gather Skinning 1
+  collect 4232 x20 anywhere gather Skinning 80
+
+step Embossed Leather Pants (60-80)
+  tip Embossed Leather Pants, 20 to 80: 1 Cured Light Hide, 6 Light Leather and 2 Coarse Thread each. These take the 20 Cured Light Hides kept from the 30-50 band. Without the hides, make 24 more Embossed Leather Gloves (72 Light Leather, 48 Coarse Thread) instead.
+  learn 3759 "Embossed Leather Pants"
+  craft 3759 "Embossed Leather Pants" until 80
+
+step Cured Medium Hide (80-95)
+  tip Cured Medium Hide, 20 to 95: 1 Medium Hide and 1 Salt each. Keep all 20: the Dark Leather Belts at 105 take them. Without Medium Hides, make 19 Fine Leather Belts (114 Light Leather, 38 Coarse Thread) instead.
+  learn 3817 "Cured Medium Hide"
+  craft 3817 "Cured Medium Hide" until 95
+
+step Fine Leather Belt (95-105)
+  tip Fine Leather Belt, 22 to 105: 6 Light Leather and 2 Coarse Thread each. Keep 20 of the belts: the Dark Leather Belts at 105 take them.
+  learn 3763 "Fine Leather Belt"
+  craft 3763 "Fine Leather Belt" until 105
+
+section Leatherworking 105-150
+
+step Leatherworking 105-150: vendor goods
+  tip Fine Thread (72) for the belts and gloves, Gray Dye (20) for the belts, and Salt (75) for the Cured Heavy Hides, from any Leatherworking Supply vendor.
+  buy 2321 x72 nearest
+  buy 4340 x20 nearest
+  buy 4289 x75 nearest
+
+step Leatherworking 105-150: Auction House
+  tip What 105-150 takes that the Auction House sells: 147 Medium Leather and 25 Heavy Hide. The counts drop by what your bags, bank and mail hold.
+  auction 2319 x147
+  auction 4235 x25
+
+step Leatherworking 105-150: skinning
+  tip Medium Leather and Heavy Hides come from skinning beasts of level 18-40. Skin what you kill as you level, or take them from your bank.
+  collect 2319 x147 anywhere gather Skinning 80
+  collect 4235 x25 anywhere gather Skinning 140
+
+step Dark Leather Belt (105-125)
+  tip Dark Leather Belt, 20 to 125: 1 Fine Leather Belt, 1 Cured Medium Hide, 2 Fine Thread and 1 Gray Dye each. These take the 20 belts and 20 hides kept from the last band. Without the hides, make 16 Dark Leather Pants (192 Medium Leather, 16 Gray Dye, 16 Fine Thread) to 120, then 5 Hillman's Leather Gloves (70 Medium Leather, 20 Fine Thread) to 125 instead.
+  learn 3766 "Dark Leather Belt"
+  craft 3766 "Dark Leather Belt" until 125
+
+step Heavy Leather (125-130)
+  tip Heavy Leather, 7 to 130: 5 Medium Leather each. No Tanning Rack is needed here: the leveling guide names none, and the Rack is a camp item (skill 125, blueprint from Razorclaw the Butcher in Shadowfang Keep), not a gate on this step.
+  learn 20649 "Heavy Leather"
+  craft 20649 "Heavy Leather" until 130
+
+step Cured Heavy Hide (130-143)
+  tip Cured Heavy Hide, 25 to 143: 1 Heavy Hide and 3 Salt each. Keep them all: 15 go to the Barbaric Shoulders at 150 and 10 to the Guardian Gloves at 165. Without Heavy Hides, skip them and make Hillman's Leather Gloves from 130 to 150 instead (21 of them: 294 Medium Leather, 84 Fine Thread).
+  learn 3818 "Cured Heavy Hide"
+  craft 3818 "Cured Heavy Hide" until 143
+
+step Hillman's Leather Gloves (143-150)
+  tip Hillman's Leather Gloves, 8 to 150: 14 Medium Leather and 4 Fine Thread each.
+  learn 3764 "Hillman's Leather Gloves"
+  craft 3764 "Hillman's Leather Gloves" until 150
+
+# ---------------------------------------------------------------- Expert
+
+section Leatherworking 150-185
+
+step Expert Leatherworking
+  only Alliance
+  zone Darnassus
+  tip Expert Leatherworking raises the cap to 225; it needs skill 125 and level 20, and costs 50 silver. Telonis in Darnassus is the only Alliance Expert trainer. The Journeyman trainers still teach the recipes until 150; from 150 the Expert trainers are needed, and to train past 150 you visit them.
+  level 20
+  train Leatherworking Expert npc 4212
+
+step Expert Leatherworking
+  only Horde
+  zone Thunder Bluff
+  tip Expert Leatherworking raises the cap to 225; it needs skill 125 and level 20, and costs 50 silver. Una in Thunder Bluff is the only Horde Expert trainer. The Journeyman trainers still teach the recipes until 150; from 150 the Expert trainers are needed, and to train past 150 you visit them.
+  level 20
+  train Leatherworking Expert npc 3007
+
+step Leatherworking 150-185: vendor goods
+  tip Fine Thread (50) for the shoulders and harness, and Silken Thread (10) for the gloves, from any Leatherworking Supply vendor.
+  buy 2321 x50 nearest
+  buy 4291 x10 nearest
+
+step Leatherworking 150-185: Auction House
+  tip What 150-185 takes that the Auction House sells: 293 Heavy Leather and 10 Iron Buckle. The counts drop by what your bags, bank and mail hold.
+  auction 4234 x293
+  auction 7071 x10
+
+step Leatherworking 150-185: skinning
+  tip Heavy Leather comes from skinning beasts of level 28-40. Skin what you kill as you level, or take it from your bank.
+  collect 4234 x293 anywhere gather Skinning 140
+
+step Barbaric Shoulders (150-165)
+  tip Barbaric Shoulders, 15 to 165: 8 Heavy Leather, 1 Cured Heavy Hide and 2 Fine Thread each. These take 15 of the kept Cured Heavy Hides. The Journeyman trainers do not teach this recipe: learn it from the Expert trainers. Without the hides, buy Pattern: Barbaric Leggings from Jandia in Freewind Post (Horde) or Lardan in Astranaar (Alliance) and make 15 Barbaric Leggings (150 Heavy Leather, 15 Moss Agate, 30 Fine Thread) instead; buy the Moss Agate on the Auction House.
+  learn 7151 "Barbaric Shoulders"
+  craft 7151 "Barbaric Shoulders" until 165
+
+step Guardian Gloves (165-175)
+  tip Guardian Gloves, 10 to 175: 4 Heavy Leather, 1 Cured Heavy Hide and 1 Silken Thread each. These take the last 10 kept Cured Heavy Hides. Without the hides, start the Barbaric Harness at 165 instead (10 of them: 140 Heavy Leather, 20 Fine Thread, 10 Iron Buckle).
+  learn 7156 "Guardian Gloves"
+  craft 7156 "Guardian Gloves" until 175
+
+step Barbaric Harness (175-185)
+  tip Barbaric Harness, 10 to 185: 14 Heavy Leather, 2 Fine Thread and 1 Iron Buckle each. Blacksmiths make the Iron Buckles: buy them on the Auction House. If no Iron Buckles are on the Auction House, make 10 Thick Armor Kits (50 Thick Leather, 10 Silken Thread) instead.
+  learn 6661 "Barbaric Harness"
+  craft 6661 "Barbaric Harness" until 185
+
+section Leatherworking 185-235
+
+step Leatherworking 185-235: vendor goods
+  tip Silken Thread for the headbands and pants: 188, from any Leatherworking Supply vendor.
+  buy 4291 x188 nearest
+
+step Leatherworking 185-235: Auction House
+  tip What 185-235 takes that the Auction House sells: 614 Thick Leather. The counts drop by what your bags, bank and mail hold.
+  auction 4304 x614
+
+step Leatherworking 185-235: skinning
+  tip Thick Leather comes from skinning beasts of level 35-50. Skin what you kill as you level, or take it from your bank.
+  collect 4304 x614 anywhere gather Skinning 190
+
+step Nightscape Headband (185-205)
+  tip Nightscape Headband, 22 to 205: 5 Thick Leather and 2 Silken Thread each.
+  learn 10507 "Nightscape Headband"
+  craft 10507 "Nightscape Headband" until 205
+
+step Artisan Leatherworking
+  only Alliance
+  zone The Hinterlands
+  tip Artisan Leatherworking raises the cap to 300; it needs skill 200 and level 35. Drakk Stonehand at Aerie Peak, The Hinterlands, is the only Alliance Artisan trainer. Train it now: only the Artisan trainers teach the Nightscape Pants, and they take you to 235 but give no points past 225 without it. At 225 and level 40 the specializations open: Dragonscale (mail-type gear), Elemental (elemental resistance and leather agility gear) and Tribal (leather intellect and agility gear, and the Devilsaur Armor set). Each has its own quest chain; this guide does not route them.
+  level 35
+  train Leatherworking Artisan npc 11097
+
+step Artisan Leatherworking
+  only Horde
+  zone Feralas
+  tip Artisan Leatherworking raises the cap to 300; it needs skill 200 and level 35. Hahrana Ironhide at Camp Mojache, Feralas, is the only Horde Artisan trainer. Train it now: only the Artisan trainers teach the Nightscape Pants, and they take you to 235 but give no points past 225 without it. At 225 and level 40 the specializations open: Dragonscale (mail-type gear), Elemental (elemental resistance and leather agility gear) and Tribal (leather intellect and agility gear, and the Devilsaur Armor set). Each has its own quest chain; this guide does not route them.
+  level 35
+  train Leatherworking Artisan npc 11098
+
+step Nightscape Pants (205-235)
+  tip Nightscape Pants, 36 to 235: 14 Thick Leather and 4 Silken Thread each. The route picks the pants over the Nightscape Boots because they sell for more to a vendor, so they end up cheaper.
+  learn 10548 "Nightscape Pants" npc 11097 only Alliance
+  learn 10548 "Nightscape Pants" npc 11098 only Horde
+  craft 10548 "Nightscape Pants" until 235
+
+# ---------------------------------------------------------------- Artisan
+
+section Leatherworking 235-300
+
+step Leatherworking 235-300: vendor goods
+  tip Black Dye (36) for the gauntlets and Rune Thread (85) for the gauntlets and headbands, from any Leatherworking Supply vendor.
+  buy 2325 x36 nearest
+  buy 14341 x85 nearest
+
+step Leatherworking 235-300: Auction House
+  tip What 235-300 takes that the Auction House sells: 974 Rugged Leather and 490 Runecloth. The counts drop by what your bags, bank and mail hold.
+  auction 8170 x974
+  auction 14047 x490
+
+step Leatherworking 235-300: skinning
+  tip Rugged Leather comes from skinning beasts of level 47-60. Skin what you kill as you level, or take it from your bank.
+  collect 8170 x974 anywhere gather Skinning 240
+
+step Runecloth
+  tip Runecloth drops from humanoids of level 45-60: keep what you loot as you level, or take it from your bank.
+  collect 14047 x490 anywhere gather levels 45-60
+
+step Pattern: Wicked Leather Gauntlets
+  tip Pattern: Wicked Leather Gauntlets, for the next band. Sold by Werg Thickblade in Tirisfal Glades (Horde) and Leonard Porter in Western Plaguelands (Alliance) for 1 gold 20 silver.
+  buy 15725 x1 nearest
+
+step Wicked Leather Gauntlets (235-265)
+  tip Wicked Leather Gauntlets, 36 to 265: 8 Rugged Leather, 1 Black Dye and 1 Rune Thread each. Alternatives if the patterns are held: Blue Suede Shoes instead (36: 288 Rugged Leather, 36 Blue Dye, 36 Rune Thread; same leather, sells for more, saves about 13 gold). Or the Wicked Leather Headband table: 20 Gauntlets to 255, then 10 Headbands (120 Rugged Leather, 10 Black Dye) to 265; 6 fewer crafts, and the headbands are worth more, vendor or disenchant. Or the Charged Scorpid Bracers table: 20 Gauntlets to 255, then 10 Bracers (20 Rugged Leather, 40 Heavy Scorpid Scale, 20 Elemental Air) to 265.
+  learn 19049 "Wicked Leather Gauntlets"
+  craft 19049 "Wicked Leather Gauntlets" until 265
+
+step Pattern: Runic Leather Headband
+  tip Pattern: Runic Leather Headband, for the last band. Jase Farlane at Light's Hope Chapel in Eastern Plaguelands sells it for 2 gold 20 silver.
+  buy 15756 x1 nearest
+
+step Runic Leather Headband (265-300)
+  tip Runic Leather Headband, 49 to 300: 14 Rugged Leather, 10 Runecloth and 1 Rune Thread each. Yellow from 285, green from 295: make a few more if you come up short of 300. Alternatives if the patterns are held: the Wicked Leather Headband table (10 Headbands to 275, then 39 Runic Headbands to 300); the Tooled Leather Bracers table (5 Runic Headbands to 270, then 36 Bracers: 360 Rugged Leather, 36 Orange Dye); the Blue Suede Bracers table (10 Runic Headbands to 275, then 27 Bracers: 270 Rugged Leather, 27 Blue Dye); the Wicked Leather Belt table (36 Runic Headbands to 295, then 7 Belts: 98 Rugged Leather, 14 Black Dye). From 280, if you can use someone else's Sewing Machine and hold Pattern: Blue Suede Hat: 20 Hats (320 Rugged Leather, 80 Blue Dye, 20 Rune Thread). You cannot place a Sewing Machine yourself before 300 even if you buy one.
+  learn 19082 "Runic Leather Headband"
+  craft 19082 "Runic Leather Headband" until 300

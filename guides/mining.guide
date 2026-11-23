@@ -1,0 +1,266 @@
+# Canonical route: the page's mining routes. Durotar for Horde and
+# Elwynn Forest for Alliance 1-65, the Wetlands cave for Alliance and
+# Hillsbrad Foothills for Horde 65-125, Arathi Highlands 125-175, the
+# Hinterlands 175-245, Un'Goro Crater 245-300. The page's smelting
+# shortcut (buy ore, smelt to about 105) is a tip, not steps: buy about
+# 140 Copper Ore and 70 Tin Ore, smelt Copper to 65, learn Journeyman
+# and smelt Tin, then smelt Bronze to around 100 to 110.
+#
+# The page's routes are drawn lines on map images, so every loop here is
+# built from the reference data instead: node spawn centroids from
+# objects.json, clustered per band (derive_coords.py), cross-checked
+# against the zones and ores the page names. The page's routes from 125
+# up are largely Classic routes the author could not test on live (the
+# beta cap was 30); the loops still follow the data's densest spawns.
+# The shipped reference names Lesser Bloodstone nodes in Arathi, but no
+# such object exists in the data, so the Arathi loop uses Iron, Tin and
+# Gold only. Rich Thorium in Un'Goro spawns only in the west and south
+# of the crater, so the 275-300 loop stays on that ground.
+#
+# NPC/item ids resolved from the reference data (npcs.json,
+# professions.json rank trainer lists):
+#   Trainers: Kelsey Fargo 247226 (Elwynn), Norzsh 267328 (Valley of
+#   Trials), Geofram Bouldertoe 4254 (Ironforge), Makaru 3357
+#   (Orgrimmar). The starting-zone trainers teach Apprentice only,
+#   matching the page; the capital trainers teach every rank.
+#   Mining Pick 2901.
+# Skill needed per node (from the page): Copper 1, Tin and Incendicite
+# 65, Silver 75, Iron 125, Gold 155, Mithril 175, Truesilver 230, Small
+# Thorium 245, Rich Thorium 275.
+guide forever-professions/mining
+title Mining 1-300
+category Professions
+coords era
+levels 1-60
+zone Azeroth
+
+# ---------------------------------------------------------------- Apprentice
+
+section Mining 1-65
+
+step Learn Mining
+  only Alliance
+  zone Elwynn Forest
+  tip Mining takes one of your two primary profession slots (pairs naturally with Blacksmithing or Engineering, and yields Scarce ores like Pyrite, Bauxite and Pitchblende). Kelsey Fargo in Elwynn Forest teaches Apprentice Mining at any character level. Buy a Mining Pick before you start: it stays in your bags, it does not need to be equipped, but you cannot mine without one. Turn on Find Minerals once you have learned it: it is in the Mining box of the Professions window, and it is off by default. Drag it to your action bar; it switches off every time you die, and you can only track minerals or herbs, not both. Darnassus has no Mining trainer; the closest is Kurdram Stonehammer in Auberdine, Darkshore.
+  train Mining Apprentice npc 247226
+  buy 2901 x1 nearest
+
+step Learn Mining
+  only Horde
+  zone Durotar
+  tip Mining takes one of your two primary profession slots (pairs naturally with Blacksmithing or Engineering, and yields Scarce ores like Pyrite, Bauxite and Pitchblende). Norzsh in the Valley of Trials teaches Apprentice Mining at any character level. Buy a Mining Pick before you start: it stays in your bags, it does not need to be equipped, but you cannot mine without one. Turn on Find Minerals once you have learned it: it is in the Mining box of the Professions window, and it is off by default. Drag it to your action bar; it switches off every time you die, and you can only track minerals or herbs, not both.
+  train Mining Apprentice npc 267328
+  buy 2901 x1 nearest
+
+step Copper in Durotar
+  only Horde
+  zone Durotar
+  tip Mine every Copper Vein and Poor Copper Vein you pass and circle the waypoints until Mining 65; Poor Copper Veins give Copper Ore and Rough Stone from skill 1. One or two laps is usually enough ore to reach 65 once smelted; stop at Razor Hill to smelt. With gold to spend, smelting skips most of this band: buy about 140 Copper Ore and 70 Tin Ore, smelt Copper to 65, then Tin and Bronze to around 100 to 110. Mulgore's cave, five Copper Veins with a very fast regrow, is the alternative if Durotar is busy.
+  goto 42.1,68.1 "Poor Copper Vein" r 30
+  goto 41.6,71.6 "Poor Copper Vein" r 30
+  goto 45.4,72.8 "Poor Copper Vein" r 30
+  goto 46.5,67.6 "Poor Copper Vein" r 30
+  goto 46.7,62.4 "Poor Copper Vein" r 30
+  goto 46.4,58.3 "Poor Copper Vein" r 30
+  goto 42.5,58.1 "Poor Copper Vein" r 30
+  goto 41.8,61.1 "Poor Copper Vein" r 30
+  goto 43.3,53.4 "Poor Copper Vein" r 30
+  goto 36.0,45.4 "Copper Vein" r 30
+  goto 35.6,35.5 "Copper Vein" r 30
+  goto 36.1,28.9 "Copper Vein" r 30
+  skill Mining 65
+
+step Copper in Elwynn Forest
+  only Alliance
+  zone Elwynn Forest
+  tip Mine every Copper Vein and Poor Copper Vein you pass and circle the waypoints until Mining 65; Poor Copper Veins give Copper Ore and Rough Stone from skill 1. Move back and forth along the route, and clear the cave if you are high enough level: the veins inside regrow fast, and you may not need to leave it. Stop at Goldshire to smelt. With gold to spend, smelting skips most of this band: buy about 140 Copper Ore and 70 Tin Ore, smelt Copper to 65, then Tin and Bronze to around 100 to 110.
+  goto 47.3,32.3 "Poor Copper Vein" r 30
+  goto 52.1,32.4 "Poor Copper Vein" r 30
+  goto 49.2,26.9 "Poor Copper Vein" r 30
+  goto 56.2,37.9 "Poor Copper Vein" r 30
+  goto 57.3,50.4 "Poor Copper Vein" r 30
+  goto 52.7,52.7 "Poor Copper Vein" r 30
+  goto 48.9,48.8 "Poor Copper Vein" r 30
+  goto 44.4,42.2 "Poor Copper Vein" r 30
+  goto 30.2,54.0 "Copper Vein" r 30
+  goto 28.1,66.2 "Copper Vein" r 30
+  goto 20.8,77.7 "Copper Vein" r 30
+  goto 29.2,88.1 "Copper Vein" r 30
+  skill Mining 65
+
+# ---------------------------------------------------------------- Mining 65-125
+
+section Mining 65-125
+
+step Journeyman Mining
+  only Alliance
+  zone Ironforge
+  tip Journeyman Mining raises the cap to 150 and needs skill 50. Geofram Bouldertoe in Ironforge teaches it.
+  train Mining Journeyman npc 4254
+
+step Journeyman Mining
+  only Horde
+  zone Orgrimmar
+  tip Journeyman Mining raises the cap to 150 and needs skill 50. Makaru in Orgrimmar teaches it.
+  train Mining Journeyman npc 3357
+
+step Tin and Incendicite in the Wetlands
+  only Alliance
+  zone Wetlands
+  tip Tin Veins need 65, Silver Veins 75. The Wetlands cave is the best spot for Alliance: full of Tin Veins and Incendicite Mineral Veins with a very fast regrow. The mobs inside are around level 20, and in Forever they come back much faster, so outlevel them by a few levels. Smelt leftover Copper and Tin into Bronze before heading out; Bronze stops giving points around 105.
+  goto 47.5,62.1 "Incendicite Mineral Vein, Tin Vein" r 30
+  goto 48.9,59.3 "Incendicite Mineral Vein" r 30
+  goto 51.3,58.6 "Incendicite Mineral Vein, Copper Vein" r 30
+  goto 51.2,61.6 "Incendicite Mineral Vein, Tin Vein" r 30
+  goto 47.3,66.4 "Incendicite Mineral Vein, Copper Vein" r 30
+  goto 24.0,60.0 "Copper Vein, Tin Vein" r 30
+  goto 25.8,50.2 "Copper Vein, Tin Vein" r 30
+  goto 27.8,38.0 "Copper Vein, Tin Vein" r 30
+  goto 20.7,35.2 "Copper Vein, Tin Vein" r 30
+  goto 34.1,15.2 "Copper Vein, Tin Vein" r 30
+  goto 43.6,22.6 "Copper Vein, Tin Vein" r 30
+  goto 44.5,41.7 "Copper Vein, Tin Vein" r 30
+  skill Mining 125
+
+step Tin in Hillsbrad Foothills
+  only Horde
+  zone Hillsbrad Foothills
+  tip Tin Veins need 65, Silver Veins 75. Hillsbrad Foothills is the best open mining route for this band; it is popular, so expect company, and the route passes near the Horde town of Tarren Mill. Smelt leftover Copper and Tin into Bronze before heading out; Bronze stops giving points around 105. The Barrens and Ashenvale are the quieter alternatives.
+  goto 31.5,57.5 "Tin Vein, Silver Vein" r 30
+  goto 27.6,57.5 "Tin Vein, Silver Vein" r 30
+  goto 31.4,52.7 "Tin Vein, Silver Vein" r 30
+  goto 40.7,53.4 "Copper Vein, Tin Vein" r 30
+  goto 38.5,63.8 "Copper Vein, Tin Vein" r 30
+  goto 17.1,56.3 "Copper Vein, Tin Vein" r 30
+  goto 21.8,40.9 "Copper Vein, Tin Vein" r 30
+  goto 26.2,31.8 "Copper Vein, Tin Vein" r 30
+  goto 37.5,25.9 "Copper Vein, Tin Vein" r 30
+  goto 39.0,36.7 "Copper Vein, Tin Vein" r 30
+  goto 54.9,23.7 "Copper Vein, Tin Vein" r 30
+  goto 13.5,79.2 "Copper Vein, Tin Vein" r 30
+  skill Mining 125
+
+# ---------------------------------------------------------------- Mining 125-175
+
+section Mining 125-175
+
+step Expert Mining
+  only Alliance
+  zone Ironforge
+  tip Expert Mining raises the cap to 225 and needs skill 125. Geofram Bouldertoe in Ironforge teaches it.
+  train Mining Expert npc 4254
+
+step Expert Mining
+  only Horde
+  zone Orgrimmar
+  tip Expert Mining raises the cap to 225 and needs skill 125. Makaru in Orgrimmar teaches it.
+  train Mining Expert npc 3357
+
+step Iron and Gold in Arathi Highlands
+  zone Arathi Highlands
+  tip Iron Deposits need 125, Gold Veins 155. Arathi Highlands has four caves worth going all the way into: you will not see every vein from the entrance. Low-level players should skip all four caves; low-level Alliance can detour south of Hammerfall instead. Thousand Needles is the safest alternative for characters around level 30. Smelting can help here too: about 20 Iron Ore smelted to 135, and at 155 Smelt Gold takes you to 175 on about 22 Gold Ore, if the prices make sense.
+  goto 19.2,93.3 "Tin Vein, Gold Vein" r 30
+  goto 28.4,88.2 "Tin Vein, Gold Vein" r 30
+  goto 26.8,69.6 "Tin Vein, Gold Vein" r 30
+  goto 15.8,63.2 "Tin Vein, Iron Deposit" r 30
+  goto 17.3,47.7 "Tin Vein, Iron Deposit" r 30
+  goto 39.6,73.1 "Tin Vein, Gold Vein" r 30
+  goto 48.3,64.4 "Tin Vein, Gold Vein" r 30
+  goto 57.7,73.3 "Tin Vein, Gold Vein" r 30
+  goto 69.1,82.7 "Tin Vein, Gold Vein" r 30
+  goto 48.6,85.2 "Tin Vein, Gold Vein" r 30
+  goto 78.8,43.6 "Tin Vein, Gold Vein" r 30
+  goto 29.1,15.2 "Tin Vein, Gold Vein" r 30
+  skill Mining 175
+
+# ---------------------------------------------------------------- Mining 175-245
+
+section Mining 175-245
+
+step Mithril in the Hinterlands
+  zone The Hinterlands
+  tip Mithril Deposits need 175, Truesilver Deposits 230. The Hinterlands loop is the pick for this band. Skip the route the page marks in red: level 62 elites patrol it. Lower levels may also want to skip the cave marked on the page's map. Tanaris is the alternative zone; its four marked caves are for level 60s.
+  goto 20.8,58.8 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 25.1,68.8 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 33.3,60.6 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 41.0,66.1 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 35.5,74.8 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 50.1,71.6 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 52.4,59.7 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 50.0,48.2 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 39.0,49.8 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 33.5,41.2 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 46.9,33.4 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 55.2,84.9 "Mithril Deposit, Truesilver Deposit" r 30
+  skill Mining 200
+
+step Artisan Mining
+  only Alliance
+  zone Ironforge
+  tip Artisan Mining raises the cap to 300 and needs skill 200. Geofram Bouldertoe in Ironforge teaches it.
+  train Mining Artisan npc 4254
+
+step Artisan Mining
+  only Horde
+  zone Orgrimmar
+  tip Artisan Mining raises the cap to 300 and needs skill 200. Makaru in Orgrimmar teaches it.
+  train Mining Artisan npc 3357
+
+step Mithril and Truesilver in the Hinterlands cont.
+  zone The Hinterlands
+  tip Keep circling the same loop to 245; Truesilver Deposits open up at 230.
+  goto 20.8,58.8 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 25.1,68.8 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 33.3,60.6 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 41.0,66.1 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 35.5,74.8 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 50.1,71.6 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 52.4,59.7 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 50.0,48.2 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 39.0,49.8 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 33.5,41.2 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 46.9,33.4 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 55.2,84.9 "Mithril Deposit, Truesilver Deposit" r 30
+  skill Mining 245
+
+# ---------------------------------------------------------------- Mining 245-275
+
+section Mining 245-275
+
+step Small Thorium in Un'Goro Crater
+  zone Un'Goro Crater
+  tip Small Thorium Veins need 245. Un'Goro Crater is the pick for this band; the two marked caves hold two or three veins each, though lower levels will probably skip the south cave. Felwood is the alternative: its marked cave is small, with few mobs, and usually holds two veins. Skip the other two Felwood caves at Jaedenar, especially Shadow Hold, unless you can stealth through them.
+  goto 78.1,57.3 "Small Thorium Vein, Mithril Deposit" r 30
+  goto 61.0,66.2 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 52.3,64.9 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 50.3,71.1 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 44.3,88.5 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 23.4,61.0 "Small Thorium Vein, Truesilver Deposit" r 30
+  goto 32.9,49.2 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 40.9,35.3 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 34.7,20.9 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 43.5,15.7 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 57.3,15.4 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 60.0,34.9 "Mithril Deposit, Truesilver Deposit" r 30
+  skill Mining 275
+
+# ---------------------------------------------------------------- Mining 275-300
+
+section Mining 275-300
+
+step Rich Thorium in Un'Goro Crater
+  zone Un'Goro Crater
+  tip Rich Thorium Veins open up at 275. This loop covers the same ground as the last band, now with Rich Thorium in the mix; the veins cluster in the west and south of the crater. Winterspring is the alternative: its caves are mostly manageable, but the gorge has patrolling elites and the far cave is not recommended for most players. Eastern Plaguelands has a run of level 57 to 58 elites; skip it unless geared or stealthed.
+  goto 23.4,61.0 "Small Thorium Vein, Rich Thorium Vein" r 30
+  goto 24.7,49.8 "Small Thorium Vein" r 30
+  goto 32.9,49.2 "Mithril Deposit" r 30
+  goto 37.8,35.3 "Small Thorium Vein" r 30
+  goto 40.9,35.3 "Mithril Deposit" r 30
+  goto 52.7,47.3 "Rich Thorium Vein" r 30
+  goto 45.5,64.8 "Small Thorium Vein" r 30
+  goto 37.9,64.5 "Mithril Deposit" r 30
+  goto 50.3,71.1 "Mithril Deposit" r 30
+  goto 50.5,75.6 "Small Thorium Vein" r 30
+  goto 59.5,65.4 "Small Thorium Vein" r 30
+  goto 37.8,81.1 "Mithril Deposit" r 30
+  skill Mining 300

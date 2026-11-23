@@ -1,0 +1,232 @@
+# Canonical route: the page's fastest path. Starting-zone beasts 1-75
+# (Mottled Boars in the Valley of Trials for Horde, wolves in Northshire
+# for Alliance), the raptor camp west of Northwatch Hold for Horde 75-150
+# and Loch Modan then the Wetlands for Alliance, the Foothill Caverns
+# yetis 150-225, the Feral Scar Vale yetis 225-280, the western Un'Goro
+# dinosaurs 280-300.
+#
+# Skill rule (from the page): a beast up to level 10 skins at skill 1;
+# levels 11-19 need 10 skill per level above 10; from level 20 a beast
+# needs five times its level.
+#
+# Coordinates are spawn centroids from the reference data (npcs.json),
+# clustered per band (derive_coords.py). Northwatch Hold sits at
+# 61.1,55.4 in the Barrens (Polestar's exploration guide), so the 75-150
+# Horde loop is the trio's spawns west of it. The plain Pterrordax
+# roosts only at the crater's north and south edges, so the Un'Goro loop
+# dips to the south roost. The Foothill Caverns yetis spawn on both the
+# Hillsbrad and Alterac maps; the loop uses the Hillsbrad side, where
+# the cave is entered.
+#
+# NPC/item ids resolved from the reference data (npcs.json,
+# professions.json rank trainer lists):
+#   Trainers: Riley Peltskinner 247227 (Northshire), Kagil 267327
+#   (Valley of Trials), Balthus Stoneflayer 6291 (Ironforge),
+#   Thuwd 7088 (Orgrimmar). The starting-zone trainers teach
+#   Apprentice only, matching the page; the capital trainers teach
+#   every rank.
+#   Skinning Knife 7005.
+guide forever-professions/skinning
+title Skinning 1-300
+category Professions
+coords era
+levels 1-60
+zone Azeroth
+
+# ---------------------------------------------------------------- Apprentice
+
+section Skinning 1-75
+
+step Learn Skinning
+  only Alliance
+  zone Elwynn Forest
+  tip Skinning takes one of your two primary profession slots (pairs seamlessly with Leatherworking because Pristine Leather, Hide and Scale go straight into recipes). Riley Peltskinner in Northshire teaches Apprentice Skinning at any character level. Buy a Skinning Knife before you start: it stays in your bags, it does not need to be equipped, but you cannot skin without one. Most trade goods and general vendors sell it.
+  train Skinning Apprentice npc 247227
+  buy 7005 x1 nearest
+
+step Learn Skinning
+  only Horde
+  zone Durotar
+  tip Skinning takes one of your two primary profession slots (pairs seamlessly with Leatherworking because Pristine Leather, Hide and Scale go straight into recipes). Kagil in the Valley of Trials teaches Apprentice Skinning at any character level. Buy a Skinning Knife before you start: it stays in your bags, it does not need to be equipped, but you cannot skin without one. Most trade goods and general vendors sell it.
+  train Skinning Apprentice npc 267327
+  buy 7005 x1 nearest
+
+step Mottled Boars in the Valley of Trials
+  only Horde
+  zone Durotar
+  tip Kill and skin Mottled Boars around the Valley of Trials until Skinning 75; loot each corpse, then skin it. The boars here carry you the whole way to 75. Skinning has a level gate: anything up to level 10 skins at skill 1, then each level from 11 to 19 needs 10 more skill, and from level 20 a beast needs five times its level, so skin the highest-level beast your skill allows. Any starting zone works for this band if you would rather stay where you are levelling.
+  goto 45.9,65.4 "Mottled Boar" r 30
+  goto 45.0,62.0 "Mottled Boar" r 30
+  goto 42.7,61.6 "Mottled Boar" r 30
+  goto 44.6,59.3 "Mottled Boar" r 30
+  goto 42.3,64.7 "Mottled Boar" r 30
+  goto 45.8,69.4 "Mottled Boar" r 30
+  goto 43.3,72.6 "Mottled Boar" r 30
+  goto 42.1,71.6 "Mottled Boar" r 30
+  skill Skinning 75
+
+step Wolves in Northshire Valley
+  only Alliance
+  zone Elwynn Forest
+  tip Kill and skin Young Wolves and Timber Wolves around Northshire Valley until Skinning 75; loot each corpse, then skin it. The wolves here carry you the whole way to 75. Skinning has a level gate: anything up to level 10 skins at skill 1, then each level from 11 to 19 needs 10 more skill, and from level 20 a beast needs five times its level, so skin the highest-level beast your skill allows. Any starting zone works for this band if you would rather stay where you are levelling.
+  goto 46.2,41.9 "Young Wolf, Timber Wolf" r 30
+  goto 46.4,38.1 "Timber Wolf, Young Wolf" r 30
+  goto 49.0,37.8 "Young Wolf, Timber Wolf" r 30
+  goto 48.3,34.3 "Timber Wolf" r 30
+  goto 46.1,35.0 "Timber Wolf" r 30
+  goto 52.8,38.9 "Timber Wolf" r 30
+  goto 51.5,42.2 "Timber Wolf" r 30
+  goto 50.0,45.9 "Timber Wolf, Young Wolf" r 30
+  skill Skinning 75
+
+# ---------------------------------------------------------------- Skinning 75-150
+
+section Skinning 75-150
+
+step Journeyman Skinning
+  only Alliance
+  zone Ironforge
+  tip Journeyman Skinning raises the cap to 150 and needs skill 50. Balthus Stoneflayer in Ironforge teaches it.
+  train Skinning Journeyman npc 6291
+
+step Journeyman Skinning
+  only Horde
+  zone Orgrimmar
+  tip Journeyman Skinning raises the cap to 150 and needs skill 50. Thuwd in Orgrimmar teaches it.
+  train Skinning Journeyman npc 7088
+
+step Raptor camp west of Northwatch Hold
+  only Horde
+  zone The Barrens
+  tip The small raptor camp west of Northwatch Hold holds Sunscale Scytheclaws, Zhevra Chargers and Ornery Plainstriders, level 16 to 18. Skin the 16s and 17s until 80, then the 18s open up too. Stay here to 150; the last points come slowly but the camp refills fast. Northwatch Hold itself is an Alliance fort, so keep to the camp west of it. Horde players can pick up the Keen Skinning Knife, +3 Skinning, from the Unwelcome Guests quest in the Barrens.
+  goto 57.8,52.0 "Ornery Plainstrider, Sunscale Scytheclaw" r 30
+  goto 61.1,50.1 "Sunscale Scytheclaw, Zhevra Charger" r 30
+  goto 61.3,47.8 "Ornery Plainstrider" r 30
+  goto 56.3,47.8 "Ornery Plainstrider, Sunscale Scytheclaw" r 30
+  goto 52.5,47.1 "Sunscale Scytheclaw, Zhevra Charger" r 30
+  goto 48.8,47.4 "Ornery Plainstrider, Zhevra Charger" r 30
+  goto 48.1,50.3 "Sunscale Scytheclaw" r 30
+  goto 52.8,51.6 "Sunscale Scytheclaw, Zhevra Charger" r 30
+  skill Skinning 150
+
+step Boars and bears in Loch Modan
+  only Alliance
+  zone Loch Modan
+  tip Elder Mountain Boars and Black Bear Patriarchs, level 16 and 17, roam the east side of the loch; Loch Crocolisks along the shore skin too. Stay until 130: the Wetlands raptors need more skill than that.
+  goto 62.1,38.0 "Elder Mountain Boar" r 30
+  goto 62.7,33.8 "Black Bear Patriarch, Elder Mountain Boar" r 30
+  goto 57.3,32.6 "Loch Crocolisk, Black Bear Patriarch" r 30
+  goto 56.8,37.2 "Loch Crocolisk" r 30
+  goto 53.6,38.7 "Loch Crocolisk" r 30
+  goto 59.0,27.0 "Black Bear Patriarch" r 30
+  goto 67.2,38.0 "Elder Mountain Boar, Black Bear Patriarch" r 30
+  goto 67.2,41.5 "Elder Mountain Boar, Black Bear Patriarch" r 30
+  goto 73.4,43.0 "Black Bear Patriarch, Elder Mountain Boar" r 30
+  goto 76.7,42.6 "Black Bear Patriarch" r 30
+  goto 71.9,36.9 "Black Bear Patriarch, Elder Mountain Boar" r 30
+  skill Skinning 130
+
+step Raptors at Whelgar's Excavation Site
+  only Alliance
+  zone Wetlands
+  tip Mottled Scytheclaws and Mottled Razormaws, level 25 to 27, gather around Whelgar's Excavation Site in the north of the Wetlands. At 130 you can skin the 25s; the 26s and 27s open up as you climb.
+  goto 34.7,49.8 "Mottled Scytheclaw, Mottled Razormaw" r 30
+  goto 36.0,48.4 "Mottled Scytheclaw" r 30
+  goto 34.2,46.5 "Mottled Razormaw, Mottled Scytheclaw" r 30
+  goto 34.6,44.1 "Mottled Scytheclaw" r 30
+  goto 31.8,46.9 "Mottled Scytheclaw" r 30
+  goto 31.7,48.5 "Mottled Scytheclaw, Mottled Razormaw" r 30
+  goto 32.8,51.0 "Mottled Scytheclaw" r 30
+  goto 35.6,51.9 "Mottled Scytheclaw" r 30
+  skill Skinning 150
+
+# ---------------------------------------------------------------- Skinning 150-225
+
+section Skinning 150-225
+
+step Expert Skinning
+  only Alliance
+  zone Ironforge
+  tip Expert Skinning raises the cap to 225 and needs skill 125. Balthus Stoneflayer in Ironforge teaches it.
+  train Skinning Expert npc 6291
+
+step Expert Skinning
+  only Horde
+  zone Orgrimmar
+  tip Expert Skinning raises the cap to 225 and needs skill 125. Thuwd in Orgrimmar teaches it.
+  train Skinning Expert npc 7088
+
+step Outside the Foothill Caverns
+  zone Hillsbrad Foothills
+  tip Vicious Gray Bears and Starving Mountain Lions, level 22 to 24, prowl the slopes in front of the Foothill Caverns in the north of Hillsbrad Foothills. Work them to 160: at that point the level 32 Ferocious Yetis inside open up, and the cave is worth staying in. Horde come from Tarren Mill, Alliance from Southshore.
+  goto 53.0,37.7 "Starving Mountain Lion, Vicious Gray Bear" r 30
+  goto 51.7,42.8 "Starving Mountain Lion, Vicious Gray Bear" r 30
+  goto 47.7,44.1 "Vicious Gray Bear" r 30
+  goto 41.5,42.6 "Vicious Gray Bear, Starving Mountain Lion" r 30
+  goto 38.8,42.3 "Starving Mountain Lion, Vicious Gray Bear" r 30
+  goto 38.1,37.0 "Vicious Gray Bear, Starving Mountain Lion" r 30
+  goto 42.8,37.8 "Vicious Gray Bear, Starving Mountain Lion" r 30
+  goto 48.4,33.4 "Vicious Gray Bear, Starving Mountain Lion" r 30
+  goto 52.9,31.5 "Vicious Gray Bear, Starving Mountain Lion" r 30
+  goto 56.6,42.5 "Starving Mountain Lion, Vicious Gray Bear" r 30
+  skill Skinning 160
+
+step Inside the Foothill Caverns
+  zone Hillsbrad Foothills
+  tip Cave Yetis and Ferocious Yetis, level 30 to 32, fill the Foothill Caverns, and they come back fast enough to stay inside the whole way to 225. If the cave is crowded, Duskwood's Nightbane worgen, level 26 to 29, are the alternative: clear around Roland's Doom and the Rotting Orchard.
+  goto 43.3,31.2 "Cave Yeti, Ferocious Yeti" r 30
+  goto 42.5,33.3 "Cave Yeti, Ferocious Yeti" r 30
+  goto 45.7,33.8 "Cave Yeti" r 30
+  goto 46.6,31.3 "Cave Yeti" r 30
+  goto 45.2,28.4 "Ferocious Yeti" r 30
+  goto 44.2,28.6 "Ferocious Yeti, Cave Yeti" r 30
+  goto 45.0,26.1 "Ferocious Yeti" r 30
+  goto 44.1,25.7 "Ferocious Yeti, Cave Yeti" r 30
+  skill Skinning 225
+
+# ---------------------------------------------------------------- Skinning 225-280
+
+section Skinning 225-280
+
+step Artisan Skinning
+  only Alliance
+  zone Ironforge
+  tip Artisan Skinning raises the cap to 300 and needs skill 200. Balthus Stoneflayer in Ironforge teaches it.
+  train Skinning Artisan npc 6291
+
+step Artisan Skinning
+  only Horde
+  zone Orgrimmar
+  tip Artisan Skinning raises the cap to 300 and needs skill 200. Thuwd in Orgrimmar teaches it.
+  train Skinning Artisan npc 7088
+
+step Yetis at Feral Scar Vale
+  zone Feralas
+  tip Feral Scar Yetis, Enraged Feral Scars and Hulking Feral Scars, level 43 to 46, pack the yeti cave at Feral Scar Vale in south Feralas. Horde come from Camp Mojache, Alliance from Feathermoon Stronghold.
+  goto 52.0,58.5 "Enraged Feral Scar, Feral Scar Yeti" r 30
+  goto 50.6,58.8 "Hulking Feral Scar, Enraged Feral Scar" r 30
+  goto 52.2,60.4 "Hulking Feral Scar" r 30
+  goto 55.8,57.7 "Feral Scar Yeti" r 30
+  goto 55.4,56.0 "Feral Scar Yeti" r 30
+  goto 53.2,55.9 "Enraged Feral Scar, Feral Scar Yeti" r 30
+  skill Skinning 280
+
+# ---------------------------------------------------------------- Skinning 280-300
+
+section Skinning 280-300
+
+step Dinosaurs in western Un'Goro Crater
+  zone Un'Goro Crater
+  tip Fly to Marshal's Refuge, then work the dinosaurs in western Un'Goro Crater: Diemetradons, Elder Diemetradons and Frenzied Pterrordaxes, level 50 to 55. The plain Pterrordaxes roost at the crater's south edge, so the loop dips down to them.
+  goto 47.6,67.3 "Diemetradon" r 30
+  goto 52.3,63.4 "Diemetradon" r 30
+  goto 42.1,63.1 "Diemetradon, Frenzied Pterrordax" r 30
+  goto 42.9,71.7 "Diemetradon, Elder Diemetradon" r 30
+  goto 26.6,62.2 "Elder Diemetradon, Frenzied Pterrordax" r 30
+  goto 28.4,54.8 "Elder Diemetradon, Frenzied Pterrordax" r 30
+  goto 23.4,52.4 "Elder Diemetradon, Frenzied Pterrordax" r 30
+  goto 31.8,37.3 "Elder Diemetradon, Frenzied Pterrordax" r 30
+  goto 32.6,31.1 "Elder Diemetradon, Frenzied Pterrordax" r 30
+  goto 57.7,52.5 "Diemetradon" r 30
+  goto 51.0,89.0 "Pterrordax" r 30
+  skill Skinning 300

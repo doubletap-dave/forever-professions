@@ -1,0 +1,306 @@
+# Canonical route: the Healing Potions tab where the page offers one
+# (1-75, 90-150), since it is the cheaper path when buying everything and
+# the route Polestar's own generated guide does not take; the Bandages tab
+# is named in each section's tip with its material list, for players who
+# already hold the cloth. Expert (150-225) and Artisan (225-300) are
+# bandage-only on the page, except the 275-300 Major Healing Potion
+# alternative, which is a tip at 260-290.
+#
+# Spell/item ids resolved from the Forever client tables (build
+# 1.60.1.70532, SkillLineAbility.csv + SpellName.csv + SpellReagents.csv),
+# each cross-checked against the page's own material lists:
+#   Minor Healing Potion 1244431, Simple Poultice 1259342,
+#   Healing Potion 1244433, Heavy Runecloth Bandage 18630,
+#   Bottle of Dalaran Noir 2723.
+# Note: the reference data names item 2723 "Bottle of Pinot Noir" (its
+# Classic name); the Forever client tables call it "Bottle of Dalaran
+# Noir", and the Simple Poultice recipe lists 2723 as a reagent, so 2723
+# is the right id either way.
+guide forever-professions/first-aid
+title First Aid 1-300
+category Professions
+coords era
+levels 1-60
+zone Azeroth
+
+# ---------------------------------------------------------------- Apprentice
+
+section First Aid 1-75
+
+step Learn First Aid
+  only Alliance
+  zone Ironforge
+  tip First Aid takes no profession slot, so every character can learn it. Nissa Firestone in Ironforge teaches Apprentice First Aid, at any character level. In Forever, First Aid also makes the healing potions that used to be Alchemy recipes, and this guide brews them where they are cheaper than bandages.
+  train First Aid Apprentice npc 5150
+
+step Learn First Aid
+  only Horde
+  zone Orgrimmar
+  tip First Aid takes no profession slot, so every character can learn it. Arnok in Orgrimmar teaches Apprentice First Aid, at any character level. In Forever, First Aid also makes the healing potions that used to be Alchemy recipes, and this guide brews them where they are cheaper than bandages.
+  train First Aid Apprentice npc 3373
+
+step First Aid 1-75: Auction House
+  tip What the potions take that the Auction House sells: 86 Peacebloom. The counts drop by what your bags, bank and mail hold.
+  auction 2447 x86
+
+step First Aid 1-75: herbs
+  tip Peacebloom is the starter herb: pick it in any starting zone while you level, or take it from your bank.
+  collect 2447 x86 anywhere gather Herbalism 1
+
+step First Aid 1-75: vendor goods
+  tip Mild Spices come from Cooking supply vendors and Empty Vials from Alchemy supply vendors, in any capital and most starting zones.
+  buy 2678 x86 nearest
+  buy 3371 x86 nearest
+
+step Minor Healing Potion (1-75)
+  tip Minor Healing Potion is taught with Apprentice First Aid: 86 brews take you to 75. Bandages instead, if you already hold the cloth: 50 Linen Bandage (50 Linen Cloth) to 40, then 47 Heavy Linen Bandage (94 Linen Cloth) to 75.
+  learn 1244431 "Minor Healing Potion"
+  craft 1244431 "Minor Healing Potion" until 75
+
+# ---------------------------------------------------------------- Journeyman
+
+section First Aid 75-90
+
+step Journeyman First Aid
+  only Alliance
+  zone Ironforge
+  tip Journeyman First Aid raises the cap to 150; it needs skill 50 and no character level. Nissa Firestone in Ironforge teaches it.
+  train First Aid Journeyman npc 5150
+
+step Journeyman First Aid
+  only Horde
+  zone Orgrimmar
+  tip Journeyman First Aid raises the cap to 150; it needs skill 50 and no character level. Arnok in Orgrimmar teaches it.
+  train First Aid Journeyman npc 3373
+
+step Heavy Linen Bandage: Auction House
+  tip What Heavy Linen Bandage takes that the Auction House sells: 26 Linen Cloth. The counts drop by what your bags, bank and mail hold.
+  auction 2589 x26
+
+step Heavy Linen Bandage: cloth
+  tip Linen Cloth drops from humanoids of level 5-20: keep what you loot as you level, or take it from your bank.
+  collect 2589 x26 anywhere gather levels 5-20
+
+step Heavy Linen Bandage (75-80)
+  tip Heavy Linen Bandage, 13 crafts to 80. Any First Aid trainer teaches it from skill 40. Bandages need no fire: craft them anywhere.
+  learn 3276 "Heavy Linen Bandage"
+  craft 3276 "Heavy Linen Bandage" until 80
+
+step Wool Bandage: Auction House
+  tip What Wool Bandage takes that the Auction House sells: 12 Wool Cloth. The counts drop by what your bags, bank and mail hold.
+  auction 2592 x12
+
+step Wool Bandage: cloth
+  tip Wool Cloth drops from humanoids of level 15-30: keep what you loot as you level, or take it from your bank.
+  collect 2592 x12 anywhere gather levels 15-30
+
+step Wool Bandage (80-90)
+  tip Wool Bandage, 12 crafts to 90. Any First Aid trainer teaches it from skill 80.
+  learn 3277 "Wool Bandage"
+  craft 3277 "Wool Bandage" until 90
+
+section First Aid 90-125
+
+step First Aid 90-125: Auction House
+  tip What the poultices take that the Auction House sells: 54 Spider Ichor. The counts drop by what your bags, bank and mail hold.
+  auction 3174 x54
+
+step First Aid 90-125: vendor goods
+  tip Mild Spices come from Cooking supply vendors and Bottles of Dalaran Noir from barkeeps, in any capital city.
+  buy 2678 x54 nearest
+  buy 2723 x54 nearest
+
+step Simple Poultice (90-125)
+  tip Simple Poultice, 54 brews to 125: Spider Ichor, Mild Spices and a Bottle of Dalaran Noir each. Bandages instead, if you already hold the cloth: 40 Wool Bandage (40 Wool Cloth) to 115, then Heavy Wool Bandage on to 150.
+  learn 1259342 "Simple Poultice"
+  craft 1259342 "Simple Poultice" until 125
+
+section First Aid 125-150
+
+step First Aid 125-150: Auction House
+  tip What the potions take that the Auction House sells: 31 Bruiseweed. The counts drop by what your bags, bank and mail hold.
+  auction 2453 x31
+
+step First Aid 125-150: herbs
+  tip Bruiseweed grows in mid-level zones: pick it while you level, or take it from your bank.
+  collect 2453 x31 anywhere gather Herbalism 75
+
+step First Aid 125-150: vendor goods
+  tip Hot Spices come from Cooking supply vendors and Leaded Vials from Alchemy supply vendors. Starting-zone vendors do not sell either: buy them in a capital city.
+  buy 2692 x31 nearest
+  buy 3372 x31 nearest
+
+step Healing Potion (125-150)
+  tip Healing Potion, 31 brews to 150: Bruiseweed, Hot Spices and a Leaded Vial each. Bandages instead, if you already hold the cloth: 51 Heavy Wool Bandage (102 Wool Cloth) from 115 to 150.
+  learn 1244433 "Healing Potion"
+  craft 1244433 "Healing Potion" until 150
+
+# ---------------------------------------------------------------- Expert
+
+section First Aid 150-180
+
+step Expert First Aid
+  only Alliance
+  zone Arathi Highlands
+  tip Expert First Aid raises the cap to 225. It is a book, Expert First Aid - Under Wraps, sold by Deneb Walker in the Arathi Highlands. The book has no level requirement: you only need First Aid 125. Buy the Heavy Silk and Mageweave Bandage manuals from him while you are there; you read them at 180 and 210. Learn Silk Bandage from your trainer before you leave: it is the last recipe the trainers teach.
+  train First Aid Expert npc 2805
+  buy 16112 x1 nearest
+  buy 16113 x1 nearest
+
+step Expert First Aid
+  only Horde
+  zone Dustwallow Marsh
+  tip Expert First Aid raises the cap to 225. It is a book, Expert First Aid - Under Wraps, sold by Balai Lok'Wein in Dustwallow Marsh. The book has no level requirement: you only need First Aid 125. Buy the Heavy Silk and Mageweave Bandage manuals from him while you are there; you read them at 180 and 210. Learn Silk Bandage from your trainer before you leave: it is the last recipe the trainers teach.
+  train First Aid Expert npc 13476
+  buy 16112 x1 nearest
+  buy 16113 x1 nearest
+
+step Silk Bandage: Auction House
+  tip What Silk Bandage takes that the Auction House sells: 44 Silk Cloth. The counts drop by what your bags, bank and mail hold.
+  auction 4306 x44
+
+step Silk Bandage: cloth
+  tip Silk Cloth drops from humanoids of level 25-45: keep what you loot as you level, or take it from your bank.
+  collect 4306 x44 anywhere gather levels 25-45
+
+step Silk Bandage (150-180)
+  tip Silk Bandage, 44 crafts to 180. Any First Aid trainer teaches it from skill 150.
+  learn 7928 "Silk Bandage"
+  craft 7928 "Silk Bandage" until 180
+
+section First Aid 180-210
+
+step Heavy Silk Bandage: Auction House
+  tip What Heavy Silk Bandage takes that the Auction House sells: 88 Silk Cloth. The counts drop by what your bags, bank and mail hold.
+  auction 4306 x88
+
+step Heavy Silk Bandage: cloth
+  tip Silk Cloth drops from humanoids of level 25-45: keep what you loot as you level, or take it from your bank.
+  collect 4306 x88 anywhere gather levels 25-45
+
+step Heavy Silk Bandage (180-210)
+  tip Heavy Silk Bandage, 44 crafts to 210. Use the Manual: Heavy Silk Bandage first to learn the recipe.
+  learn 7929 "Heavy Silk Bandage"
+  craft 7929 "Heavy Silk Bandage" until 210
+
+section First Aid 210-225
+
+step Mageweave Bandage: Auction House
+  tip What Mageweave Bandage takes that the Auction House sells: 19 Mageweave Cloth. The counts drop by what your bags, bank and mail hold.
+  auction 4338 x19
+
+step Mageweave Bandage: cloth
+  tip Mageweave Cloth drops from humanoids of level 35-50: keep what you loot as you level, or take it from your bank.
+  collect 4338 x19 anywhere gather levels 35-50
+
+step Mageweave Bandage (210-225)
+  tip Mageweave Bandage, 19 crafts to 225. Use the Manual: Mageweave Bandage first to learn the recipe.
+  learn 10840 "Mageweave Bandage"
+  craft 10840 "Mageweave Bandage" until 225
+
+# ---------------------------------------------------------------- Artisan: Triage
+
+section First Aid 225-240
+
+step Trauma
+  only Alliance
+  zone Ironforge
+  tip Artisan First Aid comes from the Triage quest. It needs skill 225 and level 35, though the quest itself is level 45. The First Aid trainer in Ironforge sends you to the doctor in Theramore. Bring everything you need to reach 300 now: about 90 Mageweave Cloth and 70 Runecloth. You learn the next three bandages from the same doctor, and bandages need no fire, so you craft beside him.
+  skill "First Aid" 225
+  level 35
+  accept 6625
+
+step Trauma
+  only Horde
+  zone Orgrimmar
+  tip Artisan First Aid comes from the Triage quest. It needs skill 225 and level 35, though the quest itself is level 45. The First Aid trainer in Orgrimmar sends you to the doctor in Hammerfall. Bring everything you need to reach 300 now: about 90 Mageweave Cloth and 70 Runecloth. You learn the next three bandages from the same doctor, and bandages need no fire, so you craft beside him.
+  skill "First Aid" 225
+  level 35
+  accept 6623
+
+step Triage
+  only Alliance
+  zone Dustwallow Marsh
+  tip Triage: the doctor hands you Triage Bandages; use those, not your own. Fifteen patients lie in the room: heal the critically injured first, then the badly injured, then the injured, before any die. Show the health bars with Ctrl+V, zoom the camera out, stand in the middle of the room, and pre-select the next patient while you heal. Turn it in the moment fifteen are saved: the others keep dying, and too many deaths fail it even after it reads complete. If another player is talking to the doctor, he sometimes will not offer the quest: wait a bit and talk to him again.
+  turnin 6625
+  accept 6624
+  complete 6624
+  turnin 6624
+
+step Triage
+  only Horde
+  zone Arathi Highlands
+  tip Triage: the doctor hands you Triage Bandages; use those, not your own. Fifteen patients lie in the room: heal the critically injured first, then the badly injured, then the injured, before any die. Show the health bars with Ctrl+V, zoom the camera out, stand in the middle of the room, and pre-select the next patient while you heal. Turn it in the moment fifteen are saved: the others keep dying, and too many deaths fail it even after it reads complete. If another player is talking to the doctor, he sometimes will not offer the quest: wait a bit and talk to him again.
+  turnin 6623
+  accept 6622
+  complete 6622
+  turnin 6622
+
+step Mageweave Bandage: Auction House
+  tip What Mageweave Bandage takes that the Auction House sells: 26 Mageweave Cloth. The counts drop by what your bags, bank and mail hold.
+  auction 4338 x26
+
+step Mageweave Bandage: cloth
+  tip Mageweave Cloth drops from humanoids of level 35-50: keep what you loot as you level, or take it from your bank.
+  collect 4338 x26 anywhere gather levels 35-50
+
+step Mageweave Bandage (225-240)
+  tip Mageweave Bandage, 26 crafts to 240.
+  craft 10840 "Mageweave Bandage" until 240
+
+section First Aid 240-260
+
+step Heavy Mageweave Bandage
+  tip Heavy Mageweave Bandage is an Artisan recipe: only the Triage doctor teaches it (Doctor Gustaf VanHowzen in Theramore, Doctor Gregory Victor in Hammerfall).
+  learn 10841 "Heavy Mageweave Bandage" npc 12939 only Alliance
+  learn 10841 "Heavy Mageweave Bandage" npc 12920 only Horde
+
+step Heavy Mageweave Bandage: Auction House
+  tip What Heavy Mageweave Bandage takes that the Auction House sells: 60 Mageweave Cloth. The counts drop by what your bags, bank and mail hold.
+  auction 4338 x60
+
+step Heavy Mageweave Bandage: cloth
+  tip Mageweave Cloth drops from humanoids of level 35-50: keep what you loot as you level, or take it from your bank.
+  collect 4338 x60 anywhere gather levels 35-50
+
+step Heavy Mageweave Bandage (240-260)
+  tip Heavy Mageweave Bandage, 30 crafts to 260.
+  craft 10841 "Heavy Mageweave Bandage" until 260
+
+section First Aid 260-290
+
+step Runecloth Bandage
+  tip Runecloth Bandage is an Artisan recipe: only the Triage doctor teaches it (Doctor Gustaf VanHowzen in Theramore, Doctor Gregory Victor in Hammerfall).
+  learn 18629 "Runecloth Bandage" npc 12939 only Alliance
+  learn 18629 "Runecloth Bandage" npc 12920 only Horde
+
+step Runecloth Bandage: Auction House
+  tip What Runecloth Bandage takes that the Auction House sells: 44 Runecloth. The counts drop by what your bags, bank and mail hold.
+  auction 14047 x44
+
+step Runecloth Bandage: cloth
+  tip Runecloth drops from humanoids of level 45-60: keep what you loot as you level, or take it from your bank.
+  collect 14047 x44 anywhere gather levels 45-60
+
+step Runecloth Bandage (260-290)
+  tip Runecloth Bandage, 44 crafts to 290. If you would rather finish on potions you can sell or use, stop the bandages at 275 and brew 30 Major Healing Potion instead (30 Golden Sansam, 90 Soothing Spices, 30 Crystal Vial). The recipe is Manual: Major Healing Potion: check the Auction House first and buy it there if it is under 8g, else from Pexmit in Mount Hyjal for 8g. Horde can also earn it from Ortak Lomgok in Elderwild, Mount Hyjal, as the reward for A Rest Without Pain.
+  craft 18629 "Runecloth Bandage" until 290
+
+section First Aid 290-300
+
+step Heavy Runecloth Bandage
+  tip Heavy Runecloth Bandage is an Artisan recipe: only the Triage doctor teaches it (Doctor Gustaf VanHowzen in Theramore, Doctor Gregory Victor in Hammerfall).
+  learn 18630 "Heavy Runecloth Bandage" npc 12939 only Alliance
+  learn 18630 "Heavy Runecloth Bandage" npc 12920 only Horde
+
+step Heavy Runecloth Bandage: Auction House
+  tip What Heavy Runecloth Bandage takes that the Auction House sells: 24 Runecloth. The counts drop by what your bags, bank and mail hold.
+  auction 14047 x24
+
+step Heavy Runecloth Bandage: cloth
+  tip Runecloth drops from humanoids of level 45-60: keep what you loot as you level, or take it from your bank.
+  collect 14047 x24 anywhere gather levels 45-60
+
+step Heavy Runecloth Bandage (290-300)
+  tip Heavy Runecloth Bandage, 12 crafts to 300.
+  craft 18630 "Heavy Runecloth Bandage" until 300

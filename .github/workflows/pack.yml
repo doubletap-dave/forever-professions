@@ -1,0 +1,103 @@
+name: pack
+
+on:
+  push:
+    branches: ['**']
+    tags: ['v*']
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  FOREVER_BUILD: 1.60.1.71037
+  QUESTIEDB_VERSION: 1.1.5
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - name: Install Lua 5.1
+        run: sudo apt-get update && sudo apt-get install -y lua5.1
+      - name: Clone Polestar toolchain
+        run: |
+          git clone --depth 1 "https://github.com/fitzforge/polestar.git" "$RUNNER_TEMP/polestar"
+          cd "$RUNNER_TEMP/polestar"
+          npm link
+      - name: Cache Cargo build for forge
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            ${{ runner.temp }}/polestar/rust/target
+          key: forge-cargo-${{ runner.os }}-${{ hashFiles('**/pack.json') }}
+          restore-keys: |
+            forge-cargo-${{ runner.os }}-
+      - name: Build forge and WoW Forever reference data
+        run: |
+          set -euo pipefail
+          POLESTAR="$RUNNER_TEMP/polestar"
+          cd "$POLESTAR"
+          cargo build --release --locked --manifest-path rust/Cargo.toml -p forge
+          FORGE="$POLESTAR/rust/target/release/forge"
+
+          # Fetch public Forever 1.60.1 client tables and base datasets
+          "$FORGE" data sources --only pfquest,cmangos,builders,wago \
+            --forever-tables wago --forever-build "$FOREVER_BUILD"
+
+          # Download QuestieDB Forever store for Forever-only quests (e.g., Mount Hyjal)
+          QDIR="$RUNNER_TEMP/questiedb-$QUESTIEDB_VERSION"
+          curl -sSfL --retry 3 -o "$RUNNER_TEMP/questiedb.zip" \
+            "https://github.com/Questie/QuestieDB/releases/download/v${QUESTIEDB_VERSION}/QuestieDB-${QUESTIEDB_VERSION}-Forever.zip"
+          mkdir -p "$QDIR"
+          unzip -q "$RUNNER_TEMP/questiedb.zip" -d "$QDIR"
+
+          # Stage the bundled Forever TDB extract so professions.json builds cleanly
+          mkdir -p "$POLESTAR/data/sources/forever-tdb"
+          cp "$POLESTAR/rust/tests/fixtures/data/sources/forever-tdb/extract.json" \
+             "$POLESTAR/data/sources/forever-tdb/extract.json"
+
+          "$FORGE" data build --offline \
+            --questie "$QDIR/QuestieDB" \
+            --no-web-xp --no-web-zones \
+            --forever-tables wago --forever-build "$FOREVER_BUILD" --accept
+          "$FORGE" data professions
+
+          echo "$POLESTAR/rust/target/release" >> "$GITHUB_PATH"
+      - name: Lint
+        run: forge guide lint --format github
+      - name: Playtest
+        run: polestar playtest
+      - name: Pack
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: forge release pack
+      - name: Keep the zip for the release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: actions/upload-artifact@v4
+        with:
+          name: pack
+          path: dist/*.zip
+          if-no-files-found: error
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: pack
+          path: dist
+      - name: Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh release create "$GITHUB_REF_NAME" dist/*.zip --title "$GITHUB_REF_NAME" --generate-notes

@@ -1,0 +1,304 @@
+# Canonical route: the page's standard route. The PvP Thorium Grenade
+# variant and the Thorium Shells alternative are named in tips with their
+# material lists, not as steps. Specializations (Gnomish / Goblin) are
+# tips only: optional, not needed to level, and most recipes either side
+# makes are usable by both.
+#
+# Kept intermediates: Rough Blasting Powder and Handful of Copper Bolts
+# kept for the Rough Copper Bombs; Coarse Blasting Powder kept for the
+# Coarse Dynamite; Bronze Tubes kept for the Standard Scopes; Heavy
+# Blasting Powder, Whirring Bronze Gizmos and Bronze Frameworks kept for
+# the Explosive Sheep; Solid Blasting Powder kept for the Unstable
+# Triggers and Hi-Explosive Bombs; Unstable Triggers and Mithril Casings
+# kept for the Hi-Explosive Bombs; Dense Blasting Powder kept for the
+# Thorium Grenades of the PvP variant. The Arclight Spanner and the
+# Gyromatic Micro-Adjustor are tools: keep them in your bags. The craft
+# steps say how many to keep; the material counts already include them.
+#
+# Spell ids resolved from professions.json and the Forever client tables
+# (build 1.60.1.70532, SkillLineAbility.csv + SpellName.csv +
+# SpellReagents.csv), each cross-checked against the page's own material
+# lists. Note: the learn skills in professions.json are Classic estimates
+# and do not match Forever in several places (Handful of Copper Bolts is
+# crafted from 35 here, the Arclight Spanner at 55, Rough Copper Bombs
+# from 56); the bands here follow the page's beta-tested route.
+#
+# One count to watch: the Bronze Frameworks at 150-160. The Heavy Blasting
+# Powder before them is green by 135, so the powder and gizmos may land a
+# few points short of 160; the framework step crafts until 160, which can
+# take a few extra frameworks past the 15 the sheep need. Buy a little
+# extra Bronze Bar, Medium Leather and Wool Cloth against that.
+guide forever-professions/engineering
+title Engineering 1-300
+category Professions
+coords era
+levels 1-60
+zone Azeroth
+
+# ---------------------------------------------------------------- Apprentice
+
+section Engineering 1-75
+
+step Learn Engineering
+  only Alliance
+  zone Ironforge
+  tip Engineering takes a profession slot and pairs with Mining: nearly everything on this route is stone and bars. Jemma Quikswitch in Ironforge teaches Apprentice Engineering at any character level. Buy a Blacksmith Hammer now: most recipes need one in your bags.
+  train Engineering Apprentice npc 11028
+
+step Learn Engineering
+  only Horde
+  zone Orgrimmar
+  tip Engineering takes a profession slot and pairs with Mining: nearly everything on this route is stone and bars. Thund in Orgrimmar teaches Apprentice Engineering at any character level. Buy a Blacksmith Hammer now: most recipes need one in your bags.
+  train Engineering Apprentice npc 2857
+
+step Engineering 1-75: Auction House
+  tip What the first bombs take that the Auction House sells: 52 Rough Stone, 58 Copper Bar, 26 Linen Cloth. The counts drop by what your bags, bank and mail hold.
+  auction 2835 x52
+  auction 2840 x58
+  auction 2589 x26
+
+step Engineering 1-75: stone, bars and cloth
+  tip Rough Stone comes from Copper Veins while mining; Copper Bar is smelted from Copper Ore; Linen Cloth drops from humanoids of level 5-20. Gather them while you level, or take them from your bank.
+  collect 2835 x52 anywhere gather Mining 1
+  collect 2840 x58 anywhere gather Mining 1
+  collect 2589 x26 anywhere gather levels 5-20
+
+step Engineering 1-75: tools
+  tip A Blacksmith Hammer from any Blacksmithing or Engineering supply vendor, usually next to the trainer. Keep it in your bags: most recipes need it.
+  buy 5956 x1 nearest
+
+step Rough Blasting Powder, Copper Bolts, Arclight Spanner, Rough Copper Bomb (1-75)
+  tip Rough Blasting Powder, 52 crafts to 35: one Rough Stone each. Keep all of it. Then Handful of Copper Bolts, 26 crafts to 55: one Copper Bar each. Keep all of those too. Then one Arclight Spanner: six Copper Bars, and keep it, you need it to craft Engineering recipes. Then Rough Copper Bomb, 26 crafts to 75: a Copper Bar, a bolt, two powders and a Linen Cloth each. It turns yellow at 60, so make a few more if you come up short, and do not craft them all at once unless Journeyman is already learned: the bombs may carry you past 75.
+  learn 3918 "Rough Blasting Powder"
+  craft 3918 "Rough Blasting Powder" until 35
+  learn 3922 "Handful of Copper Bolts"
+  craft 3922 "Handful of Copper Bolts" until 55
+  learn 7430 "Arclight Spanner"
+  craft 7430 "Arclight Spanner" x1
+  learn 3923 "Rough Copper Bomb"
+  craft 3923 "Rough Copper Bomb" until 75
+
+# ---------------------------------------------------------------- Journeyman
+
+section Engineering 75-105
+
+step Journeyman Engineering
+  only Alliance
+  zone Ironforge
+  tip Journeyman Engineering raises the cap to 150; it needs skill 50 and character level 10. Trixie Quikswitch in Ironforge teaches it.
+  level 10
+  train Engineering Journeyman npc 11029
+
+step Journeyman Engineering
+  only Horde
+  zone Orgrimmar
+  tip Journeyman Engineering raises the cap to 150; it needs skill 50 and character level 10. Nogg in Orgrimmar teaches it.
+  level 10
+  train Engineering Journeyman npc 3412
+
+step Engineering 75-105: Auction House
+  tip What the next explosives take that the Auction House sells: 51 Coarse Stone, 17 Linen Cloth, 5 Silver Bar. The counts drop by what your bags, bank and mail hold.
+  auction 2836 x51
+  auction 2589 x17
+  auction 2842 x5
+
+step Engineering 75-105: stone, cloth and bars
+  tip Coarse Stone comes from Tin Veins while mining; Linen Cloth drops from humanoids of level 5-20; Silver Bar is smelted from Silver Ore (Mining 75). Gather them while you level, or take them from your bank.
+  collect 2836 x51 anywhere gather Mining 65
+  collect 2589 x17 anywhere gather levels 5-20
+  collect 2842 x5 anywhere gather Mining 75
+
+step Coarse Blasting Powder, Coarse Dynamite, Silver Contact (75-105)
+  tip Coarse Blasting Powder, 51 crafts to 90: one Coarse Stone each. Keep all of it. Then Coarse Dynamite, 17 crafts to 100: three powders and a Linen Cloth each. It turns green at 97, so start the Silver Contacts if you come up short. Then Silver Contact, 5 crafts to 105: a Silver Bar each, five contacts a craft. If Silver Bar is expensive, make Flying Tiger Goggles instead (30 Light Leather, 10 Tigerseye).
+  learn 3929 "Coarse Blasting Powder"
+  craft 3929 "Coarse Blasting Powder" until 90
+  learn 3931 "Coarse Dynamite"
+  craft 3931 "Coarse Dynamite" until 100
+  learn 3973 "Silver Contact"
+  craft 3973 "Silver Contact" until 105
+
+section Engineering 105-135
+
+step Engineering 105-135: Auction House
+  tip What the tubes and scopes take that the Auction House sells: 50 Bronze Bar, 10 Moss Agate. The counts drop by what your bags, bank and mail hold.
+  auction 2841 x50
+  auction 1206 x10
+
+step Engineering 105-135: bars and gems
+  tip Bronze Bar is smelted from a Copper Bar and a Tin Bar (Mining 65); Moss Agate turns up in Tin and Silver Veins. Gather them while you level, or take them from your bank.
+  collect 2841 x50 anywhere gather Mining 65
+  collect 1206 x10 anywhere gather Mining 65
+
+step Engineering 105-135: vendor goods
+  tip Weak Flux comes from Engineering supply vendors near the trainer.
+  buy 2880 x25 nearest
+
+step Bronze Tube, Standard Scope (105-135)
+  tip Bronze Tube, 25 crafts to 125: two Bronze Bars and a Weak Flux each. Keep 10 of them for the scopes. If you come up a few points short of 125, do not make more tubes: start the scopes. Then Standard Scope, 10 crafts to 135: a kept tube and a Moss Agate each. If Moss Agate is missing or very expensive, skip the scopes and start the Heavy Blasting Powder instead.
+  learn 3938 "Bronze Tube"
+  craft 3938 "Bronze Tube" until 125
+  learn 3978 "Standard Scope"
+  craft 3978 "Standard Scope" until 135
+
+# ---------------------------------------------------------------- Expert
+
+section Engineering 135-160
+
+step Expert Engineering
+  only Alliance
+  zone Ironforge
+  tip Expert Engineering raises the cap to 225; it needs skill 125 and character level 20, and costs 50 silver. Springspindle Fizzlegear in Ironforge teaches it.
+  level 20
+  train Engineering Expert npc 5174
+
+step Expert Engineering
+  only Horde
+  zone Orgrimmar
+  tip Expert Engineering raises the cap to 225; it needs skill 125 and character level 20, and costs 50 silver. Roxxik in Orgrimmar teaches it.
+  level 20
+  train Engineering Expert npc 11017
+
+step Engineering 135-160: Auction House
+  tip What the sheep parts take that the Auction House sells: 30 Heavy Stone, 60 Bronze Bar, 30 Wool Cloth, 15 Medium Leather. The counts drop by what your bags, bank and mail hold.
+  auction 2838 x30
+  auction 2841 x60
+  auction 2592 x30
+  auction 2319 x15
+
+step Engineering 135-160: stone, bars, cloth and leather
+  tip Heavy Stone comes from Iron Deposits while mining; Bronze Bar is smelted from a Copper Bar and a Tin Bar; Wool Cloth drops from humanoids of level 15-30; Medium Leather is skinned from beasts in the 15-30 zones. Gather them while you level, or take them from your bank.
+  collect 2838 x30 anywhere gather Mining 125
+  collect 2841 x60 anywhere gather Mining 65
+  collect 2592 x30 anywhere gather levels 15-30
+  collect 2319 x15 anywhere gather Skinning 100
+
+step Heavy Blasting Powder, Whirring Bronze Gizmo, Bronze Framework (135-160)
+  tip In this order. Heavy Blasting Powder, 30 crafts: one Heavy Stone each, keep them all for the sheep. Then Whirring Bronze Gizmo, 15 crafts to 150: two Bronze Bars and a Wool Cloth each, keep them all. Then Bronze Framework, 15 crafts to 160: two Bronze Bars, a Medium Leather and a Wool Cloth each, keep them all. The frameworks will probably carry you past 160; if they do not, make a few more, the sheep only need 15.
+  learn 3945 "Heavy Blasting Powder"
+  craft 3945 "Heavy Blasting Powder" x30
+  learn 3942 "Whirring Bronze Gizmo"
+  craft 3942 "Whirring Bronze Gizmo" until 150
+  learn 3953 "Bronze Framework"
+  craft 3953 "Bronze Framework" until 160
+
+section Engineering 160-175
+
+step Engineering 160-175: Auction House
+  tip What the sheep take that the Auction House sells: 30 Wool Cloth. The counts drop by what your bags, bank and mail hold.
+  auction 2592 x30
+
+step Engineering 160-175: cloth
+  tip Wool Cloth drops from humanoids of level 15-30. Gather it while you level, or take it from your bank.
+  collect 2592 x30 anywhere gather levels 15-30
+
+step Explosive Sheep (160-175)
+  tip Explosive Sheep, 15 crafts to 175: two kept Heavy Blasting Powders, a kept Whirring Bronze Gizmo, a kept Bronze Framework and two Wool Cloths each. Keep 5 of the sheep: they may be needed for Goblin Engineering at 200.
+  learn 3955 "Explosive Sheep"
+  craft 3955 "Explosive Sheep" until 175
+
+section Engineering 175-200
+
+step Engineering 175-200: Auction House
+  tip What the next parts take that the Auction House sells: 120 Solid Stone, 4 Steel Bar, 18 Mithril Bar. The counts drop by what your bags, bank and mail hold.
+  auction 7912 x120
+  auction 3859 x4
+  auction 3860 x18
+
+step Engineering 175-200: stone and bars
+  tip Solid Stone comes from Mithril Deposits while mining; Steel Bar is smelted from an Iron Bar and a Coal (Mining 165); Mithril Bar is smelted from Mithril Ore (Mining 175). Gather them while you level, or take them from your bank.
+  collect 7912 x120 anywhere gather Mining 175
+  collect 3859 x4 anywhere gather Mining 165
+  collect 3860 x18 anywhere gather Mining 175
+
+step Solid Blasting Powder, Gyromatic Micro-Adjustor, Mithril Tube (175-200)
+  tip Solid Blasting Powder, 60 crafts to 194: two Solid Stone each. Keep all of it: the triggers and the bombs need it later. Then one Gyromatic Micro-Adjustor: four Steel Bars, and keep it, some Engineering recipes need it to craft. Then Mithril Tube, 6 crafts to 200: three Mithril Bars each. Keep all six: they may be needed for Gnomish Engineering at 200. If the Adjustor does not land the point to 195, craft a few Iron Grenades or any other recipe that still gives skill points. At 200 and level 30 you can pick a specialization, Gnomish or Goblin: optional, not needed to level.
+  learn 12585 "Solid Blasting Powder"
+  craft 12585 "Solid Blasting Powder" until 194
+  learn 12590 "Gyromatic Micro-Adjustor"
+  craft 12590 "Gyromatic Micro-Adjustor" x1
+  learn 12589 "Mithril Tube"
+  craft 12589 "Mithril Tube" until 200
+
+# ---------------------------------------------------------------- Artisan
+
+section Engineering 200-238
+
+step Artisan Engineering
+  zone Tanaris
+  tip Artisan Engineering raises the cap to 300; it needs skill 200 and character level 35. Buzzek Bracketswing in Gadgetzan, Tanaris, teaches both factions, right outside the inn near the mailbox. He also teaches the recipes above 200, so come as soon as you reach 200.
+  level 35
+  train Engineering Artisan npc 8736
+
+step Engineering 200-238: Auction House
+  tip What the triggers and casings take that the Auction House sells: 140 Mithril Bar, 20 Mageweave Cloth. The counts drop by what your bags, bank and mail hold.
+  auction 3860 x140
+  auction 4338 x20
+
+step Engineering 200-238: bars and cloth
+  tip Mithril Bar is smelted from Mithril Ore (Mining 175); Mageweave Cloth drops from humanoids of level 35-50. Gather them while you level, or take them from your bank.
+  collect 3860 x140 anywhere gather Mining 175
+  collect 4338 x20 anywhere gather levels 35-50
+
+step Unstable Trigger, Mithril Casing (200-238)
+  tip Unstable Trigger, 20 crafts to 215: a Mithril Bar, a Mageweave Cloth and one of the kept Solid Blasting Powders each. Keep all 20 for the bombs. Then Mithril Casing, 40 crafts to 238: three Mithril Bars each. Keep all 40 for the bombs.
+  learn 12591 "Unstable Trigger"
+  craft 12591 "Unstable Trigger" until 215
+  learn 12599 "Mithril Casing"
+  craft 12599 "Mithril Casing" until 238
+
+section Engineering 238-260
+
+step Engineering 238-260: Auction House
+  tip What the next powder takes that the Auction House sells: 88 Dense Stone. The counts drop by what your bags, bank and mail hold.
+  auction 12365 x88
+
+step Engineering 238-260: stone
+  tip Dense Stone comes from Thorium Veins while mining. Pick it up as you level, or take it from your bank.
+  collect 12365 x88 anywhere gather Mining 250
+
+step Hi-Explosive Bomb, Dense Blasting Powder (238-260)
+  tip Hi-Explosive Bomb, 20 crafts to 250: two kept Mithril Casings, a kept Unstable Trigger and two kept Solid Blasting Powders each, four bombs a craft. Then Dense Blasting Powder, 44 crafts to 260: two Dense Stone each. Keep the powder: the Thorium Grenades of the PvP variant need it.
+  learn 12619 "Hi-Explosive Bomb"
+  craft 12619 "Hi-Explosive Bomb" until 250
+  learn 19788 "Dense Blasting Powder"
+  craft 19788 "Dense Blasting Powder" until 260
+
+section Engineering 260-280
+
+step Schematic: Thorium Widget
+  tip The schematic is sold by Sovik in Orgrimmar and Gearcutter Cogspinner in Ironforge, limited stock.
+  buy 16042 x1 nearest
+
+step Engineering 260-280: Auction House
+  tip What the widgets take that the Auction House sells: 60 Thorium Bar, 20 Runecloth. The counts drop by what your bags, bank and mail hold.
+  auction 12359 x60
+  auction 14047 x20
+
+step Engineering 260-280: bars and cloth
+  tip Thorium Bar is smelted from Thorium Ore (Mining 250); Runecloth drops from humanoids of level 45-60. Gather them while you level, or take them from your bank.
+  collect 12359 x60 anywhere gather Mining 250
+  collect 14047 x20 anywhere gather levels 45-60
+
+step Thorium Widget (260-280)
+  tip Thorium Widget, 20 crafts to 280: three Thorium Bars and a Runecloth each. Use the schematic first to learn it. PvP variant: make only 10 widgets (30 Thorium Bar, 10 Runecloth), then 10 Thorium Grenades (a widget, 3 Thorium Bars, 3 Dense Blasting Powders and 3 Runecloth each; Schematic: Thorium Grenade from the same two vendors). If the grenades sell well, keep making widgets and grenades to 290 (about 8 of each, needs 10 more Dense Blasting Powder), then only 12 Thorium Tubes are needed.
+  learn 19791 "Thorium Widget"
+  craft 19791 "Thorium Widget" until 280
+
+section Engineering 280-300
+
+step Schematic: Thorium Tube
+  tip The schematic is sold by Xizzer Fizzbolt in Everlook, Winterspring, first building on the right after the gate. It binds when picked up in Forever: buy it with the character leveling Engineering.
+  buy 16047 x1 nearest
+
+step Engineering 280-300: Auction House
+  tip What the tubes take that the Auction House sells: 126 Thorium Bar. The counts drop by what your bags, bank and mail hold.
+  auction 12359 x126
+
+step Engineering 280-300: bars
+  tip Thorium Bar is smelted from Thorium Ore (Mining 250). Smelt your own ore, or take the bars from your bank.
+  collect 12359 x126 anywhere gather Mining 250
+
+step Thorium Tube (280-300)
+  tip Thorium Tube, 21 crafts to 300: six Thorium Bars each. It turns yellow at 295, so make a few more if you come up short of 300. Use the schematic first to learn it. If you hold world-drop Schematic: Thorium Shells, make 5 tubes to 285, then 15 Thorium Shells (30 Thorium Bar, 15 Dense Blasting Powder; one craft makes 200 shells).
+  learn 19795 "Thorium Tube"
+  craft 19795 "Thorium Tube" until 300

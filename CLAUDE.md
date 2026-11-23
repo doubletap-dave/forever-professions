@@ -1,0 +1,1 @@
+See [AGENTS.md](AGENTS.md) and [docs/MULTI_PROFESSION_RULES.md](docs/MULTI_PROFESSION_RULES.md).

@@ -1,0 +1,229 @@
+# Canonical route: Mulgore (Horde) or Elwynn Forest (Alliance) 1-75, the
+# capital cities 75-130, Stonetalon Mountains (Horde) or Mystral Lake in
+# Ashenvale (Alliance) 130-205, the Dustwallow Marsh swamp 205-255, the Nat
+# Pagle quest at 225, Feralas 255-300. Every fish caught feeds the Cooking
+# guide in this pack, which cooks the route's catch 1-300.
+#
+# Three spots the page does not name in text, resolved from the reference
+# data (objects.json fishing pools, npcs.json spawns):
+#   Nat Pagle: Dustwallow Marsh 58.61, 60.06 (island off the east coast).
+#   Stonetalon "open water": Mirkfallon Lake, where the zone's fishing
+#     pools are (47.6, 40.1).
+#   Feralas 255-300 lake: the page's lake is map-image only, and the page
+#     allows any Feralas lake or river except Jademir Lake, so Alliance
+#     fishes the western lake (pool cluster at 34.4, 34.2) and Horde the
+#     Verdantis River (63.7, 52.4, where the Feralas Ahi was caught).
+# Quest-fish spots are the data's fishing-location objects: Sar'theris
+# Striker (Desolace coast), Feralas Ahi (Verdantis River), Savage Coast
+# Blue Sailfin (Stranglethorn west coast), Misty Reed Mahi Mahi (Misty Reed
+# Strand). The Horde Sailfin spot sits mid-coast, away from Grom'gol: the
+# page warns only trout and catfish bite there.
+#
+# NPC/item ids resolved from the reference data (npcs.json, items.json,
+# quests.json, professions.json):
+#   Trainers: Lee Brown 1651 (Elwynn), Uthan Stillwater 5938 (Mulgore),
+#   Lumak 3332 (Orgrimmar), Grimnur Stonebrand 5161 (Ironforge),
+#   Kah Mistrunner 3028 (Thunder Bluff pond), Arnold Leland 5493
+#   (Stormwind canals). Old Man Heming 2626 (Expert book), Nat Pagle
+#   12919, Shandrina 3955, Kulwia 12043, Sheendra Tallgrass 8145,
+#   Vivianna 7947, Kilxx 3497, Helenia Olden 4897.
+#   Quests: 6608/6609 lead-ins, 6607 Nat Pagle Angler Extreme.
+#   Quest fish: 16968 Sar'theris Striker, 16967 Feralas Ahi,
+#   16969 Savage Coast Blue Sailfin, 16970 Misty Reed Mahi Mahi.
+#   Gear: Fishing Pole 6256, Shiny Bauble 6529, Nightcrawlers 6530,
+#   Bright Baubles 6532, Aquadynamic Fish Attractor 6533.
+guide forever-professions/fishing
+title Fishing 1-300
+category Professions
+coords era
+levels 1-60
+zone Azeroth
+
+# ---------------------------------------------------------------- Apprentice
+
+section Fishing 1-75
+
+step Learn Fishing
+  only Alliance
+  zone Elwynn Forest
+  tip Fishing takes no profession slot, so every character can learn it. Lee Brown at Crystal Lake, east of Goldshire, teaches Apprentice Fishing, at any character level. Buy a Fishing Pole and a few Shiny Baubles: a lure adds to your skill for ten minutes, so fewer fish get away at the start. Tharynn Bouden in Goldshire sells the Cooking recipes for what you catch. Buy any Aquadynamic Fish Attractor you see and keep it: the Feralas Ahi quest fish wants one later.
+  train Fishing Apprentice npc 1651
+  buy 6256 x1 nearest
+  buy 6529 x3 nearest
+
+step Learn Fishing
+  only Horde
+  zone Mulgore
+  tip Fishing takes no profession slot, so every character can learn it. Uthan Stillwater at Stonebull Lake teaches Apprentice Fishing, at any character level. Buy a Fishing Pole and a few Shiny Baubles: a lure adds to your skill for ten minutes, so fewer fish get away at the start. Harn Longcast in Bloodhoof Village sells the Cooking recipes for what you catch. Buy any Aquadynamic Fish Attractor you see and keep it: the Feralas Ahi quest fish wants one later.
+  train Fishing Apprentice npc 5938
+  buy 6256 x1 nearest
+  buy 6529 x3 nearest
+
+step Fishing 1-75
+  only Alliance
+  zone Elwynn Forest
+  tip Fish Crystal Lake to 75, about 75 catches: below 75 every catch raises the skill. Expect about 45 Raw Brilliant Smallfish and 30 Raw Longjaw Mud Snapper; keep them all, they are your first Cooking ingredients. Other starting waters work the same: Iceflow Lake in Dun Morogh, Lake Al'Ameth in Teldrassil, any lake or river on Zephras Isle.
+  goto 47.6,62.3 map 1429 "Crystal Lake" r 25
+  skill Fishing 75
+
+step Fishing 1-75
+  only Horde
+  zone Mulgore
+  tip Fish Stonebull Lake to 75, about 75 catches: below 75 every catch raises the skill. Expect about 45 Raw Brilliant Smallfish and 30 Raw Longjaw Mud Snapper; keep them all, they are your first Cooking ingredients. Other starting waters work the same: the coast south of Sen'jin Village in Durotar (mostly Raw Slitherskin Mackerel there), Brightwater Lake in Tirisfal Glades, any lake or river on Zephras Isle.
+  goto 44.2,63.8 map 1412 "Stonebull Lake" r 25
+  skill Fishing 75
+
+# ---------------------------------------------------------------- Journeyman
+
+section Fishing 75-130
+
+step Journeyman Fishing
+  only Alliance
+  zone Elwynn Forest
+  tip Journeyman Fishing raises the cap to 150; it needs skill 50 and character level 10. Lee Brown at Crystal Lake teaches it.
+  level 10
+  train Fishing Journeyman npc 1651
+
+step Journeyman Fishing
+  only Horde
+  zone Mulgore
+  tip Journeyman Fishing raises the cap to 150; it needs skill 50 and character level 10. Uthan Stillwater at Stonebull Lake teaches it.
+  level 10
+  train Fishing Journeyman npc 5938
+
+step Fishing 75-130
+  only Alliance
+  zone Stormwind City
+  tip Fish the Stormwind City canals to 130. From 75 no fish gets away in any capital city. Expect about 20 more Raw Brilliant Smallfish, 60 Raw Longjaw Mud Snapper and 30 Raw Bristle Whisker Catfish. Buy Recipe: Bristle Whisker Catfish from Catherine Leland in Stormwind (it cooks in the next band) and 20 Alterac Swiss from Ben Trias (the Artisan Cooking quest wants them later).
+  goto 55.0,69.7 live map 1453 "Stormwind canals" r 25
+  skill Fishing 130
+
+step Fishing 75-130
+  only Horde
+  zone Thunder Bluff
+  tip Fish the Thunder Bluff pond, near the Auction House, to 130. From 75 no fish gets away in any capital city. Expect about 20 more Raw Brilliant Smallfish, 60 Raw Longjaw Mud Snapper and 30 Raw Bristle Whisker Catfish. The Orgrimmar pond in the Valley of Honor and the Undercity canals work too, though about a third of the Undercity catch is junk. Buy Recipe: Bristle Whisker Catfish from Naal Mistrunner in Thunder Bluff (it cooks in the next band).
+  goto 56.1,46.4 map 1456 "Thunder Bluff pond" r 25
+  skill Fishing 130
+
+# ---------------------------------------------------------------- Expert
+
+section Fishing 130-205
+
+step Expert Fishing
+  zone Stranglethorn Vale
+  tip Expert Fishing raises the cap to 225. It is a book, Expert Fishing - The Bass and You, sold by Old Man Heming on the lowest dock of Booty Bay, to both factions. It needs Fishing 125 and level 20. At 20 the safe way in is the boat from Ratchet in The Barrens, not the road through Stranglethorn. Kelsey Yance in Booty Bay sells the Mithril Head Trout and Filet of Redgill recipes for the Cooking that goes with this route.
+  level 20
+  train Fishing Expert npc 2626
+
+step Fishing 130-205
+  only Alliance
+  zone Ashenvale
+  tip Fly to Astranaar and ride south-east to Mystral Lake. Buy 7 Nightcrawlers from Shandrina there (she also sells the Expert Cookbook for Cooking): attach one and fish the open water of the lake to 205. Two lures last to 150; keep the other five for later. Expect about 95 Raw Longjaw Mud Snapper and 145 Raw Bristle Whisker Catfish.
+  buy 6530 x7 nearest
+  goto 49.5,67.1 map 1440 "Mystral Lake" r 25
+  skill Fishing 205
+
+step Fishing 130-205
+  only Horde
+  zone Stonetalon Mountains
+  tip Fly to Sun Rock Retreat and buy 7 Nightcrawlers from Kulwia: attach one and fish the open water to 205. Two lures last to 150; keep the other five for later. Expect about 95 Raw Longjaw Mud Snapper and 145 Raw Bristle Whisker Catfish.
+  buy 6530 x7 nearest
+  goto 47.6,40.1 map 1442 "Mirkfallon Lake" r 25
+  skill Fishing 205
+
+# ---------------------------------------------------------------- Artisan: Nat Pagle
+
+section Fishing 205-225
+
+step Fishing 205-225
+  zone Dustwallow Marsh
+  tip Fish anywhere in the Dustwallow Marsh swamp to 225. Do not fish in the ocean. Keep a Nightcrawler on the pole until 225 or a few fish get away. Out of Nightcrawlers? Kilxx in The Barrens and Helenia Olden in Dustwallow Marsh sell them.
+  goto 48.2,36.5 map 1445 "Dustwallow Marsh swamp" r 25
+  skill Fishing 225
+
+step Nat Pagle, Angler Extreme
+  only Alliance
+  zone Ironforge
+  tip Artisan Fishing comes from Nat Pagle in Dustwallow Marsh. The fishing trainer in Ironforge sends you to him; the quest needs skill 225 and level 35.
+  skill Fishing 225
+  level 35
+  accept 6609
+
+step Nat Pagle, Angler Extreme
+  only Horde
+  zone Orgrimmar
+  tip Artisan Fishing comes from Nat Pagle in Dustwallow Marsh. The fishing trainer in Orgrimmar sends you to him; the quest needs skill 225 and level 35.
+  skill Fishing 225
+  level 35
+  accept 6608
+
+step Nat Pagle
+  zone Dustwallow Marsh
+  tip Nat Pagle fishes from the shore of a small island off the east coast, south of Theramore; swim over from the coast. Hand in the lead-in and take Nat Pagle, Angler Extreme: one rare fish from each of four zones.
+  turnin 6609 only Alliance
+  turnin 6608 only Horde
+  accept 6607
+
+step Sar'theris Striker
+  only Alliance
+  zone Desolace
+  tip Fish the Desolace coast until you catch a Sar'theris Striker. The water around the tower on the northern coast works. At skill 225 nothing gets away here. If only trout and catfish bite, move to another spot.
+  collect 16968 quest 6607 @38.8,23.2
+
+step Sar'theris Striker
+  only Horde
+  zone Desolace
+  tip Fish the Desolace coast until you catch a Sar'theris Striker. The coast at Shadowprey Village works. At skill 225 nothing gets away here. If only trout and catfish bite, move to another spot.
+  collect 16968 quest 6607 @22.8,76.8
+
+step Feralas Ahi
+  zone Feralas
+  tip Fish the Verdantis River, just west of the bridge where the main road crosses it, until you catch a Feralas Ahi. Attach the Aquadynamic Fish Attractor you kept, or Bright Baubles (Sheendra Tallgrass and Vivianna in Feralas sell them), or most get away. The other three zones need no lure at 225.
+  buy 6532 x2 nearest
+  collect 16967 quest 6607 @63.7,52.4
+
+step Savage Coast Blue Sailfin
+  only Alliance
+  zone Stranglethorn Vale
+  tip Fish the Savage Coast, the west shore of Stranglethorn Vale, until you catch a Savage Coast Blue Sailfin. The southern coast works. At skill 225 nothing gets away here. If only trout and catfish bite, move, notably around Grom'gol Base Camp.
+  collect 16969 quest 6607 @27.4,68.9
+
+step Savage Coast Blue Sailfin
+  only Horde
+  zone Stranglethorn Vale
+  tip Fish the Savage Coast, the west shore of Stranglethorn Vale, until you catch a Savage Coast Blue Sailfin. Fish mid-coast: around Grom'gol Base Camp only trout and catfish bite. At skill 225 nothing gets away here.
+  collect 16969 quest 6607 @25.3,45.2
+
+step Misty Reed Mahi Mahi
+  zone Swamp of Sorrows
+  tip Fish the Misty Reed Strand, the east coast of Swamp of Sorrows, until you catch a Misty Reed Mahi Mahi. Small islands just off the coast avoid the murlocs; check you are still in the Strand there. At skill 225 nothing gets away here.
+  collect 16970 quest 6607 @75.1,95.9
+
+step Nat Pagle
+  zone Dustwallow Marsh
+  tip Hand the four fish to Nat Pagle: Artisan Fishing is the reward, and the cap rises to 300.
+  turnin 6607
+
+section Fishing 225-300
+
+step Fishing 225-255
+  zone Dustwallow Marsh
+  tip Keep fishing in the Dustwallow Marsh swamp to 255. Do not fish in the ocean: there you catch Raw Rockscale Cod instead of the Raw Mithril Head Trout you cook next. Cook at Brackenwall Village (Horde) or Theramore Isle (Alliance), or put down a campfire.
+  goto 48.2,36.5 map 1445 "Dustwallow Marsh swamp" r 25
+  skill Fishing 255
+
+step Fishing 255-300
+  only Alliance
+  zone Feralas
+  tip Fly to Feathermoon Stronghold and buy 12 Nightcrawlers from Vivianna. Attach a Nightcrawler and fish the lake to 300, a new lure every 10 minutes. Any other Feralas lake or river works too, except Jademir Lake. Fish mornings, evenings or nights if you want Raw Nightfin Snapper for Cooking: they do not bite 12:00-18:00 game time.
+  buy 6530 x12 nearest
+  goto 34.4,34.2 map 1444 "Feralas lake" r 25
+  skill Fishing 300
+
+step Fishing 255-300
+  only Horde
+  zone Feralas
+  tip Fly to Camp Mojache and buy 12 Nightcrawlers from Sheendra Tallgrass. Attach a Nightcrawler and fish the Verdantis River to 300, a new lure every 10 minutes. Any other Feralas lake or river works too, except Jademir Lake. Fish mornings, evenings or nights if you want Raw Nightfin Snapper for Cooking: they do not bite 12:00-18:00 game time.
+  buy 6530 x12 nearest
+  goto 63.7,52.4 map 1444 "Verdantis River" r 25
+  skill Fishing 300

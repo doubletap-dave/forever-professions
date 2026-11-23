@@ -1,0 +1,363 @@
+# Canonical route: the page's Heavy Mithril tab. The Mithril Spurs tab and
+# all world-drop alternatives are named in tips with their material lists,
+# not as steps. Specializations (Armorsmithing / Weaponsmithing) are tips
+# only: optional, not needed to level.
+#
+# Kept intermediates: Rough Grinding Stones kept from 25-50 for the Silver
+# Rods at 75; Coarse Grinding Stones kept from 50-75 for the Patterned
+# Bronze Bracers at 95 and 112; Heavy Grinding Stones kept from 100-112
+# for the Golden Scale Bracers at 180 (20 more made there); Solid Grinding
+# Stones kept from 175-180 for the Heavy Mithril Axes at 210. The craft
+# steps say how many to keep; the material counts already include them.
+#
+# The four Imperial Plate quests are done in one trip to Derotain
+# Mudsipper in Tanaris at 240, as the page advises ("bring at least 140
+# Thorium Bar to get all 4 recipes"): A Blue Light Bargain first, then the
+# Belt, Bracer, Boots and Leggings quests. UNVERIFIED ASSUMPTION: the
+# reference data lists all five quests as needing Blacksmithing 265 and
+# character level 50, while the page routes the Belt from 240. Forever
+# moved Blacksmithing recipes down 25 points across the board, so the
+# quests may have moved too; Polestar's own notes flag 265 as assumed. If
+# Derotain will not offer the quests below 265, bridge with Thorium
+# Bracers (world-drop plans, 12 Thorium Bar + 4 Blue Power Crystal each)
+# to 265, then take all five quests in one trip. The 240-245 tip says so.
+#
+# Spell ids resolved from professions.json and the Forever client tables
+# (build 1.60.1.70532, SkillLineAbility.csv + SpellName.csv +
+# SpellReagents.csv), each cross-checked against the page's own material
+# lists. The Forever tables confirm the 25-point shift: Patterned Bronze
+# Bracers turns yellow at 125 here against 150 in Era, Mithril Coif at 225
+# against 250, and so on. Note: the learn skills in professions.json are
+# Classic estimates and do not match Forever in several places (Patterned
+# Bronze Bracers is taught from 95 in Forever, Runed Copper Belt from 45);
+# the bands here follow the page's beta-tested route.
+guide forever-professions/blacksmithing
+title Blacksmithing 1-300
+category Professions
+coords era
+levels 1-60
+zone Azeroth
+
+# ---------------------------------------------------------------- Apprentice
+
+section Blacksmithing 1-50
+
+step Learn Blacksmithing
+  only Alliance
+  zone Ironforge
+  tip Blacksmithing takes a profession slot and pairs with Mining: nearly everything on this route is stone and bars. Groum Stonebeard in Ironforge teaches Apprentice Blacksmithing at any character level. Buy a Blacksmith Hammer now: most recipes need one in your bags.
+  train Blacksmithing Apprentice npc 10277
+
+step Learn Blacksmithing
+  only Horde
+  zone Orgrimmar
+  tip Blacksmithing takes a profession slot and pairs with Mining: nearly everything on this route is stone and bars. Ug'thok in Orgrimmar teaches Apprentice Blacksmithing at any character level. Buy a Blacksmith Hammer now: most recipes need one in your bags.
+  train Blacksmithing Apprentice npc 10266
+
+step Blacksmithing 1-50: Auction House
+  tip What the first stones take that the Auction House sells: 90 Rough Stone. The counts drop by what your bags, bank and mail hold.
+  auction 2835 x90
+
+step Blacksmithing 1-50: stone
+  tip Rough Stone comes from Copper Veins while mining. Pick it up as you level, or take it from your bank.
+  collect 2835 x90 anywhere gather Mining 1
+
+step Blacksmithing 1-50: tools
+  tip A Blacksmith Hammer from any Blacksmithing supply vendor, usually next to the trainer. Keep it in your bags: most recipes need it.
+  buy 5956 x1 nearest
+
+step Rough Sharpening Stone, Rough Grinding Stone (1-50)
+  tip Rough Sharpening Stone, 30 crafts to 25, then Rough Grinding Stone, 30 crafts to 50: two Rough Stone in each of the second. Keep 10 of the grinding stones: the Silver Rods at 75 need them. Both are taught with Apprentice Blacksmithing.
+  learn 2660 "Rough Sharpening Stone"
+  craft 2660 "Rough Sharpening Stone" until 25
+  learn 3320 "Rough Grinding Stone"
+  craft 3320 "Rough Grinding Stone" until 50
+
+# ---------------------------------------------------------------- Journeyman
+
+section Blacksmithing 50-75
+
+step Journeyman Blacksmithing
+  only Alliance
+  zone Ironforge
+  tip Journeyman Blacksmithing raises the cap to 150; it needs skill 50 and character level 10. Rotgath Stonebeard in Ironforge teaches it. Train now: the next recipe is taught from 50.
+  level 10
+  train Blacksmithing Journeyman npc 10276
+
+step Journeyman Blacksmithing
+  only Horde
+  zone Orgrimmar
+  tip Journeyman Blacksmithing raises the cap to 150; it needs skill 50 and character level 10. Snarl in Orgrimmar teaches it. Train now: the next recipe is taught from 50.
+  level 10
+  train Blacksmithing Journeyman npc 1383
+
+step Blacksmithing 50-75: Auction House
+  tip What the next stones take that the Auction House sells: 72 Coarse Stone. The counts drop by what your bags, bank and mail hold.
+  auction 2836 x72
+
+step Blacksmithing 50-75: stone
+  tip Coarse Stone comes from Tin Veins while mining. Pick it up as you level, or take it from your bank.
+  collect 2836 x72 anywhere gather Mining 65
+
+step Coarse Grinding Stone (50-75)
+  tip Coarse Grinding Stone, 36 crafts to 75: two Coarse Stone in each. Make all 36 and keep them: 10 go into the bracers at 95 and 26 into the bracers at 112.
+  learn 3326 "Coarse Grinding Stone"
+  craft 3326 "Coarse Grinding Stone" until 75
+
+section Blacksmithing 75-100
+
+step Blacksmithing 75-100: Auction House
+  tip What the next pieces take that the Auction House sells: 5 Silver Bar, 115 Bronze Bar. The counts drop by what your bags, bank and mail hold.
+  auction 2842 x5
+  auction 2841 x115
+
+step Blacksmithing 75-100: bars
+  tip Silver Bar is smelted from Silver Ore (Mining 75); Bronze Bar from a Copper Bar and a Tin Bar (Mining 65). Smelt your own ore, or take the bars from your bank.
+  collect 2842 x5 anywhere gather Mining 75
+  collect 2841 x115 anywhere gather Mining 65
+
+step Silver Rod, Rough Bronze Leggings, Patterned Bronze Bracers (75-100)
+  tip Silver Rod, 5 crafts to 80: a Silver Bar and two of the kept Rough Grinding Stones each. Then Rough Bronze Leggings, 15 crafts to 95. Then Patterned Bronze Bracers, 5 crafts to 100: five Bronze Bars and two of the kept Coarse Grinding Stones each. If one Silver Bar costs more than 10 Copper Bars, make Runed Copper Belts instead of the rods (10 Copper Bars each).
+  learn 7818 "Silver Rod"
+  craft 7818 "Silver Rod" x5
+  learn 2668 "Rough Bronze Leggings"
+  craft 2668 "Rough Bronze Leggings" until 95
+  learn 2672 "Patterned Bronze Bracers"
+  craft 2672 "Patterned Bronze Bracers" until 100
+
+section Blacksmithing 100-125
+
+step Blacksmithing 100-125: Auction House
+  tip What the next pieces take that the Auction House sells: 60 Heavy Stone, 65 Bronze Bar. The counts drop by what your bags, bank and mail hold.
+  auction 2838 x60
+  auction 2841 x65
+
+step Blacksmithing 100-125: stone and bars
+  tip Heavy Stone comes from Iron Deposits while mining; Bronze Bar is smelted from a Copper Bar and a Tin Bar. Pick them up as you level, or take them from your bank.
+  collect 2838 x60 anywhere gather Mining 125
+  collect 2841 x65 anywhere gather Mining 65
+
+step Heavy Grinding Stone, Patterned Bronze Bracers (100-125)
+  tip Heavy Grinding Stone, 20 crafts to 112: three Heavy Stone in each. Keep all 20: the Golden Scale Bracers at 180 need them. Then Patterned Bronze Bracers, 13 more crafts to 125, using the last 26 kept Coarse Grinding Stones.
+  learn 3337 "Heavy Grinding Stone"
+  craft 3337 "Heavy Grinding Stone" until 112
+  craft 2672 "Patterned Bronze Bracers" until 125
+
+section Blacksmithing 125-140
+
+step Blacksmithing 125-140: Auction House
+  tip What the shortswords take that the Auction House sells: 120 Bronze Bar, 48 Medium Leather. The counts drop by what your bags, bank and mail hold.
+  auction 2841 x120
+  auction 2319 x48
+
+step Blacksmithing 125-140: bars and leather
+  tip Bronze Bar is smelted from a Copper Bar and a Tin Bar; Medium Leather is skinned from beasts in the 15-30 zones. Gather them while you level, or take them from your bank.
+  collect 2841 x120 anywhere gather Mining 65
+  collect 2319 x48 anywhere gather Skinning 100
+
+step Blacksmithing 125-140: vendor goods
+  tip Weak Flux comes from the Blacksmithing supply vendor next to the trainer in every capital city.
+  buy 2880 x96 nearest
+
+step Bronze Shortsword (125-140)
+  tip Bronze Shortsword, 24 crafts to 140: five Bronze Bars, four Weak Flux and two Medium Leather each. They sell to vendors for more than twice the bracers, so the route is cheaper overall. Disenchanters can make Patterned Bronze Bracers instead (120 Bronze Bar, 48 Coarse Grinding Stone).
+  learn 2742 "Bronze Shortsword"
+  craft 2742 "Bronze Shortsword" until 140
+
+# ---------------------------------------------------------------- Expert
+
+section Blacksmithing 140-175
+
+step Expert Blacksmithing
+  only Alliance
+  zone Ironforge
+  tip Expert Blacksmithing raises the cap to 225; it needs skill 125 and character level 20, and costs 50 silver. Bengus Deepforge in Ironforge teaches it. Train before crafting the bracers: no skill above 150 without it.
+  level 20
+  train Blacksmithing Expert npc 4258
+
+step Expert Blacksmithing
+  only Horde
+  zone Orgrimmar
+  tip Expert Blacksmithing raises the cap to 225; it needs skill 125 and character level 20, and costs 50 silver. Saru Steelfury in Orgrimmar teaches it. Train before crafting the bracers: no skill above 150 without it.
+  level 20
+  train Blacksmithing Expert npc 3355
+
+step Blacksmithing 140-175: Auction House
+  tip What the bracers take that the Auction House sells: 240 Iron Bar. The counts drop by what your bags, bank and mail hold.
+  auction 3575 x240
+
+step Blacksmithing 140-175: bars
+  tip Iron Bar is smelted from Iron Ore (Mining 125). Smelt your own ore, or take the bars from your bank.
+  collect 3575 x240 anywhere gather Mining 125
+
+step Blacksmithing 140-175: vendor goods
+  tip Green Dye comes from Tamar in Orgrimmar and Bombus Finespindle in Ironforge, and from other dye vendors.
+  buy 2605 x40 nearest
+
+step Green Iron Bracers (140-175)
+  tip Green Iron Bracers, 40 crafts to 175: six Iron Bars and a Green Dye each.
+  learn 3501 "Green Iron Bracers"
+  craft 3501 "Green Iron Bracers" until 175
+
+section Blacksmithing 175-195
+
+step Blacksmithing 175-195: Auction House
+  tip What the next pieces take that the Auction House sells: 32 Solid Stone, 100 Steel Bar, 60 Heavy Stone. The counts drop by what your bags, bank and mail hold.
+  auction 7912 x32
+  auction 3859 x100
+  auction 2838 x60
+
+step Blacksmithing 175-195: stone and bars
+  tip Solid Stone comes from Mithril Deposits while mining; Steel Bar is smelted from an Iron Bar and a Coal (Mining 165, Coal from the Blacksmithing supply vendor); Heavy Stone comes from Iron Deposits. Gather them while you level, or take them from your bank.
+  collect 7912 x32 anywhere gather Mining 175
+  collect 3859 x100 anywhere gather Mining 165
+  collect 2838 x60 anywhere gather Mining 125
+
+step Solid Grinding Stone, Golden Scale Bracers (175-195)
+  tip Solid Grinding Stone, 8 crafts to 180: four Solid Stone in each. Keep 6 of them for the Heavy Mithril Axes at 210. Then make 20 more Heavy Grinding Stones from the Heavy Stone, and Golden Scale Bracers, 20 crafts to 195: five Steel Bars and two Heavy Grinding Stones each, using the 20 kept stones and the 20 new ones. Alliance: keep 6 bracers, they may be needed for Armorsmithing later.
+  learn 9920 "Solid Grinding Stone"
+  craft 9920 "Solid Grinding Stone" until 180
+  craft 3337 "Heavy Grinding Stone" x20
+  learn 7223 "Golden Scale Bracers"
+  craft 7223 "Golden Scale Bracers" until 195
+
+section Blacksmithing 195-215
+
+step Blacksmithing 195-215: Auction House
+  tip What the next pieces take that the Auction House sells: 276 Mithril Bar, 12 Citrine, 24 Heavy Leather. The counts drop by what your bags, bank and mail hold.
+  auction 3860 x276
+  auction 3864 x12
+  auction 4234 x24
+
+step Blacksmithing 195-215: bars, gems and leather
+  tip Mithril Bar is smelted from Mithril Ore (Mining 175); Citrine turns up in Mithril Deposits; Heavy Leather is skinned from beasts in the 25-40 zones. Gather them while you level, or take them from your bank.
+  collect 3860 x276 anywhere gather Mining 175
+  collect 3864 x12 anywhere gather Mining 175
+  collect 4234 x24 anywhere gather Skinning 150
+
+step Mithril Plate Pants, Heavy Mithril Axe (195-215)
+  tip Mithril Plate Pants, 17 crafts to 210: twelve Mithril Bars each. They sell to vendors for more than three times the Heavy Mithril Gauntlets. Then Heavy Mithril Axe, 6 crafts to 215: twelve Mithril Bars, two Citrine, one of the kept Solid Grinding Stones and four Heavy Leather each. Keep 2 axes, they may be needed for Weaponsmithing later. At 200 and level 40 you can pick a specialization, Armorsmithing or Weaponsmithing: optional, not needed to level, and it can wait.
+  learn 9931 "Mithril Plate Pants"
+  craft 9931 "Mithril Plate Pants" until 210
+  learn 9993 "Heavy Mithril Axe"
+  craft 9993 "Heavy Mithril Axe" until 215
+
+# ---------------------------------------------------------------- Artisan
+
+section Blacksmithing 215-225
+
+step Artisan Blacksmithing
+  zone Stranglethorn Vale
+  tip Artisan Blacksmithing raises the cap to 300; it needs skill 200 and character level 35. Brikk Keencraft in Booty Bay teaches both factions, and he alone teaches the Mithril Coif, so this trip does both jobs.
+  level 35
+  train Blacksmithing Artisan npc 2836
+
+step Blacksmithing 215-225: Auction House
+  tip What the coifs take that the Auction House sells: 100 Mithril Bar, 60 Mageweave Cloth. The counts drop by what your bags, bank and mail hold.
+  auction 3860 x100
+  auction 4338 x60
+
+step Blacksmithing 215-225: bars and cloth
+  tip Mithril Bar is smelted from Mithril Ore (Mining 175); Mageweave Cloth drops from humanoids of level 35-50. Gather them while you level, or take them from your bank.
+  collect 3860 x100 anywhere gather Mining 175
+  collect 4338 x60 anywhere gather levels 35-50
+
+step Mithril Coif (215-225)
+  tip Mithril Coif, 10 crafts to 225: ten Mithril Bars and six Mageweave Cloth each. Only Brikk Keencraft teaches it. Keep 2 coifs, they may be needed for Armorsmithing later. With world-drop Plans: Mithril Spurs you could make spurs here instead (40 Mithril Bar, 30 Solid Grinding Stone to 225, then 28 more spurs to 245) and skip the Belt quest; the Imperial Plate steps after are the same.
+  learn 9961 "Mithril Coif"
+  craft 9961 "Mithril Coif" until 225
+
+section Blacksmithing 225-240
+
+step Blacksmithing 225-240: Auction House
+  tip What the next pieces take that the Auction House sells: 16 Dense Stone, 154 Mithril Bar, 44 Thick Leather. The counts drop by what your bags, bank and mail hold.
+  auction 12365 x16
+  auction 3860 x154
+  auction 4304 x44
+
+step Blacksmithing 225-240: stone, bars and leather
+  tip Dense Stone comes from Thorium Veins while mining; Mithril Bar is smelted from Mithril Ore; Thick Leather is skinned from beasts of level 38-50. Gather them while you level, or take them from your bank.
+  collect 12365 x16 anywhere gather Mining 250
+  collect 3860 x154 anywhere gather Mining 175
+  collect 4304 x44 anywhere gather Skinning 190
+
+step Dense Sharpening Stone, Heavy Mithril Boots (225-240)
+  tip Dense Sharpening Stone, 16 crafts to 235: one Dense Stone each. Then Heavy Mithril Boots, 11 crafts to 240: fourteen Mithril Bars and four Thick Leather each. Keep 2 boots, they may be needed for Armorsmithing later.
+  learn 16641 "Dense Sharpening Stone"
+  craft 16641 "Dense Sharpening Stone" until 235
+  learn 9968 "Heavy Mithril Boots"
+  craft 9968 "Heavy Mithril Boots" until 240
+
+section Blacksmithing 240-270
+
+step Blacksmithing 240-270: Auction House
+  tip What the Imperial Plate pieces and their quests take that the Auction House sells: 790 Thorium Bar, 30 Rugged Leather, 5 Aquamarine, 27 Star Ruby. The Thorium covers the 140 bars the four quests ask for plus the 650 the belt and bracers take. The counts drop by what your bags, bank and mail hold.
+  auction 12359 x790
+  auction 8170 x30
+  auction 7909 x5
+  auction 7910 x27
+
+step Blacksmithing 240-270: bars, leather and gems
+  tip Thorium Bar is smelted from Thorium Ore (Mining 250); Rugged Leather is skinned from beasts of level 48-60; Aquamarine and Star Ruby turn up in Truesilver Deposits. Gather them while you level, or take them from your bank.
+  collect 12359 x790 anywhere gather Mining 250
+  collect 8170 x30 anywhere gather Skinning 240
+  collect 7909 x5 anywhere gather Mining 230
+  collect 7910 x27 anywhere gather Mining 230
+
+step The Imperial Plate quests
+  zone Tanaris
+  tip Derotain Mudsipper in Tanaris trades the four Imperial Plate plans for Thorium Bars: A Blue Light Bargain first (it asks for nothing), then the Belt (20 bars), Bracer (20), Boots (40) and Leggings (60). Take all five in one trip. The quests need character level 50. One caution: the reference data lists them as needing Blacksmithing 265, while this route takes them at 240; if Derotain will not offer them yet, bridge with Thorium Bracers (world-drop plans, 12 Thorium Bar and 4 Blue Power Crystal each) to 265 and come back.
+  level 50
+  accept 7652
+  turnin 7652
+  accept 7653
+  turnin 7653
+  accept 7655
+  turnin 7655
+  accept 7654
+  turnin 7654
+  accept 7658
+  turnin 7658
+
+step Imperial Plate Belt, Imperial Plate Bracers (240-270)
+  tip Imperial Plate Belt, 5 crafts to 245: twenty-two Thorium Bars, six Rugged Leather and an Aquamarine each. Then Imperial Plate Bracers, 27 crafts to 270: twenty Thorium Bars and a Star Ruby each. Use the plans first to learn each recipe. World-drop alternatives for 240-255, if the quests are out of reach: Dazzling Mithril Rapier (27 crafts: 378 Mithril Bar, 27 Aquamarine, 54 Lesser Moonstone, 54 Moss Agate, 27 Solid Grinding Stone, 54 Mageweave Cloth), Runed Mithril Hammer (20 crafts: 360 Mithril Bar, 40 Core of Earth, 20 Solid Grinding Stone, 80 Thick Leather), or Thorium Bracers (20 crafts: 204 Thorium Bar, 68 Blue Power Crystal).
+  learn 16647 "Imperial Plate Belt"
+  craft 16647 "Imperial Plate Belt" until 245
+  learn 16649 "Imperial Plate Bracers"
+  craft 16649 "Imperial Plate Bracers" until 270
+
+section Blacksmithing 270-290
+
+step Blacksmithing 270-290: Auction House
+  tip What the boots take that the Auction House sells: 680 Thorium Bar, 20 Star Ruby, 20 Aquamarine. The counts drop by what your bags, bank and mail hold.
+  auction 12359 x680
+  auction 7910 x20
+  auction 7909 x20
+
+step Blacksmithing 270-290: bars and gems
+  tip Thorium Bar is smelted from Thorium Ore (Mining 250); Star Ruby and Aquamarine turn up in Truesilver Deposits. Gather them while you level, or take them from your bank.
+  collect 12359 x680 anywhere gather Mining 250
+  collect 7910 x20 anywhere gather Mining 230
+  collect 7909 x20 anywhere gather Mining 230
+
+step Imperial Plate Boots (270-290)
+  tip Imperial Plate Boots, 20 crafts to 290: thirty-four Thorium Bars, a Star Ruby and an Aquamarine each. Use the plans first to learn the recipe. World-drop alternatives: Radiant Boots (22 crafts: 308 Thorium Bar, 88 Heart of Fire), or Thorium Leggings from 275 (15 crafts: 390 Thorium Bar, 60 Red Power Crystal); if you hold both plans, make Radiant Boots.
+  learn 16657 "Imperial Plate Boots"
+  craft 16657 "Imperial Plate Boots" until 290
+
+section Blacksmithing 290-300
+
+step Blacksmithing 290-300: Auction House
+  tip What the leggings take that the Auction House sells: 440 Thorium Bar, 20 Star Ruby. The counts drop by what your bags, bank and mail hold.
+  auction 12359 x440
+  auction 7910 x20
+
+step Blacksmithing 290-300: bars and gems
+  tip Thorium Bar is smelted from Thorium Ore (Mining 250); Star Ruby turns up in Truesilver Deposits. Gather them while you level, or take them from your bank.
+  collect 12359 x440 anywhere gather Mining 250
+  collect 7910 x20 anywhere gather Mining 230
+
+step Imperial Plate Leggings (290-300)
+  tip Imperial Plate Leggings, 10 crafts to 300: forty-four Thorium Bars and two Star Rubies each. Use the plans first to learn the recipe. World-drop alternatives: Radiant Leggings (10 crafts: 200 Thorium Bar, 40 Heart of Fire), or Thorium Leggings (12 crafts: 312 Thorium Bar, 48 Red Power Crystal); if you hold both plans, make Radiant Leggings, orange to 300.
+  learn 16730 "Imperial Plate Leggings"
+  craft 16730 "Imperial Plate Leggings" until 300

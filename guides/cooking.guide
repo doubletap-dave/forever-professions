@@ -1,0 +1,245 @@
+# Canonical route: the combined Fishing + Cooking route, fish first and cook
+# what you catch. Cooking starts once Fishing reaches 130: Brilliant
+# Smallfish 1-50, Longjaw Mud Snapper 50-100, Bristle Whisker Catfish
+# 100-175, Mithril Headed Trout 175-250, Filet of Redgill 250-285, Nightfin
+# Soup 285-300. Expert is the Expert Cookbook (Shandrina in Ashenvale,
+# Wulan in Desolace); Artisan is the Clamlette Surprise quest in Gadgetzan.
+# The companion fishing.guide in this pack fishes the route; this guide
+# stands alone too, buying its fish on the Auction House.
+#
+# Counts follow the page's catches where the page gives them (65 Raw
+# Brilliant Smallfish, 90 Raw Longjaw Mud Snapper, 175 Raw Bristle Whisker
+# Catfish). Where the page gives no count, the count is estimated from the
+# recipe's skill colours in professions.json (orange 1 point a craft,
+# yellow about 1 in 2, green about 1 in 4): 60 + 80 Raw Mithril Head Trout,
+# about 55 Raw Redgill, about 25 Raw Nightfin Snapper. The page says to buy
+# 20 Refreshing Spring Water; this guide buys 25, one per soup.
+#
+# Spell/item ids resolved from professions.json (built from the Forever
+# client tables, build 1.60.1.70532), each cross-checked against the page's
+# own material lists:
+#   Brilliant Smallfish 7751 (recipe 6325), Slitherskin Mackerel 7752,
+#   Longjaw Mud Snapper 7753 (recipe 6328),
+#   Bristle Whisker Catfish 7755 (recipe 6330),
+#   Mithril Headed Trout 20916 (recipe 17062),
+#   Filet of Redgill 18241 (recipe 13941),
+#   Nightfin Soup 18243 (recipe 13945).
+# Recipe vendors confirmed in the data: Filet of Redgill only from Kelsey
+# Yance (Booty Bay), Nightfin Soup only from Gikkix (Steamwheedle Port).
+guide forever-professions/cooking
+title Cooking 1-300
+category Professions
+coords era
+levels 1-60
+zone Azeroth
+
+# ---------------------------------------------------------------- Apprentice
+
+section Cooking 1-50
+
+step Learn Cooking
+  only Alliance
+  zone Stormwind City
+  tip Cooking takes no profession slot, so every character can learn it. Stephen Ryback in Stormwind teaches Apprentice Cooking, at any character level. This guide cooks what you catch while fishing: Brilliant Smallfish first, from the fish of your starting lakes. Buy Recipe: Brilliant Smallfish here (Catherine Leland sells it in Stormwind; Tharynn Bouden in Goldshire does too). Cook at any fire: a town hearth or your own Basic Campfire.
+  train Cooking Apprentice npc 5482
+  buy 6325 x1 nearest
+
+step Learn Cooking
+  only Horde
+  zone Thunder Bluff
+  tip Cooking takes no profession slot, so every character can learn it. Aska Mistrunner in Thunder Bluff teaches Apprentice Cooking, at any character level. This guide cooks what you catch while fishing: Brilliant Smallfish first, from the fish of your starting lakes. Buy Recipe: Brilliant Smallfish here (Sewa Mistrunner sells it in Thunder Bluff; Harn Longcast in Bloodhoof Village does too). Cook at any fire: a town hearth or your own Basic Campfire.
+  train Cooking Apprentice npc 3026
+  buy 6325 x1 nearest
+
+step Brilliant Smallfish: Auction House
+  tip What Brilliant Smallfish takes that the Auction House sells: 65 Raw Brilliant Smallfish, the catch from fishing 1-130. The counts drop by what your bags, bank and mail hold.
+  auction 6291 x65
+
+step Brilliant Smallfish: fish
+  tip Raw Brilliant Smallfish bites in any starting-area lake or river. Fish it while you level, or take it from your bank.
+  collect 6291 x65 anywhere gather Fishing 1
+
+step Brilliant Smallfish (1-50)
+  tip Brilliant Smallfish, about 54 cooks to 50. Fished Durotar instead of Mulgore or Elwynn? Cook your Raw Slitherskin Mackerel the same way (Recipe: Slitherskin Mackerel from Zansoa in Sen'jin Village). If you run short of fish, catch and cook a few more.
+  learn 7751 "Brilliant Smallfish"
+  craft 7751 "Brilliant Smallfish" until 50
+
+# ---------------------------------------------------------------- Journeyman
+
+section Cooking 50-100
+
+step Journeyman Cooking
+  only Alliance
+  zone Stormwind City
+  tip Journeyman Cooking raises the cap to 150; it needs skill 50 and no character level. Stephen Ryback in Stormwind teaches it. Buy Recipe: Longjaw Mud Snapper while you are here (Tharynn Bouden in Goldshire sells it too).
+  train Cooking Journeyman npc 5482
+  buy 6328 x1 nearest
+
+step Journeyman Cooking
+  only Horde
+  zone Thunder Bluff
+  tip Journeyman Cooking raises the cap to 150; it needs skill 50 and no character level. Aska Mistrunner in Thunder Bluff teaches it. Buy Recipe: Longjaw Mud Snapper while you are here (Naal Mistrunner sells it in Thunder Bluff; Lizbeth Cromwell in Undercity does too).
+  train Cooking Journeyman npc 3026
+  buy 6328 x1 nearest
+
+step Longjaw Mud Snapper: Auction House
+  tip What Longjaw Mud Snapper takes that the Auction House sells: 90 Raw Longjaw Mud Snapper, the catch from fishing 1-130. The counts drop by what your bags, bank and mail hold.
+  auction 6289 x90
+
+step Longjaw Mud Snapper: fish
+  tip Raw Longjaw Mud Snapper bites in starting-area lakes and rivers and in the capital cities. Fish it while you level, or take it from your bank.
+  collect 6289 x90 anywhere gather Fishing 1
+
+step Longjaw Mud Snapper (50-100)
+  tip Longjaw Mud Snapper, about 60 cooks to 100, and past it: the recipe stays yellow to 110. More Raw Longjaw Mud Snapper comes from the next fishing band if you run short.
+  learn 7753 "Longjaw Mud Snapper"
+  craft 7753 "Longjaw Mud Snapper" until 100
+
+# ---------------------------------------------------------------- Expert
+
+section Cooking 100-175
+
+step Expert Cooking
+  only Alliance
+  zone Ashenvale
+  tip Expert Cooking raises the cap to 225. It is a book, the Expert Cookbook, sold by Shandrina at Mystral Lake in Ashenvale. It needs Cooking 125 and level 20. Read it the moment Cooking hits 125: without it, skill stops at 150 and further cooking gains nothing. Shandrina also sells Nightcrawlers for the fishing that goes with this band.
+  level 20
+  train Cooking Expert npc 3955
+
+step Expert Cooking
+  only Horde
+  zone Desolace
+  tip Expert Cooking raises the cap to 225. It is a book, the Expert Cookbook, sold by Wulan in Shadowprey Village, Desolace (top floor of the eastern-most building). It needs Cooking 125 and level 20. Read it the moment Cooking hits 125: without it, skill stops at 150 and further cooking gains nothing. Buy 20 Alterac Swiss from Innkeeper Sikewa while you are in Shadowprey Village; the Artisan Cooking quest wants them later.
+  level 20
+  train Cooking Expert npc 12033
+
+step Bristle Whisker Catfish: recipe
+  tip Recipe: Bristle Whisker Catfish, needed for the next band. Naal Mistrunner in Thunder Bluff and Ronald Burch in Undercity sell it for the Horde; Catherine Leland in Stormwind for the Alliance.
+  buy 6330 x1 nearest
+
+step Bristle Whisker Catfish: Auction House
+  tip What Bristle Whisker Catfish takes that the Auction House sells: 175 Raw Bristle Whisker Catfish, the catch from fishing 75-205. The counts drop by what your bags, bank and mail hold.
+  auction 6308 x175
+
+step Bristle Whisker Catfish: fish
+  tip Raw Bristle Whisker Catfish bites in the capital cities from Fishing 75 and in the Stonetalon and Ashenvale waters from 130. Fish it while you level, or take it from your bank.
+  collect 6308 x175 anywhere gather Fishing 75
+
+step Longjaw Mud Snapper top-up
+  tip Still below 100? Cook the Raw Longjaw Mud Snapper from the last fishing band first; Bristle Whisker Catfish needs Cooking 100 to learn. Already at 100, this step is done.
+  craft 7753 "Longjaw Mud Snapper" until 100
+
+step Bristle Whisker Catfish (100-175)
+  tip Bristle Whisker Catfish, about 140 cooks to 175. Read the Expert Cookbook at 125 if you have not already. More Raw Bristle Whisker Catfish comes from the Dustwallow fishing later if you run short.
+  learn 7755 "Bristle Whisker Catfish"
+  craft 7755 "Bristle Whisker Catfish" until 175
+
+section Cooking 175-225
+
+step Mithril Head Trout: recipes
+  zone Stranglethorn Vale
+  tip Kelsey Yance in Booty Bay sells Recipe: Mithril Head Trout and Recipe: Filet of Redgill. Buy both now: the trout recipe cooks next, the Redgill one at 250. Old Man Heming on the lowest dock sells the Expert Fishing book if you are fishing alongside.
+  buy 17062 x1 npc 2664
+  buy 13941 x1 npc 2664
+
+step Mithril Headed Trout: Auction House
+  tip What Mithril Headed Trout takes that the Auction House sells: about 60 Raw Mithril Head Trout for this band, from the Dustwallow Marsh swamp. The counts drop by what your bags, bank and mail hold.
+  auction 8365 x60
+
+step Mithril Headed Trout: fish
+  tip Raw Mithril Head Trout bites in the Dustwallow Marsh swamp from Fishing 225. Do not fish the ocean there: it gives Raw Rockscale Cod instead. Fish it while you level, or take it from your bank.
+  collect 8365 x60 anywhere gather Fishing 225
+
+step Bristle Whisker Catfish top-up
+  tip Still below 175? Cook the Raw Bristle Whisker Catfish left from the last band first; Mithril Headed Trout needs Cooking 175 to learn. Already at 175, this step is done.
+  craft 7755 "Bristle Whisker Catfish" until 175
+
+step Mithril Headed Trout (175-225)
+  tip Mithril Headed Trout, about 60 cooks to 225. Keep the rest of the trout: they cook on after the Artisan Cooking quest.
+  learn 20916 "Mithril Headed Trout"
+  craft 20916 "Mithril Headed Trout" until 225
+
+# ---------------------------------------------------------------- Artisan: Clamlette Surprise
+
+section Cooking 225-300
+
+step Dirge Quikcleave
+  only Alliance
+  zone Ironforge
+  tip Artisan Cooking comes from Dirge Quikcleave in Gadgetzan (Tanaris). The cooking trainer in Ironforge sends you; it needs skill 225 and level 35. Bring the quest goods before you go: 12 Giant Egg, 10 Zesty Clam Meat, 20 Alterac Swiss.
+  skill Cooking 225
+  level 35
+  accept 6612
+
+step Dirge Quikcleave
+  only Horde
+  zone Orgrimmar
+  tip Artisan Cooking comes from Dirge Quikcleave in Gadgetzan (Tanaris). The cooking trainer in Orgrimmar sends you; it needs skill 225 and level 35. Bring the quest goods before you go: 12 Giant Egg, 10 Zesty Clam Meat, 20 Alterac Swiss.
+  skill Cooking 225
+  level 35
+  accept 6611
+
+step Giant Eggs
+  zone Tanaris
+  tip Giant Eggs drop from the Rocs, Fire Rocs and Searing Rocs of Tanaris. Twelve for the quest.
+  collect 12207 x12
+
+step Zesty Clam Meat
+  zone Tanaris
+  tip Zesty Clam Meat comes from Big-mouth Clams: open each one, every clam holds one. The Steeljaw Snappers on the Tanaris east coast, by Steamwheedle Port, drop the clams. Ten for the quest.
+  collect 7974 x10 @66.2,20.8
+
+step Alterac Swiss
+  tip Innkeepers and food vendors sell Alterac Swiss; the arrow picks the nearest. Twenty for the quest. The route buys them early (Ben Trias in Stormwind, Innkeeper Sikewa in Shadowprey Village); buy them here if you did not.
+  buy 8932 x20 nearest
+
+step Clamlette Surprise
+  zone Tanaris
+  tip Hand the lead-in to Dirge Quikcleave in Gadgetzan, take Clamlette Surprise, and hand it straight back with the goods: Artisan Cooking is the reward. While you are in Tanaris, ride to Steamwheedle Port and buy Recipe: Nightfin Soup from Gikkix; it finishes the guide at 285.
+  turnin 6612 only Alliance
+  turnin 6611 only Horde
+  accept 6610
+  turnin 6610
+  buy 13945 x1 npc 8137
+
+step Mithril Headed Trout: Auction House
+  tip What the rest of the trout takes that the Auction House sells: about 80 more Raw Mithril Head Trout, from the Dustwallow Marsh swamp. The counts drop by what your bags, bank and mail hold.
+  auction 8365 x80
+
+step Mithril Headed Trout: fish
+  tip More Raw Mithril Head Trout from the Dustwallow Marsh swamp, or take it from your bank.
+  collect 8365 x80 anywhere gather Fishing 225
+
+step Mithril Headed Trout (225-250)
+  tip Mithril Headed Trout, about 80 more cooks to 250. The recipe goes green at 235, so the last points come slowly.
+  craft 20916 "Mithril Headed Trout" until 250
+
+step Filet of Redgill: Auction House
+  tip What Filet of Redgill takes that the Auction House sells: about 55 Raw Redgill. The counts drop by what your bags, bank and mail hold.
+  auction 13758 x55
+
+step Filet of Redgill: fish
+  tip Raw Redgill bites on the coasts fished while hunting the four Nat Pagle quest fish (Stranglethorn Vale, Desolace, Swamp of Sorrows): keep the bycatch, or take it from your bank.
+  collect 13758 x55 anywhere gather Fishing 225
+
+step Filet of Redgill (250-285)
+  tip Filet of Redgill, about 55 cooks to 285. The recipe came from Kelsey Yance in Booty Bay; if you did not buy it there, no other vendor sells it.
+  learn 18241 "Filet of Redgill"
+  craft 18241 "Filet of Redgill" until 285
+
+step Nightfin Soup: shopping
+  tip Nightfin Soup takes one Refreshing Spring Water a soup. Buy 25 from any innkeeper.
+  buy 159 x25 nearest
+
+step Nightfin Soup: Auction House
+  tip What Nightfin Soup takes that the Auction House sells: about 25 Raw Nightfin Snapper, caught fishing Feralas at night. The counts drop by what your bags, bank and mail hold.
+  auction 13759 x25
+
+step Nightfin Soup: fish
+  tip Raw Nightfin Snapper bites in Feralas, but not between 12:00 and 18:00 game time: fish mornings, evenings or nights, or take it from your bank.
+  collect 13759 x25 anywhere gather Fishing 255
+
+step Nightfin Soup (285-300)
+  tip Nightfin Soup, about 25 cooks to 300. Short of snapper? Cook the rest of the Raw Redgill into Filet of Redgill too, or fish more outside the afternoon, or buy Raw Nightfin Snapper on the Auction House.
+  learn 18243 "Nightfin Soup"
+  craft 18243 "Nightfin Soup" until 300

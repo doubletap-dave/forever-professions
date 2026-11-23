@@ -1,0 +1,283 @@
+# Canonical route: the page's fastest path. Any starting zone 1-70
+# (Durotar for Horde, Elwynn Forest for Alliance), Silverpine Forest
+# for Horde and Loch Modan for Alliance 70-115, Hillsbrad Foothills
+# 115-170, Stranglethorn Vale 170-205, Tanaris 205-230, the Hinterlands
+# 230-270, Felwood 270-300. Learn Artisan before Tanaris or Searing
+# Gorge: neither zone has a trainer.
+#
+# The page's routes are drawn lines on map images, so every loop here is
+# built from the reference data instead: herb spawn centroids from
+# objects.json, clustered per band (derive_coords.py), cross-checked
+# against the zones and herbs the page names. The page's routes from
+# 170 up are Classic routes the author could not test on live (the beta
+# cap was 30); the loops still follow the data's densest spawns.
+#
+# NPC ids resolved from the reference data (npcs.json, professions.json
+# rank trainer lists):
+#   Trainers: Nancy Songflower 247223 (Elwynn), Zor'la 267329 (Valley
+#   of Trials), Reyna Stonebranch 5137 (Ironforge), Jandi 3404
+#   (Orgrimmar). The starting-zone trainers teach Apprentice only,
+#   matching the page; the capital trainers teach every rank.
+# Skill needed per herb (from the page and the shipped reference):
+# Peacebloom, Silverleaf 1, Earthroot 15, Mageroyal 50, Briarthorn 70,
+# Stranglekelp 85, Bruiseweed 100, Wild Steelbloom 115, Kingsblood 125,
+# Liferoot 150, Fadeleaf 160, Goldthorn 170, Khadgar's Whisker 185,
+# Firebloom 205, Purple Lotus 210, Sungrass 230, Ghost Mushroom 245,
+# Gromsblood 250, Golden Sansam 260, Dreamfoil 270, Mountain Silversage
+# 280, Plaguebloom 285.
+guide forever-professions/herbalism
+title Herbalism 1-300
+category Professions
+coords era
+levels 1-60
+zone Azeroth
+
+# ---------------------------------------------------------------- Apprentice
+
+section Herbalism 1-70
+
+step Learn Herbalism
+  only Alliance
+  zone Elwynn Forest
+  tip Herbalism takes one of your two primary profession slots (gathering pairs cleanly with Alchemy or funds crafting via Scarce herbs like Frilled Lichen, Rosecap and Stranglevine). Nancy Songflower in Elwynn Forest teaches Apprentice Herbalism at any character level. Turn on Find Herbs once you have learned it: it is in the Herbalism box of the Professions window, and it is off by default. Drag it to your action bar; it switches off every time you die, and you can only track herbs or minerals, not both.
+  train Herbalism Apprentice npc 247223
+
+step Learn Herbalism
+  only Horde
+  zone Durotar
+  tip Herbalism takes one of your two primary profession slots (gathering pairs cleanly with Alchemy or funds crafting via Scarce herbs like Frilled Lichen, Rosecap and Stranglevine). Zor'la in the Valley of Trials teaches Apprentice Herbalism at any character level. Turn on Find Herbs once you have learned it: it is in the Herbalism box of the Professions window, and it is off by default. Drag it to your action bar; it switches off every time you die, and you can only track herbs or minerals, not both.
+  train Herbalism Apprentice npc 267329
+
+step Peacebloom and Silverleaf in Durotar
+  only Horde
+  zone Durotar
+  tip Pick every Peacebloom, Silverleaf and Earthroot you pass and circle the waypoints until Herbalism 70; Earthroot needs skill 15. Forever's starting areas also grow Wilted Peacebloom and Stunted Silverleaf, both pickable from skill 1. Herbs come back so fast here that you often cannot finish a full lap before they regrow. Any starting zone works for this band.
+  goto 42.2,62.6 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 46.2,62.7 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 46.5,58.3 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 43.0,58.0 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 43.6,66.8 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 46.9,68.2 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 43.3,72.3 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 52.3,57.9 "Silverleaf, Peacebloom" r 30
+  goto 41.4,48.0 "Silverleaf, Peacebloom" r 30
+  goto 47.6,37.1 "Silverleaf, Peacebloom" r 30
+  goto 36.8,28.4 "Peacebloom, Earthroot" r 30
+  goto 57.1,22.4 "Silverleaf, Peacebloom" r 30
+  skill Herbalism 70
+
+step Peacebloom and Silverleaf in Elwynn Forest
+  only Alliance
+  zone Elwynn Forest
+  tip Pick every Peacebloom, Silverleaf and Earthroot you pass and circle the waypoints until Herbalism 70; Earthroot needs skill 15. Forever's starting areas also grow Wilted Peacebloom and Stunted Silverleaf, both pickable from skill 1. Herbs come back so fast here that you often cannot finish a full lap before they regrow. Any starting zone works for this band.
+  goto 53.0,38.0 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 52.6,42.1 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 56.9,43.0 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 52.1,47.9 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 47.6,47.5 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 47.9,43.7 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 47.7,37.8 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 46.0,32.0 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 51.6,32.9 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 50.8,83.4 "Earthroot" r 30
+  goto 78.5,76.4 "Silverleaf, Peacebloom" r 30
+  goto 23.0,76.6 "Silverleaf, Peacebloom" r 30
+  skill Herbalism 70
+
+# ---------------------------------------------------------------- Herbalism 70-115
+
+section Herbalism 70-115
+
+step Journeyman Herbalism
+  only Alliance
+  zone Ironforge
+  tip Journeyman Herbalism raises the cap to 150 and needs skill 50. Reyna Stonebranch in Ironforge teaches it.
+  train Herbalism Journeyman npc 5137
+
+step Journeyman Herbalism
+  only Horde
+  zone Orgrimmar
+  tip Journeyman Herbalism raises the cap to 150 and needs skill 50. Jandi in Orgrimmar teaches it.
+  train Herbalism Journeyman npc 3404
+
+step Mageroyal and Briarthorn in Silverpine Forest
+  only Horde
+  zone Silverpine Forest
+  tip Mageroyal and Briarthorn are the skill-up herbs here, with Stranglekelp along the shore from 85. The lower part of Silverpine regrows fast enough to run small circles; with a mount, run the main road up to the loop. Stranglekelp grows underwater, so watch your breath.
+  goto 62.1,77.2 "Briarthorn" r 30
+  goto 51.8,78.0 "Briarthorn" r 30
+  goto 52.0,72.6 "Mageroyal, Briarthorn" r 30
+  goto 47.2,81.3 "Mageroyal, Briarthorn" r 30
+  goto 41.4,72.0 "Stranglekelp, Mageroyal" r 30
+  goto 52.7,56.0 "Briarthorn, Mageroyal" r 30
+  goto 52.0,36.9 "Mageroyal, Briarthorn" r 30
+  goto 48.7,32.5 "Briarthorn, Mageroyal" r 30
+  goto 47.1,27.2 "Mageroyal" r 30
+  goto 57.3,18.5 "Mageroyal" r 30
+  goto 62.8,12.2 "Mageroyal" r 30
+  goto 31.8,16.8 "Stranglekelp, Mageroyal" r 30
+  skill Herbalism 115
+
+step Mageroyal and Briarthorn in Loch Modan
+  only Alliance
+  zone Loch Modan
+  tip Mageroyal and Briarthorn are the skill-up herbs here. The Loch Modan loop is an easy one, with slightly fewer herbs than Darkshore; Darkshore is the alternative if the loch is picked clean.
+  goto 77.6,71.7 "Briarthorn" r 30
+  goto 67.0,72.9 "Mageroyal, Briarthorn" r 30
+  goto 69.1,51.2 "Mageroyal, Briarthorn" r 30
+  goto 53.5,36.7 "Briarthorn" r 30
+  goto 53.1,26.6 "Mageroyal" r 30
+  goto 57.5,16.4 "Briarthorn, Mageroyal" r 30
+  goto 41.3,31.4 "Mageroyal" r 30
+  goto 40.4,37.5 "Mageroyal" r 30
+  goto 40.8,42.3 "Mageroyal" r 30
+  goto 38.0,45.6 "Mageroyal" r 30
+  goto 30.6,53.0 "Mageroyal" r 30
+  goto 26.9,47.3 "Mageroyal" r 30
+  skill Herbalism 115
+
+# ---------------------------------------------------------------- Herbalism 115-170
+
+section Herbalism 115-170
+
+step Bruiseweed and Wild Steelbloom in Hillsbrad Foothills
+  zone Hillsbrad Foothills
+  tip Bruiseweed and Wild Steelbloom are the skill-up herbs here, with Stranglekelp along the shore and Kingsblood from 125. The loop is long enough to give the herbs time to regrow. Stonetalon Mountains is the alternative: its lowest area has the gentlest mobs, around level 14 to 15.
+  goto 67.5,37.6 "Liferoot, Wild Steelbloom" r 30
+  goto 63.6,37.6 "Liferoot, Kingsblood" r 30
+  goto 67.3,32.2 "Liferoot, Wild Steelbloom" r 30
+  goto 68.0,27.9 "Liferoot" r 30
+  goto 72.4,28.0 "Bruiseweed, Kingsblood" r 30
+  goto 81.4,32.3 "Bruiseweed, Kingsblood" r 30
+  goto 87.3,32.4 "Wild Steelbloom" r 30
+  goto 64.1,53.6 "Bruiseweed, Wild Steelbloom" r 30
+  goto 57.9,46.9 "Liferoot" r 30
+  goto 38.3,51.9 "Kingsblood, Bruiseweed" r 30
+  goto 67.9,67.9 "Bruiseweed, Wild Steelbloom" r 30
+  goto 71.6,62.6 "Bruiseweed, Kingsblood" r 30
+  skill Herbalism 125
+
+step Expert Herbalism
+  only Alliance
+  zone Ironforge
+  tip Expert Herbalism raises the cap to 225 and needs skill 125. Reyna Stonebranch in Ironforge teaches it.
+  train Herbalism Expert npc 5137
+
+step Expert Herbalism
+  only Horde
+  zone Orgrimmar
+  tip Expert Herbalism raises the cap to 225 and needs skill 125. Jandi in Orgrimmar teaches it.
+  train Herbalism Expert npc 3404
+
+step Kingsblood and Liferoot in Hillsbrad Foothills cont.
+  zone Hillsbrad Foothills
+  tip Keep circling the same loop to 170: Kingsblood from 125, Liferoot from 150. If you get stuck between two herbs, a skill bonus bridges the gap: Herbalist's Gloves add 5, the Advanced Herbalism glove enchant adds 5, and Goldthorn Tea adds 15. With +5 you can pick Kingsblood from 120 instead of 125.
+  goto 67.5,37.6 "Liferoot, Wild Steelbloom" r 30
+  goto 63.6,37.6 "Liferoot, Kingsblood" r 30
+  goto 67.3,32.2 "Liferoot, Wild Steelbloom" r 30
+  goto 68.0,27.9 "Liferoot" r 30
+  goto 72.4,28.0 "Bruiseweed, Kingsblood" r 30
+  goto 81.4,32.3 "Bruiseweed, Kingsblood" r 30
+  goto 87.3,32.4 "Wild Steelbloom" r 30
+  goto 64.1,53.6 "Bruiseweed, Wild Steelbloom" r 30
+  goto 57.9,46.9 "Liferoot" r 30
+  goto 38.3,51.9 "Kingsblood, Bruiseweed" r 30
+  goto 67.9,67.9 "Bruiseweed, Wild Steelbloom" r 30
+  goto 71.6,62.6 "Bruiseweed, Kingsblood" r 30
+  skill Herbalism 170
+
+# ---------------------------------------------------------------- Herbalism 170-205
+
+section Herbalism 170-205
+
+step Kingsblood to Khadgar's Whisker in Stranglethorn Vale
+  zone Stranglethorn Vale
+  tip Kingsblood, Liferoot, Fadeleaf, Goldthorn and Khadgar's Whisker are the skill-up herbs here; Khadgar's Whisker needs 185. Arathi Highlands is the alternative zone for this band.
+  goto 37.8,17.3 "Fadeleaf, Kingsblood" r 30
+  goto 38.1,22.4 "Liferoot, Fadeleaf" r 30
+  goto 37.7,26.4 "Liferoot, Fadeleaf" r 30
+  goto 37.0,32.2 "Kingsblood, Liferoot" r 30
+  goto 31.9,22.8 "Kingsblood, Fadeleaf" r 30
+  goto 32.4,17.2 "Kingsblood, Fadeleaf" r 30
+  goto 29.3,9.1 "Kingsblood, Khadgar's Whisker" r 30
+  goto 23.1,12.2 "Fadeleaf, Goldthorn" r 30
+  goto 41.8,11.6 "Fadeleaf, Goldthorn" r 30
+  goto 43.3,16.9 "Kingsblood, Liferoot" r 30
+  goto 31.8,52.4 "Kingsblood, Khadgar's Whisker" r 30
+  goto 32.9,66.8 "Fadeleaf, Kingsblood" r 30
+  skill Herbalism 205
+
+# ---------------------------------------------------------------- Herbalism 205-230
+
+section Herbalism 205-230
+
+step Artisan Herbalism
+  only Alliance
+  zone Ironforge
+  tip Artisan Herbalism raises the cap to 300 and needs skill 200. Train it now, before heading out: there is no Herbalism trainer in Tanaris or Searing Gorge. Reyna Stonebranch in Ironforge teaches it.
+  train Herbalism Artisan npc 5137
+
+step Artisan Herbalism
+  only Horde
+  zone Orgrimmar
+  tip Artisan Herbalism raises the cap to 300 and needs skill 200. Train it now, before heading out: there is no Herbalism trainer in Tanaris or Searing Gorge. Jandi in Orgrimmar teaches it.
+  train Herbalism Artisan npc 3404
+
+step Purple Lotus and Firebloom in Tanaris
+  zone Tanaris
+  tip Purple Lotus and Firebloom are the skill-up herbs here. Searing Gorge is the alternative zone for this band.
+  goto 58.6,24.1 "Purple Lotus, Firebloom" r 30
+  goto 60.5,23.0 "Purple Lotus" r 30
+  goto 48.5,33.0 "Firebloom" r 30
+  goto 53.0,44.6 "Purple Lotus" r 30
+  goto 53.8,47.0 "Purple Lotus" r 30
+  goto 41.0,53.2 "Firebloom" r 30
+  goto 46.4,63.5 "Purple Lotus, Firebloom" r 30
+  goto 47.0,67.0 "Purple Lotus, Firebloom" r 30
+  goto 38.7,73.4 "Purple Lotus, Firebloom" r 30
+  goto 29.8,74.8 "Firebloom" r 30
+  goto 35.3,64.7 "Firebloom" r 30
+  goto 38.5,23.5 "Firebloom, Purple Lotus" r 30
+  skill Herbalism 230
+
+# ---------------------------------------------------------------- Herbalism 230-270
+
+section Herbalism 230-270
+
+step Sungrass and Purple Lotus in the Hinterlands
+  zone The Hinterlands
+  tip Sungrass, Purple Lotus, Ghost Mushroom and Golden Sansam are the skill-up herbs here. Ghost Mushroom grows in caves and dark hollows, and you need skill 245 to pick it; the cave on the page's map holds a lot of them.
+  goto 57.5,42.5 "Ghost Mushroom, Purple Lotus" r 30
+  goto 51.7,41.0 "Golden Sansam, Sungrass" r 30
+  goto 47.0,53.4 "Sungrass, Purple Lotus" r 30
+  goto 52.2,56.4 "Sungrass, Golden Sansam" r 30
+  goto 48.8,62.7 "Golden Sansam, Purple Lotus" r 30
+  goto 50.6,66.4 "Sungrass, Purple Lotus" r 30
+  goto 38.1,62.1 "Sungrass, Golden Sansam" r 30
+  goto 33.1,67.1 "Golden Sansam, Purple Lotus" r 30
+  goto 28.7,66.5 "Sungrass, Golden Sansam" r 30
+  goto 23.2,57.6 "Sungrass, Golden Sansam" r 30
+  goto 57.3,82.1 "Ghost Mushroom, Purple Lotus" r 30
+  goto 76.3,53.0 "Sungrass, Golden Sansam" r 30
+  skill Herbalism 270
+
+# ---------------------------------------------------------------- Herbalism 270-300
+
+section Herbalism 270-300
+
+step Sungrass to Plaguebloom in Felwood
+  zone Felwood
+  tip Sungrass, Gromsblood, Golden Sansam, Dreamfoil, Mountain Silversage and Plaguebloom are the skill-up herbs here. Pick everything you pass: at these skill levels every herb on the loop still gives points.
+  goto 52.9,27.4 "Gromsblood, Sungrass" r 30
+  goto 48.0,23.8 "Plaguebloom, Dreamfoil" r 30
+  goto 42.7,17.2 "Dreamfoil, Gromsblood" r 30
+  goto 53.3,17.2 "Sungrass, Dreamfoil" r 30
+  goto 56.5,21.8 "Golden Sansam, Plaguebloom" r 30
+  goto 56.0,8.5 "Sungrass, Gromsblood" r 30
+  goto 38.3,52.8 "Sungrass, Gromsblood" r 30
+  goto 39.0,57.5 "Golden Sansam, Plaguebloom" r 30
+  goto 41.0,58.1 "Dreamfoil, Sungrass" r 30
+  goto 42.6,66.9 "Dreamfoil, Gromsblood" r 30
+  goto 42.1,82.1 "Gromsblood, Golden Sansam" r 30
+  goto 47.4,82.1 "Dreamfoil, Plaguebloom" r 30
+  skill Herbalism 300

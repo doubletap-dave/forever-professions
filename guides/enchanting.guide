@@ -1,0 +1,321 @@
+# Canonical route: the Strange Dust tab. The Lesser Magic Essence tab is
+# an alternative for the whole 20-150 stretch, given in the tips. Rods
+# are craft steps with their materials (the unruned rods are Blacksmith-
+# made, bought on the Auction House). The enchanting macro is a tip on
+# the first repeat-enchant step.
+#
+# Trainer resolution (the two reads of the page disagreed on the
+# Alliance capitals): the Forever data's rank trainer lists say both
+# sets teach Apprentice, but only Lucan Cordell (Stormwind), Gimble
+# Thistlefuzz (Ironforge) and Taladan (Darnassus) teach Journeyman too;
+# Betty Quin (Stormwind), Thonys Pillarstone (Ironforge) and Lalina
+# Summermoon (Darnassus) are Apprentice-only. This guide uses the
+# Journeyman-capable trainers so the player returns to the same one.
+# Expert is Kitta Firewind (Tower of Azora, Elwynn) and Hgarth (Sun Rock
+# Retreat, Stonetalon). Artisan is Annora in Uldaman, the only one.
+#
+# Strange Dust total: the page's steps sum to 260; its own shopping list
+# says 257. This guide uses 260, the sum of the steps.
+#
+# Annora: back entrance coordinates (Badlands 65.2,43.5, live frame)
+# from Polestar's own curated entrances data (data/codex/entrances.json,
+# Uldaman entry). She has no spawn in the reference data, so the step
+# leads to the entrance and names the room.
+#
+# Spell/item ids resolved from professions.json (built from the Forever
+# client tables, build 1.60.1.70532), reagents cross-checked against the
+# page's own material lists. Formula vendors confirmed in items.json.
+# Annora's recipes are the page's list (230 and up, taught nowhere else).
+guide forever-professions/enchanting
+title Enchanting 1-300
+category Professions
+coords era
+levels 1-60
+zone Azeroth
+
+# ---------------------------------------------------------------- Apprentice
+
+section Enchanting 1-75
+
+step Learn Enchanting
+  only Alliance
+  zone Stormwind City
+  tip Enchanting takes a profession slot and pairs well with Tailoring: disenchant what you make. Lucan Cordell in Stormwind teaches Apprentice Enchanting, at any character level; he teaches Journeyman too, so you come back to the same trainer. (Betty Quin, also in Stormwind, teaches Apprentice only.) Disenchant comes with Apprentice Enchanting: in Forever it is not in the spellbook, it is in the Enchanting box of the Professions window. Mote of Magic comes only from Enchanting Supply vendors.
+  train Enchanting Apprentice npc 1317
+
+step Learn Enchanting
+  only Horde
+  zone Orgrimmar
+  tip Enchanting takes a profession slot and pairs well with Tailoring: disenchant what you make. Jhag in Orgrimmar teaches Apprentice Enchanting, at any character level. (Malcomb Wynn in Undercity and Mot Dawnstrider in Thunder Bluff teach it too; Pa'zula in Sen'jin Village is the Durotar starting trainer.) Disenchant comes with Apprentice Enchanting: in Forever it is not in the spellbook, it is in the Enchanting box of the Professions window. Mote of Magic comes only from Enchanting Supply vendors.
+  train Enchanting Apprentice npc 11066
+
+step Enchanting 1-75: vendor goods
+  tip Mote of Magic (19) and a Copper Rod (1), both from the Enchanting Supply vendor near the trainer, not the Auction House. In the starting zones only the Zephras Isle and Tirisfal (Brill) trainers sell Mote of Magic; everyone else visits the capital.
+  buy 247786 x19 nearest
+  buy 6217 x1 nearest
+
+step Enchanting 1-75: Auction House
+  tip What 1-75 takes that the Auction House sells: 50 Strange Dust. The counts drop by what your bags, bank and mail hold.
+  auction 10940 x50
+
+step Strange Dust
+  tip Strange Dust comes from disenchanting green items of item level 1-20. Disenchant what you loot as you level, or take it from your bank.
+  collect 10940 x50 anywhere gather Enchanting 1
+
+step Runed Copper Rod (1-2)
+  tip Runed Copper Rod, 1 craft to 2: 1 Copper Rod and 1 Mote of Magic. Keep it in your bags: every enchant to 110 needs a runed rod in hand, and the Copper one is it until the Silver Rod at 109.
+  learn 7421 "Runed Copper Rod"
+  craft 7421 "Runed Copper Rod" x1
+
+step Enchant Bracer - Inferior Stamina (2-20)
+  tip Enchant Bracer - Inferior Stamina, 18 to 20: 1 Mote of Magic each. Enchant any bracers in your bags, even grey ones. Speeds it up: a macro that presses Create and confirms the replace-enchant prompt. Type /m, click New, name it, paste these two lines, drag it to the action bar, then open the Enchanting window, select the enchant, put the target item in the optional target slot and press it repeatedly: /run ProfessionsFrame.CraftingPage.CreateButton:Click() then /run StaticPopup1Button1:Click()
+  learn 7418 "Enchant Bracer - Inferior Stamina"
+  craft 7418 "Enchant Bracer - Inferior Stamina" until 20
+
+step Enchant Chest - Inferior Stamina (20-70)
+  tip Enchant Chest - Inferior Stamina, 50 to 70: 1 Strange Dust each. Cheaper on Lesser Magic Essence instead? The alternative tab runs Enchant Bracer - Minor Deflect here instead, 50 of them (50 Lesser Magic Essence). A Greater Magic Essence turns into 3 Lesser Magic Essence when right-clicked in the bags, so those can be bought too.
+  learn 7420 "Enchant Chest - Inferior Stamina"
+  craft 7420 "Enchant Chest - Inferior Stamina" until 70
+
+# ---------------------------------------------------------------- Journeyman
+
+section Enchanting 75-150
+
+step Journeyman Enchanting
+  only Alliance
+  zone Stormwind City
+  tip Journeyman Enchanting raises the cap to 150; it needs skill 50 and level 10. Lucan Cordell in Stormwind teaches it (Gimble Thistlefuzz in Ironforge and Taladan in Darnassus do too).
+  level 10
+  train Enchanting Journeyman npc 1317
+
+step Journeyman Enchanting
+  only Horde
+  zone Orgrimmar
+  tip Journeyman Enchanting raises the cap to 150; it needs skill 50 and level 10. Godan in Orgrimmar teaches it (Lavinia Crowe in Undercity and Teg Dawnstrider in Thunder Bluff do too). Note the change of trainer: Jhag, who taught Apprentice, does not teach Journeyman.
+  level 10
+  train Enchanting Journeyman npc 3345
+
+step Enchanting 75-150: Auction House
+  tip What 75-150 takes that the Auction House sells: 210 Strange Dust, 4 Lesser Magic Essence, 1 Shadowgem and 1 Silver Rod. The counts drop by what your bags, bank and mail hold.
+  auction 10940 x210
+  auction 10938 x4
+  auction 1210 x1
+  auction 6338 x1
+
+step Enchanting 75-150: gathering
+  tip Strange Dust and Lesser Magic Essence come from disenchanting low-level greens; the Shadowgem comes from mining; a Blacksmith makes the Silver Rod.
+  collect 10940 x210 anywhere gather Enchanting 1
+  collect 10938 x4 anywhere gather Enchanting 1
+  collect 1210 x1 anywhere gather Mining 1
+  collect 6338 x1 anywhere gather Blacksmithing 75
+
+step Enchant Chest - Inferior Stamina (70-85)
+  tip Enchant Chest - Inferior Stamina, 21 more to 85: 1 Strange Dust each. On the Lesser Magic Essence tab instead, this whole 70-150 stretch runs differently: 49 Enchant Chest - Minor Absorption (49 Lesser Magic Essence) to 109, then 23 Greater Magic Wand (23 Simple Wood, 46 Lesser Magic Essence) to 125, then 37 Enchant 2H Weapon - Lesser Intellect (148 Lesser Magic Essence) to 150. The Silver Rod at 109 is the same either way.
+  craft 7420 "Enchant Chest - Inferior Stamina" until 85
+
+step Enchant Bracer - Minor Stamina (85-100)
+  tip Enchant Bracer - Minor Stamina, 15 to 100: 2 Strange Dust each.
+  learn 7457 "Enchant Bracer - Minor Stamina"
+  craft 7457 "Enchant Bracer - Minor Stamina" until 100
+
+step Enchant Cloak - Minor Protection (100-109)
+  tip Enchant Cloak - Minor Protection, 9 to 109: 2 Strange Dust each. The formula (Formula: Imbue Cloak - Protection) is a world drop: buy it on the Auction House.
+  learn 7771 "Enchant Cloak - Minor Protection"
+  craft 7771 "Enchant Cloak - Minor Protection" until 109
+
+step Runed Silver Rod (109-110)
+  tip Runed Silver Rod, 1 craft to 110: 1 Silver Rod, 3 Strange Dust, 4 Lesser Magic Essence and 1 Shadowgem. The Silver Rod and every later rod are made by Blacksmiths: buy them on the Auction House. Keep the runed rod in your bags: the recipes from 130 need it.
+  learn 7795 "Runed Silver Rod"
+  craft 7795 "Runed Silver Rod" x1
+
+step Enchant Cloak - Minor Protection (110-130)
+  tip Enchant Cloak - Minor Protection, 29 more to 130: 2 Strange Dust each. Yellow the whole way: if you come up short of 130, start the Enchant Boots - Minor Stamina from the next step.
+  craft 7771 "Enchant Cloak - Minor Protection" until 130
+
+step Enchant Boots - Minor Stamina (130-150)
+  tip Enchant Boots - Minor Stamina, 20 to 150: 4 Strange Dust each. The formula is a world drop: buy it on the Auction House. If 20 Soul Dust cost less than 80 Strange Dust, make 20 Enchant Bracer - Lesser Stamina (1 Soul Dust each) instead.
+  learn 7863 "Enchant Boots - Minor Stamina"
+  craft 7863 "Enchant Boots - Minor Stamina" until 150
+
+# ---------------------------------------------------------------- Expert
+
+section Enchanting 150-225
+
+step Expert Enchanting
+  only Alliance
+  zone Elwynn Forest
+  tip Expert Enchanting raises the cap to 225; it needs skill 125 and level 20, and costs 50 silver. Kitta Firewind, at the top of the Tower of Azora in Elwynn Forest, is the only Alliance Expert trainer.
+  level 20
+  train Enchanting Expert npc 11072
+
+step Expert Enchanting
+  only Horde
+  zone Stonetalon Mountains
+  tip Expert Enchanting raises the cap to 225; it needs skill 125 and level 20, and costs 50 silver. Hgarth, up on the hill above Sun Rock Retreat in Stonetalon Mountains, is the only Horde Expert trainer.
+  level 20
+  train Enchanting Expert npc 11074
+
+step Formula: Minor Mana Oil
+  tip Formula: Minor Mana Oil, for the next band. Sold by Kithas (Orgrimmar), Nata Dawnstrider (Thunder Bluff), Thaddeus Webb (Undercity), Vaean (Darnassus), Tilli Thistlefuzz (Ironforge) and Jessara Cordell (Stormwind) for 30 silver. Buy Formula: Lesser Wizard Oil from them too: it is needed at 200.
+  buy 20752 x1 nearest
+
+step Formula: Lesser Wizard Oil
+  tip Formula: Lesser Wizard Oil, needed at 200. Same six vendors as the Minor Mana Oil formula, 40 silver.
+  buy 20753 x1 nearest
+
+step Enchanting 150-225: vendor goods
+  tip Maple Seed (32) and Stranglethorn Seed (50) from Reagent vendors; Leaded Vial (41) from Alchemy Supply vendors.
+  buy 17034 x32 nearest
+  buy 3372 x41 nearest
+  buy 17035 x50 nearest
+
+step Enchanting 150-225: Auction House
+  tip What 150-225 takes that the Auction House sells: 61 Soul Dust, 31 Vision Dust, 1 Golden Rod, 1 Iridescent Pearl, 1 Greater Astral Essence, 1 Truesilver Rod, 1 Black Pearl and 1 Greater Mystic Essence. The counts drop by what your bags, bank and mail hold.
+  auction 11083 x61
+  auction 11137 x31
+  auction 11128 x1
+  auction 5500 x1
+  auction 11082 x1
+  auction 11144 x1
+  auction 7971 x1
+  auction 11135 x1
+
+step Enchanting 150-225: disenchanting
+  tip Soul Dust, Vision Dust and the greater essences come from disenchanting greens of item level 21-40.
+  collect 11083 x61 anywhere gather Enchanting 1
+  collect 11137 x31 anywhere gather Enchanting 1
+  collect 11082 x1 anywhere gather Enchanting 1
+  collect 11135 x1 anywhere gather Enchanting 1
+
+step Enchanting 150-225: rods
+  tip A Blacksmith makes the Golden Rod and the Truesilver Rod; the pearls turn up inside clams, and the Auction House is the sane way to get both.
+  collect 11128 x1 anywhere gather Blacksmithing 125
+  collect 11144 x1 anywhere gather Blacksmithing 175
+
+step Runed Golden Rod (150-151)
+  tip Runed Golden Rod, 1 craft to 151: 1 Golden Rod, 1 Iridescent Pearl, 1 Greater Astral Essence and 1 Soul Dust. Keep it in your bags: the recipes from 165 need it.
+  learn 13628 "Runed Golden Rod"
+  craft 13628 "Runed Golden Rod" x1
+
+step Minor Mana Oil (151-165)
+  tip Minor Mana Oil, 16 to 165: 1 Soul Dust, 2 Maple Seed and 1 Leaded Vial each.
+  learn 25125 "Minor Mana Oil"
+  craft 25125 "Minor Mana Oil" until 165
+
+step Enchant Boots - Lesser Agility (165-200)
+  tip Enchant Boots - Lesser Agility, 44 to 200: 1 Soul Dust each. Yellow from 180: make a few more if you come up short of 200. If 2 Vision Dust cost less than 3 Soul Dust, stop the boots at 185 and make 15 Enchant Bracer - Strength (1 Vision Dust each) to 200 instead.
+  learn 13637 "Enchant Boots - Lesser Agility"
+  craft 13637 "Enchant Boots - Lesser Agility" until 200
+
+step Runed Truesilver Rod (200-201)
+  tip Runed Truesilver Rod, 1 craft to 201: 1 Truesilver Rod, 1 Black Pearl, 1 Greater Mystic Essence and 1 Vision Dust. Keep it in your bags: the recipes from 220 need it.
+  learn 13702 "Runed Truesilver Rod"
+  craft 13702 "Runed Truesilver Rod" x1
+
+step Lesser Wizard Oil (201-220)
+  tip Lesser Wizard Oil, 25 to 220: 1 Vision Dust, 2 Stranglethorn Seed and 1 Leaded Vial each.
+  learn 25126 "Lesser Wizard Oil"
+  craft 25126 "Lesser Wizard Oil" until 220
+
+step Enchant Cloak - Greater Defense (220-225)
+  tip Enchant Cloak - Greater Defense, 5 to 225: 1 Vision Dust each.
+  learn 13746 "Enchant Cloak - Greater Defense"
+  craft 13746 "Enchant Cloak - Greater Defense" until 225
+
+# ---------------------------------------------------------------- Artisan: Annora in Uldaman
+
+section Enchanting 225-300
+
+step Annora in Uldaman
+  zone Badlands
+  tip Artisan Enchanting raises the cap to 300; it needs skill 200 and level 35, and costs 5 gold. Annora in Uldaman is the only Artisan Enchanting trainer. Uldaman is in the Badlands: use the back entrance, in the south of the zone. It cannot be soloed at level 35: go with a party, or ask a level 60 to help. Annora only spawns once you kill every mob in the area she is in. Bring enough gold to learn every recipe and enough materials to reach 250 (around 50 Vision Dust), or you must return for the higher recipes. Do not leave without learning them all: the recipes from 230 up are taught nowhere else.
+  goto 65.2,43.5 live "Uldaman back entrance"
+  enter "Uldaman"
+  level 35
+  train Enchanting Artisan npc 11073
+  learn 13815 "Enchant Gloves - Agility" npc 11073
+  learn 13917 "Enchant Chest - Superior Intellect" npc 11073
+  learn 13905 "Enchant Shield - Greater Spirit" npc 11073
+  learn 13935 "Enchant Boots - Agility" npc 11073
+  learn 13937 "Enchant 2H Weapon - Greater Impact" npc 11073
+  learn 13939 "Enchant Bracer - Greater Strength" npc 11073
+  learn 13941 "Enchant Chest - Stats" npc 11073
+  learn 13943 "Enchant Weapon - Greater Striking" npc 11073
+  learn 13948 "Enchant Gloves - Minor Haste" npc 11073
+  learn 17181 "Enchanted Leather" npc 11073
+  learn 17180 "Enchanted Thorium" npc 11073
+
+step Formula: Lesser Mana Oil
+  tip Formula: Lesser Mana Oil, for the 250 band. Kania in Silithus (upstairs in the inn) sells it for 1 gold. Both of her formulas need level 40. Buy Formula: Wizard Oil from her too: it is needed at 275.
+  buy 20754 x1 nearest
+
+step Formula: Wizard Oil
+  tip Formula: Wizard Oil, needed at 275. Kania in Silithus sells it for 2 gold.
+  buy 20755 x1 nearest
+
+step Formula: Enchant Shield - Greater Stamina
+  tip Formula: Enchant Shield - Greater Stamina, for the 270 band. Sold by Daniel Bartlett (Undercity) and Mythrin'dir (Darnassus) for 1 gold 20 silver. It binds when picked up: do not buy it on an alt.
+  buy 16217 x1 nearest
+
+step Formula: Runed Arcanite Rod
+  tip Formula: Runed Arcanite Rod, for the last point. Lorelae Wintersong in Moonglade (Nighthaven) sells it for 2 gold 20 silver.
+  buy 16243 x1 nearest
+
+step Enchanting 225-300: vendor goods
+  tip Crystal Vial for the oils: 52, from any Alchemy Supply vendor (Mishta in Silithus sells them too).
+  buy 8925 x52 nearest
+
+step Enchanting 225-300: Auction House
+  tip What 225-300 takes that the Auction House sells: 34 Vision Dust, 104 Dream Dust, 26 Purple Lotus, 52 Firebloom, 88 Illusion Dust, 1 Arcanite Rod, 1 Golden Pearl, 4 Greater Eternal Essence, 4 Small Brilliant Shard and 2 Large Brilliant Shard. The counts drop by what your bags, bank and mail hold.
+  auction 11137 x34
+  auction 11176 x104
+  auction 8831 x26
+  auction 4625 x52
+  auction 16204 x88
+  auction 16206 x1
+  auction 13926 x1
+  auction 16203 x4
+  auction 14343 x4
+  auction 14344 x2
+
+step Enchanting 225-300: disenchanting
+  tip Vision Dust, Dream Dust, Illusion Dust, the Greater Eternal Essence and the Brilliant Shards all come from disenchanting greens and blues of item level 31 and up.
+  collect 11137 x34 anywhere gather Enchanting 1
+  collect 11176 x104 anywhere gather Enchanting 1
+  collect 16204 x88 anywhere gather Enchanting 1
+  collect 16203 x4 anywhere gather Enchanting 1
+  collect 14343 x4 anywhere gather Enchanting 1
+  collect 14344 x2 anywhere gather Enchanting 1
+
+step Enchanting 225-300: herbs
+  tip Purple Lotus grows in the Hinterlands, Feralas and Azshara (Herbalism 210); Firebloom grows in high-level zones. Pick them while you level, or take them from your bank.
+  collect 8831 x26 anywhere gather Herbalism 210
+  collect 4625 x52 anywhere gather
+
+step Enchant Gloves - Agility (225-250)
+  tip Enchant Gloves - Agility, 34 to 250: 1 Vision Dust each. Annora taught it: learn it on that visit. Yellow from 230: make a few more if you come up short of 250.
+  craft 13815 "Enchant Gloves - Agility" until 250
+
+step Lesser Mana Oil (250-270)
+  tip Lesser Mana Oil, 26 to 270: 1 Dream Dust, 1 Purple Lotus and 1 Crystal Vial each. If you have no Purple Lotus, make Enchant Bracer - Greater Strength instead (1 Dream Dust, 2 Lesser Nether Essence each); Annora teaches it.
+  learn 25127 "Lesser Mana Oil"
+  craft 25127 "Lesser Mana Oil" until 270
+
+step Enchant Shield - Greater Stamina (270-275)
+  tip Enchant Shield - Greater Stamina, 5 to 275: 6 Dream Dust each. These are made again at 295.
+  learn 20017 "Enchant Shield - Greater Stamina"
+  craft 20017 "Enchant Shield - Greater Stamina" until 275
+
+step Wizard Oil (275-295)
+  tip Wizard Oil, 26 to 295: 3 Illusion Dust, 2 Firebloom and 1 Crystal Vial each. If Illusion Dust is expensive, make 23 Shields instead (138 Dream Dust). From 290 the Runed Arcanite Rod can be made.
+  learn 25128 "Wizard Oil"
+  craft 25128 "Wizard Oil" until 295
+
+step Enchant Shield - Greater Stamina (295-299)
+  tip Enchant Shield - Greater Stamina, 8 more to 299: 6 Dream Dust each. If Wizard Oil sells well, keep making oils instead (around 15).
+  craft 20017 "Enchant Shield - Greater Stamina" until 299
+
+step Runed Arcanite Rod (299-300)
+  tip Runed Arcanite Rod, 1 craft to 300: 1 Arcanite Rod, 1 Golden Pearl, 10 Illusion Dust, 4 Greater Eternal Essence, 4 Small Brilliant Shard and 2 Large Brilliant Shard. It can be made from 290, and most recipes at 300 need it in your bags (Crusader, for example). If you do not need it yet, make one more Shield for the last point instead.
+  learn 20051 "Runed Arcanite Rod"
+  craft 20051 "Runed Arcanite Rod" x1

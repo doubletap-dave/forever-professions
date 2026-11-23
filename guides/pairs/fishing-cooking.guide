@@ -1,0 +1,373 @@
+# Paired Secondary Route: Fishing + Cooking 1-300 (WoW: Forever)
+# Follows docs/MULTI_PROFESSION_RULES.md:
+# - Dedicated per-combination file: guides/pairs/fishing-cooking.guide
+# - Single-anchor sections on Cooking (crafting anchor) in rising order so
+#   Polestar's section auto-skip and remaining-material subtraction work
+#   with 0 lint warnings; Fishing steps are interleaved inside each bracket.
+# - Every `collect ... gather Fishing <rank>` has a matching `auction` goal
+#   in the same section so Mix / Gather / Buy modes all work cleanly.
+# - All NPC, item, spell, quest, and coordinate IDs are verified against
+#   the Forever client data (build 1.60.1).
+
+guide forever-professions/pair-fishing-cooking
+title Fishing + Cooking 1-300
+category Professions
+folder Paired Routes
+coords era
+levels 1-60
+zone Azeroth
+keywords fishing, cooking, paired, secondary, fish, well fed, camp
+pitch Level Fishing and Cooking together from 1 to 300 using zero primary profession slots.
+pro Catch 100% of your Cooking ingredients while leveling Fishing
+pro Unlocks +5% kill XP Well Fed food and the +8% all-stats Fishing Bowl camp feature
+con Takes longer than buying fish off the Auction House
+
+# ---------------------------------------------------------------- Apprentice
+
+section Cooking 1-50
+
+step Learn Fishing and Buy Gear
+  only Alliance
+  zone Elwynn Forest
+  tip Both Fishing and Cooking are secondary professions and use zero primary slots. Learn Apprentice Fishing from Lee Brown at Crystal Lake, buy a Fishing Pole and 3 Shiny Baubles, and grab Recipe: Brilliant Smallfish from Tharynn Bouden in Goldshire (or Catherine Leland in Stormwind).
+  train Fishing Apprentice npc 1651
+  buy 6256 x1 nearest
+  buy 6529 x3 nearest
+
+step Learn Fishing and Buy Gear
+  only Horde
+  zone Mulgore
+  tip Both Fishing and Cooking are secondary professions and use zero primary slots. Learn Apprentice Fishing from Uthan Stillwater at Stonebull Lake, buy a Fishing Pole and 3 Shiny Baubles, and grab Recipe: Brilliant Smallfish from Harn Longcast in Bloodhoof Village (or Sewa Mistrunner in Thunder Bluff).
+  train Fishing Apprentice npc 5938
+  buy 6256 x1 nearest
+  buy 6529 x3 nearest
+
+step Learn Cooking
+  only Alliance
+  zone Stormwind City
+  tip Learn Apprentice Cooking from Stephen Ryback in Stormwind and pick up Recipe: Brilliant Smallfish nearby. Cooked food grants +5% kill XP while Well Fed in WoW: Forever.
+  train Cooking Apprentice npc 5482
+  buy 6325 x1 nearest
+
+step Learn Cooking
+  only Horde
+  zone Thunder Bluff
+  tip Learn Apprentice Cooking from Aska Mistrunner in Thunder Bluff and pick up Recipe: Brilliant Smallfish nearby. Cooked food grants +5% kill XP while Well Fed in WoW: Forever.
+  train Cooking Apprentice npc 3026
+  buy 6325 x1 nearest
+
+step Fish to 75 (Crystal Lake)
+  only Alliance
+  zone Elwynn Forest
+  tip Fish Crystal Lake to Fishing 75. Keep every Raw Brilliant Smallfish (~45) and Raw Longjaw Mud Snapper (~30) for Cooking.
+  goto 47.6,62.3 map 1429 "Crystal Lake" r 25
+  skill Fishing 75
+
+step Fish to 75 (Stonebull Lake)
+  only Horde
+  zone Mulgore
+  tip Fish Stonebull Lake to Fishing 75. Keep every Raw Brilliant Smallfish (~45) and Raw Longjaw Mud Snapper (~30) for Cooking.
+  goto 44.2,63.8 map 1412 "Stonebull Lake" r 25
+  skill Fishing 75
+
+step Journeyman Fishing
+  only Alliance
+  zone Elwynn Forest
+  tip Train Journeyman Fishing (cap 150) at skill 50 and level 10 before fishing capital city waters to 130.
+  level 10
+  train Fishing Journeyman npc 1651
+
+step Journeyman Fishing
+  only Horde
+  zone Mulgore
+  tip Train Journeyman Fishing (cap 150) at skill 50 and level 10 before fishing capital city waters to 130.
+  level 10
+  train Fishing Journeyman npc 5938
+
+step Fish to 130 (Stormwind Canals)
+  only Alliance
+  zone Stormwind City
+  tip Fish the Stormwind canals to 130. Keep your Raw Brilliant Smallfish, Raw Longjaw Mud Snapper, and Raw Bristle Whisker Catfish. Pick up Recipe: Bristle Whisker Catfish from Catherine Leland and 20 Alterac Swiss from Ben Trias for later.
+  goto 55.0,69.7 live map 1453 "Stormwind canals" r 25
+  skill Fishing 130
+
+step Fish to 130 (Thunder Bluff Pond)
+  only Horde
+  zone Thunder Bluff
+  tip Fish the Thunder Bluff pond to 130. Keep your Raw Brilliant Smallfish, Raw Longjaw Mud Snapper, and Raw Bristle Whisker Catfish. Pick up Recipe: Bristle Whisker Catfish from Naal Mistrunner while here.
+  goto 56.1,46.4 map 1456 "Thunder Bluff pond" r 25
+  skill Fishing 130
+
+step Brilliant Smallfish: Auction House
+  tip Auction House fallback for 65 Raw Brilliant Smallfish if you are buying materials instead of fishing.
+  auction 6291 x65
+
+step Brilliant Smallfish: Gather
+  tip You should already hold ~65 Raw Brilliant Smallfish from Fishing 1-130 (or pull them from your bank).
+  collect 6291 x65 anywhere gather Fishing 1
+
+step Cook Brilliant Smallfish (1-50)
+  tip Cook Brilliant Smallfish at a campfire or hearth to reach Cooking 50.
+  learn 7751 "Brilliant Smallfish"
+  craft 7751 "Brilliant Smallfish" until 50
+
+# ---------------------------------------------------------------- Journeyman
+
+section Cooking 50-100
+
+step Journeyman Cooking
+  only Alliance
+  zone Stormwind City
+  tip Train Journeyman Cooking (cap 150) from Stephen Ryback and buy Recipe: Longjaw Mud Snapper nearby.
+  train Cooking Journeyman npc 5482
+  buy 6328 x1 nearest
+
+step Journeyman Cooking
+  only Horde
+  zone Thunder Bluff
+  tip Train Journeyman Cooking (cap 150) from Aska Mistrunner and buy Recipe: Longjaw Mud Snapper nearby.
+  train Cooking Journeyman npc 3026
+  buy 6328 x1 nearest
+
+step Longjaw Mud Snapper: Auction House
+  tip Auction House fallback for 90 Raw Longjaw Mud Snapper.
+  auction 6289 x90
+
+step Longjaw Mud Snapper: Gather
+  tip Caught during your 1-130 fishing brackets (or from your bank).
+  collect 6289 x90 anywhere gather Fishing 1
+
+step Cook Longjaw Mud Snapper (50-100)
+  tip Cook Longjaw Mud Snapper to Cooking 100. Save any leftovers—the recipe stays yellow to 110.
+  learn 7753 "Longjaw Mud Snapper"
+  craft 7753 "Longjaw Mud Snapper" until 100
+
+# ---------------------------------------------------------------- Expert
+
+section Cooking 100-175
+
+step Expert Fishing and Booty Bay Recipes
+  zone Stranglethorn Vale
+  tip Buy Expert Fishing - The Bass and You from Old Man Heming on the lowest Booty Bay dock (needs Fishing 125, level 20). While in Booty Bay, buy Recipe: Mithril Head Trout and Recipe: Filet of Redgill from Kelsey Yance for your later Cooking brackets.
+  level 20
+  train Fishing Expert npc 2626
+  buy 17062 x1 npc 2664
+  buy 13941 x1 npc 2664
+
+step Expert Cooking and Fish to 205 (Mystral Lake)
+  only Alliance
+  zone Ashenvale
+  tip Buy the Expert Cookbook and 7 Nightcrawlers from Shandrina at Mystral Lake (read the cookbook once Cooking reaches 125). Attach Nightcrawlers and fish Mystral Lake to Fishing 205 to stock Raw Bristle Whisker Catfish.
+  level 20
+  train Cooking Expert npc 3955
+  buy 6530 x7 nearest
+  goto 49.5,67.1 map 1440 "Mystral Lake" r 25
+  skill Fishing 205
+
+step Expert Cooking (Shadowprey Village)
+  only Horde
+  zone Desolace
+  tip Buy the Expert Cookbook from Wulan in Shadowprey Village (read it at Cooking 125). Grab 20 Alterac Swiss from Innkeeper Sikewa for the Artisan Cooking quest later.
+  level 20
+  train Cooking Expert npc 12033
+
+step Fish to 205 (Mirkfallon Lake)
+  only Horde
+  zone Stonetalon Mountains
+  tip Buy 7 Nightcrawlers from Kulwia at Sun Rock Retreat, attach one, and fish Mirkfallon Lake to Fishing 205 to stock Raw Bristle Whisker Catfish.
+  buy 6530 x7 nearest
+  goto 47.6,40.1 map 1442 "Mirkfallon Lake" r 25
+  skill Fishing 205
+
+step Bristle Whisker Catfish: Recipe
+  tip Pick up Recipe: Bristle Whisker Catfish if you did not buy it while fishing in your capital city.
+  buy 6330 x1 nearest
+
+step Bristle Whisker Catfish: Auction House
+  tip Auction House fallback for 175 Raw Bristle Whisker Catfish.
+  auction 6308 x175
+
+step Bristle Whisker Catfish: Gather
+  tip Stocked from Fishing 75-205 (or from your bank).
+  collect 6308 x175 anywhere gather Fishing 75
+
+step Longjaw Mud Snapper Top-Up
+  tip Top up to Cooking 100 if needed before learning Bristle Whisker Catfish.
+  craft 7753 "Longjaw Mud Snapper" until 100
+
+step Cook Bristle Whisker Catfish (100-175)
+  tip Cook Bristle Whisker Catfish to Cooking 175. Read your Expert Cookbook at 125 so skill points keep advancing past 150.
+  learn 7755 "Bristle Whisker Catfish"
+  craft 7755 "Bristle Whisker Catfish" until 175
+
+section Cooking 175-225
+
+step Fish to 225 (Dustwallow Marsh Swamp)
+  zone Dustwallow Marsh
+  tip Fish the inland swamp (not the ocean!) to Fishing 225 with Nightcrawlers active. Keep every Raw Mithril Head Trout you catch.
+  goto 48.2,36.5 map 1445 "Dustwallow Marsh swamp" r 25
+  skill Fishing 225
+
+step Mithril Headed Trout: Auction House
+  tip Auction House fallback for 60 Raw Mithril Head Trout.
+  auction 8365 x60
+
+step Mithril Headed Trout: Gather
+  tip Caught in Dustwallow Marsh swamp while fishing 205-225.
+  collect 8365 x60 anywhere gather Fishing 225
+
+step Bristle Whisker Catfish Top-Up
+  tip Top up to Cooking 175 if needed before learning Mithril Headed Trout.
+  craft 7755 "Bristle Whisker Catfish" until 175
+
+step Cook Mithril Headed Trout (175-225)
+  tip Cook Mithril Headed Trout to Cooking 225. Keep extra trout for 225-250 after Artisan Cooking.
+  learn 20916 "Mithril Headed Trout"
+  craft 20916 "Mithril Headed Trout" until 225
+
+# ---------------------------------------------------------------- Artisan
+
+section Cooking 225-300
+
+step Artisan Lead-Ins (Ironforge)
+  only Alliance
+  zone Ironforge
+  tip Pick up both Artisan lead-in quests at skill 225 and level 35: Nat Pagle, Angler Extreme (Fishing) and I Know A Guy... (Cooking).
+  skill Fishing 225
+  skill Cooking 225
+  level 35
+  accept 6609
+  accept 6612
+
+step Artisan Lead-Ins (Orgrimmar)
+  only Horde
+  zone Orgrimmar
+  tip Pick up both Artisan lead-in quests at skill 225 and level 35: Nat Pagle, Angler Extreme (Fishing) and To Gadgetzan You Go! (Cooking).
+  skill Fishing 225
+  skill Cooking 225
+  level 35
+  accept 6608
+  accept 6611
+
+step Nat Pagle, Angler Extreme
+  zone Dustwallow Marsh
+  tip Swim to Nat Pagle's island off the southeast coast of Dustwallow Marsh, turn in your lead-in, and accept Nat Pagle, Angler Extreme.
+  turnin 6609 only Alliance
+  turnin 6608 only Horde
+  accept 6607
+
+step Sar'theris Striker (Alliance)
+  only Alliance
+  zone Desolace
+  tip Fish the northern Desolace coast for Sar'theris Striker. Keep any Raw Redgill bycatch for Cooking 250-285!
+  collect 16968 quest 6607 @38.8,23.2
+
+step Sar'theris Striker (Horde)
+  only Horde
+  zone Desolace
+  tip Fish the Shadowprey Village coast for Sar'theris Striker. Keep any Raw Redgill bycatch for Cooking 250-285!
+  collect 16968 quest 6607 @22.8,76.8
+
+step Feralas Ahi
+  zone Feralas
+  tip Attach Bright Baubles (or an Aquadynamic Fish Attractor) and fish Verdantis River for Feralas Ahi.
+  buy 6532 x2 nearest
+  collect 16967 quest 6607 @63.7,52.4
+
+step Savage Coast Blue Sailfin (Alliance)
+  only Alliance
+  zone Stranglethorn Vale
+  tip Fish the southern Savage Coast for Savage Coast Blue Sailfin. Keep Raw Redgill bycatch.
+  collect 16969 quest 6607 @27.4,68.9
+
+step Savage Coast Blue Sailfin (Horde)
+  only Horde
+  zone Stranglethorn Vale
+  tip Fish mid-coast away from Grom'gol for Savage Coast Blue Sailfin. Keep Raw Redgill bycatch.
+  collect 16969 quest 6607 @25.3,45.2
+
+step Misty Reed Mahi Mahi
+  zone Swamp of Sorrows
+  tip Fish Misty Reed Strand for Misty Reed Mahi Mahi. Keep Raw Redgill bycatch.
+  collect 16970 quest 6607 @75.1,95.9
+
+step Artisan Fishing Turn-In and Swamp Trout to 255
+  zone Dustwallow Marsh
+  tip Hand the four quest fish to Nat Pagle to unlock Artisan Fishing (cap 300), then fish the Dustwallow swamp to Fishing 255 for your remaining Raw Mithril Head Trout.
+  turnin 6607
+  goto 48.2,36.5 map 1445 "Dustwallow Marsh swamp" r 25
+  skill Fishing 255
+
+step Artisan Cooking Goods (Tanaris)
+  zone Tanaris
+  tip Gather 12 Giant Eggs from Tanaris Rocs, 10 Zesty Clam Meat from Steeljaw Snappers near Steamwheedle Port, and 20 Alterac Swiss from any food vendor.
+  collect 12207 x12
+  collect 7974 x10 @66.2,20.8
+  buy 8932 x20 nearest
+
+step Clamlette Surprise and Nightfin Soup Recipe
+  zone Tanaris
+  tip Turn in your lead-in and Clamlette Surprise to Dirge Quikcleave in Gadgetzan for Artisan Cooking (cap 300), then buy Recipe: Nightfin Soup from Gikkix in Steamwheedle Port.
+  turnin 6612 only Alliance
+  turnin 6611 only Horde
+  accept 6610
+  turnin 6610
+  buy 13945 x1 npc 8137
+
+step Mithril Headed Trout 225-250: Auction House
+  tip Auction House fallback for 80 more Raw Mithril Head Trout.
+  auction 8365 x80
+
+step Mithril Headed Trout 225-250: Gather
+  tip Caught in the Dustwallow Marsh swamp while fishing to 255.
+  collect 8365 x80 anywhere gather Fishing 225
+
+step Cook Mithril Headed Trout (225-250)
+  tip Cook Mithril Headed Trout to Cooking 250.
+  craft 20916 "Mithril Headed Trout" until 250
+
+step Filet of Redgill: Auction House
+  tip Auction House fallback for 55 Raw Redgill.
+  auction 13758 x55
+
+step Filet of Redgill: Gather
+  tip Bycatch from the Nat Pagle coastal fishing stops (or from your bank).
+  collect 13758 x55 anywhere gather Fishing 225
+
+step Cook Filet of Redgill (250-285)
+  tip Cook Filet of Redgill to Cooking 285 using the recipe bought in Booty Bay.
+  learn 18241 "Filet of Redgill"
+  craft 18241 "Filet of Redgill" until 285
+
+step Fish to 300 in Feralas (Alliance)
+  only Alliance
+  zone Feralas
+  tip Buy 12 Nightcrawlers from Vivianna in Feathermoon Stronghold and fish the Feralas lake to Fishing 300. Fish mornings, evenings, or nights (not 12:00-18:00 game time) to catch Raw Nightfin Snapper for your final Cooking stretch!
+  buy 6530 x12 nearest
+  goto 34.4,34.2 map 1444 "Feralas lake" r 25
+  skill Fishing 300
+
+step Fish to 300 in Feralas (Horde)
+  only Horde
+  zone Feralas
+  tip Buy 12 Nightcrawlers from Sheendra Tallgrass in Camp Mojache and fish Verdantis River to Fishing 300. Fish mornings, evenings, or nights (not 12:00-18:00 game time) to catch Raw Nightfin Snapper for your final Cooking stretch!
+  buy 6530 x12 nearest
+  goto 63.7,52.4 map 1444 "Verdantis River" r 25
+  skill Fishing 300
+
+step Nightfin Soup: Water
+  tip Buy 25 Refreshing Spring Water from any innkeeper.
+  buy 159 x25 nearest
+
+step Nightfin Soup: Auction House
+  tip Auction House fallback for 25 Raw Nightfin Snapper.
+  auction 13759 x25
+
+step Nightfin Soup: Gather
+  tip Caught in Feralas while finishing Fishing 255-300 outside 12:00-18:00 game time.
+  collect 13759 x25 anywhere gather Fishing 255
+
+step Cook Nightfin Soup (285-300)
+  tip Cook Nightfin Soup to hit Cooking 300 — both Fishing and Cooking are now maxed at 300/300!
+  learn 18243 "Nightfin Soup"
+  craft 18243 "Nightfin Soup" until 300

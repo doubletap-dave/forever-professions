@@ -1,0 +1,9 @@
+{
+	"id": "forever-professions",
+	"title": "Forever Profession Guides",
+	"author": "chvckmachinegun",
+	"version": "0.2.0",
+	"license": "CC-BY-4.0",
+	"website": "https://github.com/doubletap-dave/forever-professions",
+	"source": "Human-curated WoW: Forever 1-300 profession guides verified against Forever client data"
+}

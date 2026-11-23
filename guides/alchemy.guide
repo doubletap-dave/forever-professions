@@ -1,0 +1,312 @@
+# Canonical route: the page's default route. The Stonescale-oil route is
+# canonical at 250-300; the Superior Mana Potion alternative is named in a
+# tip at 260-265 with its material list. All counts are the page's
+# estimates: yellow recipes do not always give a skill point, so a few
+# extra crafts are sometimes needed.
+#
+# Kept intermediates: Fire Oil made at 130-150 (40 made, 30 used for
+# Elixir of Fire Power at 150-165) and Stonescale Oil made at 250-260
+# (94 made, 88 used for Elixir of Greater Defense at 265-300). The craft
+# steps say how many to keep; the material counts already include them.
+#
+# The 265-300 discrepancy, resolved from the Forever data: the page heads
+# the step "Elixir of Greater Defense" but its recipe line names "Recipe:
+# Elixir of Superior Defense". Both are right. The Forever spell is
+# Elixir of Greater Defense (17554, reagents 2 Stonescale Oil, 1 Sungrass,
+# 1 Crystal Vial), and the item that teaches it is still called Recipe:
+# Elixir of Superior Defense (13478, sold by Kor'geld in Orgrimmar and
+# Soolie Berryfizz in Ironforge). Classic's Elixir of Superior Defense was
+# renamed Elixir of Greater Defense in Forever; Classic's Elixir of
+# Greater Defense is Elixir of Defense (11450) here, a different recipe.
+#
+# Spell ids resolved from professions.json and the Forever client tables
+# (build 1.60.1.70532, SkillLineAbility.csv + SpellName.csv +
+# SpellReagents.csv), each cross-checked against the page's own material
+# lists. Note: the learn skills in professions.json are Classic estimates
+# and do not match Forever in several places (Minor Mana Potion is taught
+# from 25 in Forever, Elixir of Wisdom from 90); the bands here follow the
+# page's beta-tested route, and Polestar's own notes confirm several of
+# the lower Forever learn skills.
+guide forever-professions/alchemy
+title Alchemy 1-300
+category Professions
+coords era
+levels 1-60
+zone Azeroth
+
+# ---------------------------------------------------------------- Apprentice
+
+section Alchemy 1-55
+
+step Learn Alchemy
+  only Alliance
+  zone Ironforge
+  tip Alchemy takes a profession slot. Vosur Brakthel in Tinker Town, Ironforge, teaches Apprentice Alchemy at any character level. Alchemy pairs well with Herbalism: every herb on this route can be picked rather than bought.
+  train Alchemy Apprentice npc 1246
+
+step Learn Alchemy
+  only Horde
+  zone Orgrimmar
+  tip Alchemy takes a profession slot. Whuut in Orgrimmar teaches Apprentice Alchemy at any character level. Alchemy pairs well with Herbalism: every herb on this route can be picked rather than bought.
+  train Alchemy Apprentice npc 11046
+
+step Alchemy 1-55: Auction House
+  tip What the first elixirs take that the Auction House sells: 54 Silverleaf, 45 Peacebloom. The counts drop by what your bags, bank and mail hold.
+  auction 765 x54
+  auction 2447 x45
+
+step Alchemy 1-55: herbs
+  tip Silverleaf and Peacebloom are starter herbs: pick them in any starting zone while you level, or take them from your bank.
+  collect 765 x54 anywhere gather Herbalism 1
+  collect 2447 x45 anywhere gather Herbalism 1
+
+step Alchemy 1-55: vendor goods
+  tip Empty Vials come from Alchemy supply vendors; most trainers have one nearby.
+  buy 3371 x54 nearest
+
+step Elixir of Minor Force, Elixir of Minor Defense (1-55)
+  tip Elixir of Minor Force, 9 brews to 10, then Elixir of Minor Defense, 45 brews to 55: a Silverleaf and a Peacebloom in each of the second. Both are taught with Apprentice Alchemy.
+  learn 1245250 "Elixir of Minor Force"
+  craft 1245250 "Elixir of Minor Force" until 10
+  learn 7183 "Elixir of Minor Defense"
+  craft 7183 "Elixir of Minor Defense" until 55
+
+# ---------------------------------------------------------------- Journeyman
+
+section Alchemy 55-90
+
+step Journeyman Alchemy
+  only Alliance
+  zone Ironforge
+  tip Journeyman Alchemy raises the cap to 150; it needs skill 50 and character level 10. Tally Berryfizz in Ironforge teaches it.
+  level 10
+  train Alchemy Journeyman npc 5177
+
+step Journeyman Alchemy
+  only Horde
+  zone Orgrimmar
+  tip Journeyman Alchemy raises the cap to 150; it needs skill 50 and character level 10. Yelmak in Orgrimmar teaches it.
+  level 10
+  train Alchemy Journeyman npc 3347
+
+step Alchemy 55-90: Auction House
+  tip What the next potions take that the Auction House sells: 10 Mageroyal, 38 Peacebloom, 56 Earthroot. The counts drop by what your bags, bank and mail hold.
+  auction 785 x10
+  auction 2447 x38
+  auction 2449 x56
+
+step Alchemy 55-90: herbs
+  tip Mageroyal grows in the 10-25 zones, Earthroot in the starting zones and the 10-20 zones. Pick them while you level, or take them from your bank.
+  collect 785 x10 anywhere gather Herbalism 50
+  collect 2447 x38 anywhere gather Herbalism 1
+  collect 2449 x56 anywhere gather Herbalism 15
+
+step Alchemy 55-90: vendor goods
+  tip Empty Vials come from Alchemy supply vendors; most trainers have one nearby.
+  buy 3371 x38 nearest
+
+step Minor Mana Potion, Elixir of Minor Fortitude (55-90)
+  tip Minor Mana Potion, 10 brews to 65, then Elixir of Minor Fortitude, 28 brews to 90: two Earthroot in each of the second. In Forever the trainer teaches Minor Mana Potion from skill 25, well before this band.
+  learn 2331 "Minor Mana Potion"
+  craft 2331 "Minor Mana Potion" until 65
+  learn 2334 "Elixir of Minor Fortitude"
+  craft 2334 "Elixir of Minor Fortitude" until 90
+
+section Alchemy 90-130
+
+step Alchemy 90-130: Auction House
+  tip What the next elixirs take that the Auction House sells: 40 Mageroyal, 60 Briarthorn, 10 Stranglekelp. The counts drop by what your bags, bank and mail hold.
+  auction 785 x40
+  auction 2450 x60
+  auction 3820 x10
+
+step Alchemy 90-130: herbs
+  tip Briarthorn grows in the 10-25 zones; Stranglekelp grows along coasts and riverbanks in the 10-30 zones. Pick them while you level, or take them from your bank.
+  collect 785 x40 anywhere gather Herbalism 50
+  collect 2450 x60 anywhere gather Herbalism 70
+  collect 3820 x10 anywhere gather Herbalism 85
+
+step Alchemy 90-130: vendor goods
+  tip Empty Vials come from Alchemy supply vendors; most trainers have one nearby.
+  buy 3371 x40 nearest
+
+step Elixir of Wisdom, Lesser Mana Potion (90-130)
+  tip Elixir of Wisdom, 30 brews to 120: two Briarthorn in each. Then Lesser Mana Potion, 10 brews to 130. Keep the Elixirs of Wisdom if you also level Tailoring: the Gloves of Meditation need them.
+  learn 3171 "Elixir of Wisdom"
+  craft 3171 "Elixir of Wisdom" until 120
+  learn 3173 "Lesser Mana Potion"
+  craft 3173 "Lesser Mana Potion" until 130
+
+section Alchemy 130-150
+
+step Alchemy 130-150: Auction House
+  tip What Fire Oil takes that the Auction House sells: 40 Firefin Snapper. The counts drop by what your bags, bank and mail hold.
+  auction 6359 x40
+
+step Alchemy 130-150: fish
+  tip Firefin Snapper is fished in mid-level waters: catch them yourself, or take them from your bank.
+  collect 6359 x40 anywhere gather Fishing 75
+
+step Alchemy 130-150: vendor goods
+  tip Empty Vials come from Alchemy supply vendors; most trainers have one nearby.
+  buy 3371 x20 nearest
+
+step Fire Oil (130-150)
+  tip Fire Oil, 20 brews to 150. Each brew makes two oils, so you end with 40: keep 30 of them for the Elixir of Fire Power next. Fire Oil is cheaper here than more Lesser Mana Potions, and the next step needs it anyway.
+  learn 7837 "Fire Oil"
+  craft 7837 "Fire Oil" until 150
+
+# ---------------------------------------------------------------- Expert
+
+section Alchemy 150-195
+
+step Expert Alchemy
+  only Alliance
+  zone Darnassus
+  tip Expert Alchemy raises the cap to 225; it needs skill 125 and character level 20, and costs 50 silver. Ainethil in Darnassus teaches it.
+  level 20
+  train Alchemy Expert npc 4160
+
+step Expert Alchemy
+  only Horde
+  zone Undercity
+  tip Expert Alchemy raises the cap to 225; it needs skill 125 and character level 20, and costs 50 silver. Doctor Herbert Halsey in the Undercity teaches it.
+  level 20
+  train Alchemy Expert npc 4611
+
+step Alchemy 150-195: Auction House
+  tip What the next potions take that the Auction House sells: 51 Kingsblood, 36 Stranglekelp. The counts drop by what your bags, bank and mail hold.
+  auction 3356 x51
+  auction 3820 x36
+
+step Alchemy 150-195: herbs
+  tip Kingsblood grows in the 20-35 zones; Stranglekelp grows along coasts and riverbanks in the 10-30 zones. Pick them while you level, or take them from your bank.
+  collect 3356 x51 anywhere gather Herbalism 125
+  collect 3820 x36 anywhere gather Herbalism 85
+
+step Alchemy 150-195: vendor goods
+  tip Leaded Vials come from Alchemy supply vendors. Starting-zone vendors do not sell them: buy them in a capital city.
+  buy 3372 x51 nearest
+
+step Elixir of Fire Power, Mana Potion (150-195)
+  tip Elixir of Fire Power, 15 brews to 165: two of the kept Fire Oils in each. Then Mana Potion, 36 brews to 195.
+  learn 7845 "Elixir of Fire Power"
+  craft 7845 "Elixir of Fire Power" until 165
+  learn 3452 "Mana Potion"
+  craft 3452 "Mana Potion" until 195
+
+section Alchemy 195-225
+
+step Alchemy 195-225: Auction House
+  tip What the Nature Protection Potions take that the Auction House sells: 36 Liferoot, 36 Stranglekelp. The counts drop by what your bags, bank and mail hold.
+  auction 3357 x36
+  auction 3820 x36
+
+step Alchemy 195-225: herbs
+  tip Liferoot grows along water in the 30-40 zones; Stranglekelp grows along coasts and riverbanks in the 10-30 zones. Pick them while you level, or take them from your bank.
+  collect 3357 x36 anywhere gather Herbalism 150
+  collect 3820 x36 anywhere gather Herbalism 85
+
+step Alchemy 195-225: vendor goods
+  tip Leaded Vials come from Alchemy supply vendors in capital cities.
+  buy 3372 x36 nearest
+
+step Recipe: Nature Protection Potion
+  tip The recipe is sold by Bronk and Logannas in Feralas, Glyx Brewright in Stranglethorn Vale, and Alchemist Pestlezugg in Tanaris. It binds when picked up: buy it with the character leveling Alchemy.
+  buy 6057 x1 nearest
+
+step Nature Protection Potion (195-225)
+  tip Nature Protection Potion, 36 brews to 225. Use the recipe first to learn it.
+  learn 7259 "Nature Protection Potion"
+  craft 7259 "Nature Protection Potion" until 225
+
+# ---------------------------------------------------------------- Artisan
+
+section Alchemy 225-250
+
+step Artisan Alchemy
+  only Alliance
+  zone Feralas
+  tip Artisan Alchemy raises the cap to 300; it needs skill 200 and character level 35. Kylanna Windwhisper at Feathermoon Stronghold in Feralas teaches it.
+  level 35
+  train Alchemy Artisan npc 7948
+
+step Artisan Alchemy
+  only Horde
+  zone Swamp of Sorrows
+  tip Artisan Alchemy raises the cap to 300; it needs skill 200 and character level 35. Rogvar in Stonard, Swamp of Sorrows, teaches it.
+  level 35
+  train Alchemy Artisan npc 1386
+
+step Alchemy 225-250: Auction House
+  tip What the next potions take that the Auction House sells: 26 Liferoot, 26 Stranglekelp, 15 Blindweed, 15 Khadgar's Whisker. The counts drop by what your bags, bank and mail hold.
+  auction 3357 x26
+  auction 3820 x26
+  auction 8839 x15
+  auction 3358 x15
+
+step Alchemy 225-250: herbs
+  tip Liferoot grows along water in the 30-40 zones; Blindweed grows in the 40-50 zones and Khadgar's Whisker in the 25-40 zones. Pick them while you level, or take them from your bank.
+  collect 3357 x26 anywhere gather Herbalism 150
+  collect 3820 x26 anywhere gather Herbalism 85
+  collect 8839 x15 anywhere gather Herbalism 235
+  collect 3358 x15 anywhere gather Herbalism 160
+
+step Alchemy 225-250: vendor goods
+  tip Leaded Vials and Crystal Vials come from Alchemy supply vendors in capital cities.
+  buy 3372 x26 nearest
+  buy 8925 x15 nearest
+
+step Nature Protection Potion, Elixir of Greater Intellect (225-250)
+  tip Nature Protection Potion, 26 more brews to 235, then Elixir of Greater Intellect, 15 brews to 250.
+  craft 7259 "Nature Protection Potion" until 235
+  learn 11465 "Elixir of Greater Intellect"
+  craft 11465 "Elixir of Greater Intellect" until 250
+
+section Alchemy 250-265
+
+step Alchemy 250-265: Auction House
+  tip What the next brews take that the Auction House sells: 47 Stonescale Eel, 10 Blindweed, 10 Khadgar's Whisker. The counts drop by what your bags, bank and mail hold.
+  auction 13422 x47
+  auction 8839 x10
+  auction 3358 x10
+
+step Alchemy 250-265: fish and herbs
+  tip Stonescale Eel is fished from Stonescale Eel schools on the coasts of the 40-55 zones. Blindweed grows in the 40-50 zones and Khadgar's Whisker in the 25-40 zones.
+  collect 13422 x47 anywhere gather Fishing 205
+  collect 8839 x10 anywhere gather Herbalism 235
+  collect 3358 x10 anywhere gather Herbalism 160
+
+step Alchemy 250-265: vendor goods
+  tip Leaded Vials and Crystal Vials come from Alchemy supply vendors in capital cities.
+  buy 3372 x47 nearest
+  buy 8925 x10 nearest
+
+step Stonescale Oil, Elixir of Greater Intellect (250-265)
+  tip Stonescale Oil, 47 brews to 260. Each brew makes two oils, so you end with 94: keep all of them for the Elixir of Greater Defense next. Then Elixir of Greater Intellect, 10 more brews to 265. If Stonescale Eel is expensive, skip the oil, keep making Elixir of Greater Intellect to 265 (about 21 more), and finish on Superior Mana Potions instead: 55 brews to 300 (110 Sungrass, 110 Blindweed, 55 Crystal Vial), recipe from Algernon in the Undercity or Ulthir in Darnassus.
+  learn 17551 "Stonescale Oil"
+  craft 17551 "Stonescale Oil" until 260
+  craft 11465 "Elixir of Greater Intellect" until 265
+
+section Alchemy 265-300
+
+step Alchemy 265-300: Auction House
+  tip What the last elixirs take that the Auction House sells: 44 Sungrass. The counts drop by what your bags, bank and mail hold.
+  auction 8838 x44
+
+step Alchemy 265-300: herbs
+  tip Sungrass grows in the 40-55 zones: pick it while you level, or take it from your bank.
+  collect 8838 x44 anywhere gather Herbalism 230
+
+step Alchemy 265-300: vendor goods
+  tip Crystal Vials come from Alchemy supply vendors in capital cities.
+  buy 8925 x44 nearest
+
+step Recipe: Elixir of Superior Defense
+  tip The recipe item is still called Recipe: Elixir of Superior Defense, and it teaches Elixir of Greater Defense: the elixir was renamed in Forever, the recipe item was not. Sold by Kor'geld in Orgrimmar and Soolie Berryfizz in Ironforge, limited stock.
+  buy 13478 x1 nearest
+
+step Elixir of Greater Defense (265-300)
+  tip Elixir of Greater Defense, 44 brews to 300: two of the kept Stonescale Oils in each. It turns yellow at 280, so make a few more if you come up short of 300. Use the recipe first to learn it.
+  learn 17554 "Elixir of Greater Defense"
+  craft 17554 "Elixir of Greater Defense" until 300
