@@ -1,0 +1,484 @@
+# Paired Route: Herbalism + Alchemy 1-300 (WoW: Forever 1.60.1 only)
+# Follows docs/MULTI_PROFESSION_RULES.md:
+# - Dedicated per-combination file: guides/pairs/herbalism-alchemy.guide
+# - Single-anchor sections on Alchemy (the crafting anchor) in rising order,
+#   so Polestar's section auto-skip and remaining-material subtraction work;
+#   Herbalism trains and skill checkpoints are interleaved inside each
+#   Alchemy bracket.
+# - Every `collect ... gather Herbalism <rank>` (and the Fishing oil
+#   reagents) has a matching `auction` goal in the same section so Mix /
+#   Gather / Buy modes all work cleanly.
+# - Alchemy crafts, vendor goods and material counts follow the solo
+#   guides/alchemy.guide route; Herbalism trainers and herb loops follow
+#   guides/herbalism.guide. Ids and coordinates were resolved from the
+#   Forever client data (build 1.60.1) for those solo guides.
+#
+# Herbalism checkpoints, mapped onto the Alchemy brackets:
+#   Alchemy   1-55   -> Herbalism  70   (starter herbs)
+#   Alchemy  55-90   -> Herbalism 100   (Mageroyal, Earthroot)
+#   Alchemy  90-130  -> Herbalism 150   (Briarthorn, Stranglekelp, Kingsblood)
+#   Alchemy 130-195  -> Herbalism 200   (Kingsblood, Stranglekelp, Liferoot)
+#   Alchemy 195-225  -> Herbalism 230   (Liferoot, Sungrass unlocked)
+#   Alchemy 225-250  -> Herbalism 250   (Blindweed needs 235; Hinterlands loop)
+#   Alchemy 265-300  -> Herbalism 300   (Sungrass and the Felwood herbs)
+#
+# Forever Scarce herbs are uncommon bonus drops from ordinary herb nodes,
+# not dedicated nodes. This route is the whole point of the pair: you pick
+# them while you gather for the current brew band.
+#   Frilled Lichen  -> Cerulean Dye   (Alchemy 50)
+#   Rosecap         -> Magenta Dye    (Alchemy 130)
+#   Stranglevine    -> Viridian Dye   (Alchemy 230)
+#   Pyrite (Mining) -> Sulfuric Acid  (Alchemy 50; buy on the Auction House
+#                      if you do not mine)
+
+guide forever-professions/pair-herbalism-alchemy
+title Herbalism + Alchemy 1-300
+category Professions
+folder Paired Routes
+coords era
+levels 1-60
+zone Azeroth
+keywords herbalism, alchemy, paired, dyes, scarce
+pitch Level Herbalism and Alchemy together from 1 to 300: pick the herbs for your current brew band and hoard the Scarce bonus drops that become dyes.
+pro Every herb on the Alchemy route is picked by you, so the Auction House only covers the gaps
+pro Frilled Lichen, Rosecap and Stranglevine turn into Cerulean, Magenta and Viridian Dye, which Tailoring and other crafters pay well for
+pro Both professions give Legacy Points from the crafting side, and the Alchemy Mana Well camp feature comes with the route
+con Uses both primary profession slots, so you carry no other profession until you swap
+con Herb nodes are shared with other gatherers, so a busy realm slows the picking bands
+
+# ---------------------------------------------------------------- Apprentice
+
+section Alchemy 1-55
+
+step Learn Herbalism
+  only Alliance
+  zone Elwynn Forest
+  tip Herbalism takes one of your two primary slots and Alchemy takes the other. Nancy Songflower in Elwynn Forest teaches Apprentice Herbalism at any character level. Turn on Find Herbs from the Herbalism box of the Professions window and drag it to your action bar: it switches off every time you die, and it replaces Find Minerals while it is on.
+  train Herbalism Apprentice npc 247223
+
+step Learn Herbalism
+  only Horde
+  zone Durotar
+  tip Herbalism takes one of your two primary slots and Alchemy takes the other. Zor'la in the Valley of Trials teaches Apprentice Herbalism at any character level. Turn on Find Herbs from the Herbalism box of the Professions window and drag it to your action bar: it switches off every time you die, and it replaces Find Minerals while it is on.
+  train Herbalism Apprentice npc 267329
+
+step Starter Herbs to 70 (Elwynn Forest)
+  only Alliance
+  zone Elwynn Forest
+  tip Pick every Peacebloom, Silverleaf and Earthroot (Earthroot needs skill 15) and circle the waypoints to Herbalism 70. Forever's starting areas also grow Wilted Peacebloom and Stunted Silverleaf, pickable from skill 1. Keep every herb: your first brews need 54 Silverleaf and 45 Peacebloom. If a Frilled Lichen drops as a bonus, keep it: it becomes Cerulean Dye at Alchemy 50.
+  goto 53.0,38.0 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 52.6,42.1 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 56.9,43.0 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 47.6,47.5 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 47.7,37.8 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 50.8,83.4 "Earthroot" r 30
+  goto 78.5,76.4 "Silverleaf, Peacebloom" r 30
+  skill Herbalism 70
+
+step Starter Herbs to 70 (Durotar)
+  only Horde
+  zone Durotar
+  tip Pick every Peacebloom, Silverleaf and Earthroot (Earthroot needs skill 15) and circle the waypoints to Herbalism 70. Forever's starting areas also grow Wilted Peacebloom and Stunted Silverleaf, pickable from skill 1. Keep every herb: your first brews need 54 Silverleaf and 45 Peacebloom. If a Frilled Lichen drops as a bonus, keep it: it becomes Cerulean Dye at Alchemy 50.
+  goto 42.2,62.6 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 46.2,62.7 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 46.5,58.3 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 43.6,66.8 "Wilted Peacebloom, Stunted Silverleaf" r 30
+  goto 52.3,57.9 "Silverleaf, Peacebloom" r 30
+  goto 36.8,28.4 "Peacebloom, Earthroot" r 30
+  goto 57.1,22.4 "Silverleaf, Peacebloom" r 30
+  skill Herbalism 70
+
+step Learn Alchemy
+  only Alliance
+  zone Ironforge
+  tip Vosur Brakthel in Tinker Town, Ironforge, teaches Apprentice Alchemy at any character level. With your herbs already in the bags, your first brews are free of Auction House trips.
+  train Alchemy Apprentice npc 1246
+
+step Learn Alchemy
+  only Horde
+  zone Orgrimmar
+  tip Whuut in Orgrimmar teaches Apprentice Alchemy at any character level. With your herbs already in the bags, your first brews are free of Auction House trips.
+  train Alchemy Apprentice npc 11046
+
+step Alchemy 1-55: Auction House
+  tip What the first elixirs take that the Auction House sells: 54 Silverleaf, 45 Peacebloom. The counts drop by what your bags, bank and mail hold.
+  auction 765 x54
+  auction 2447 x45
+
+step Alchemy 1-55: herbs
+  tip Silverleaf and Peacebloom are the starter herbs you just picked: take them from your bags or your bank.
+  collect 765 x54 anywhere gather Herbalism 1
+  collect 2447 x45 anywhere gather Herbalism 1
+
+step Alchemy 1-55: vendor goods
+  tip Empty Vials come from Alchemy supply vendors; most trainers have one nearby.
+  buy 3371 x54 nearest
+
+step Elixir of Minor Force, Elixir of Minor Defense (1-55)
+  tip Elixir of Minor Force, 9 brews to 10, then Elixir of Minor Defense, 45 brews to 55: a Silverleaf and a Peacebloom in each of the second. Both are taught with Apprentice Alchemy. At Alchemy 50 you can also learn Cerulean Dye and Sulfuric Acid: save your Frilled Lichen, and buy Pyrite on the Auction House if you do not mine.
+  learn 1245250 "Elixir of Minor Force"
+  craft 1245250 "Elixir of Minor Force" until 10
+  learn 7183 "Elixir of Minor Defense"
+  craft 7183 "Elixir of Minor Defense" until 55
+
+# ---------------------------------------------------------------- Journeyman
+
+section Alchemy 55-90
+
+step Journeyman Herbalism
+  only Alliance
+  zone Ironforge
+  tip Journeyman Herbalism raises the cap to 150 and needs skill 50. Reyna Stonebranch in Ironforge teaches it, a short walk from the Alchemy trainer.
+  train Herbalism Journeyman npc 5137
+
+step Journeyman Herbalism
+  only Horde
+  zone Orgrimmar
+  tip Journeyman Herbalism raises the cap to 150 and needs skill 50. Jandi in Orgrimmar teaches it, close to the Alchemy trainer.
+  train Herbalism Journeyman npc 3404
+
+step Journeyman Alchemy
+  only Alliance
+  zone Ironforge
+  tip Journeyman Alchemy raises the cap to 150; it needs skill 50 and character level 10. Tally Berryfizz in Ironforge teaches it.
+  level 10
+  train Alchemy Journeyman npc 5177
+
+step Journeyman Alchemy
+  only Horde
+  zone Orgrimmar
+  tip Journeyman Alchemy raises the cap to 150; it needs skill 50 and character level 10. Yelmak in Orgrimmar teaches it.
+  level 10
+  train Alchemy Journeyman npc 3347
+
+step Mageroyal and Earthroot to 100 (Loch Modan)
+  only Alliance
+  zone Loch Modan
+  tip Mageroyal (skill 50) and Earthroot (skill 15) are the herbs this brew band eats, and Briarthorn from 70 is the next band's. Pick all three and keep Briarthorn aside. Darkshore is the alternative if the loch is picked clean.
+  goto 77.6,71.7 "Briarthorn" r 30
+  goto 67.0,72.9 "Mageroyal, Briarthorn" r 30
+  goto 69.1,51.2 "Mageroyal, Briarthorn" r 30
+  goto 53.5,36.7 "Briarthorn" r 30
+  goto 53.1,26.6 "Mageroyal" r 30
+  goto 57.5,16.4 "Briarthorn, Mageroyal" r 30
+  skill Herbalism 100
+
+step Mageroyal and Earthroot to 100 (Silverpine Forest)
+  only Horde
+  zone Silverpine Forest
+  tip Mageroyal (skill 50) and Earthroot (skill 15) are the herbs this brew band eats, and Briarthorn from 70 is the next band's. Pick all three and keep Briarthorn aside. Stranglekelp grows underwater along the shore from 85, so watch your breath.
+  goto 62.1,77.2 "Briarthorn" r 30
+  goto 51.8,78.0 "Briarthorn" r 30
+  goto 52.0,72.6 "Mageroyal, Briarthorn" r 30
+  goto 47.2,81.3 "Mageroyal, Briarthorn" r 30
+  goto 41.4,72.0 "Stranglekelp, Mageroyal" r 30
+  goto 52.7,56.0 "Briarthorn, Mageroyal" r 30
+  skill Herbalism 100
+
+step Alchemy 55-90: Auction House
+  tip What the next potions take that the Auction House sells: 10 Mageroyal, 38 Peacebloom, 56 Earthroot. The counts drop by what your bags, bank and mail hold.
+  auction 785 x10
+  auction 2447 x38
+  auction 2449 x56
+
+step Alchemy 55-90: herbs
+  tip Mageroyal grows in the 10-25 zones, Earthroot in the starting zones and the 10-20 zones. Use what you just picked, or take them from your bank.
+  collect 785 x10 anywhere gather Herbalism 50
+  collect 2447 x38 anywhere gather Herbalism 1
+  collect 2449 x56 anywhere gather Herbalism 15
+
+step Alchemy 55-90: vendor goods
+  tip Empty Vials come from Alchemy supply vendors; most trainers have one nearby.
+  buy 3371 x38 nearest
+
+step Minor Mana Potion, Elixir of Minor Fortitude (55-90)
+  tip Minor Mana Potion, 10 brews to 65, then Elixir of Minor Fortitude, 28 brews to 90: two Earthroot in each of the second. In Forever the trainer teaches Minor Mana Potion from skill 25, well before this band. Keep any Frilled Lichen you picked on the way: Cerulean Dye is the first Scarce dye you can brew.
+  learn 2331 "Minor Mana Potion"
+  craft 2331 "Minor Mana Potion" until 65
+  learn 2334 "Elixir of Minor Fortitude"
+  craft 2334 "Elixir of Minor Fortitude" until 90
+
+section Alchemy 90-130
+
+step Briarthorn and Kingsblood to 150 (Hillsbrad Foothills)
+  zone Hillsbrad Foothills
+  tip Take Herbalism from 100 to 150 here (the Journeyman cap). Briarthorn needs 70 and Stranglekelp 85 for this brew band; Bruiseweed, Wild Steelbloom and Kingsblood (from 125) feed the next two. Stonetalon Mountains is the alternative. Look for Rosecap bonus drops on every node and keep all of them: it becomes Magenta Dye at Alchemy 130.
+  goto 67.5,37.6 "Liferoot, Wild Steelbloom" r 30
+  goto 63.6,37.6 "Liferoot, Kingsblood" r 30
+  goto 67.3,32.2 "Liferoot, Wild Steelbloom" r 30
+  goto 72.4,28.0 "Bruiseweed, Kingsblood" r 30
+  goto 81.4,32.3 "Bruiseweed, Kingsblood" r 30
+  goto 64.1,53.6 "Bruiseweed, Wild Steelbloom" r 30
+  goto 38.3,51.9 "Kingsblood, Bruiseweed" r 30
+  goto 71.6,62.6 "Bruiseweed, Kingsblood" r 30
+  skill Herbalism 150
+
+step Alchemy 90-130: Auction House
+  tip What the next elixirs take that the Auction House sells: 40 Mageroyal, 60 Briarthorn, 10 Stranglekelp. The counts drop by what your bags, bank and mail hold.
+  auction 785 x40
+  auction 2450 x60
+  auction 3820 x10
+
+step Alchemy 90-130: herbs
+  tip Briarthorn grows in the 10-25 zones; Stranglekelp grows along coasts and riverbanks in the 10-30 zones. Use what you picked while leveling Herbalism, or take them from your bank.
+  collect 785 x40 anywhere gather Herbalism 50
+  collect 2450 x60 anywhere gather Herbalism 70
+  collect 3820 x10 anywhere gather Herbalism 85
+
+step Alchemy 90-130: vendor goods
+  tip Empty Vials come from Alchemy supply vendors; most trainers have one nearby.
+  buy 3371 x40 nearest
+
+step Elixir of Wisdom, Lesser Mana Potion (90-130)
+  tip Elixir of Wisdom, 30 brews to 120: two Briarthorn in each. Then Lesser Mana Potion, 10 brews to 130. Keep the Elixirs of Wisdom if you also level Tailoring: the Gloves of Meditation need them. At Alchemy 130 Magenta Dye opens: hoard your Rosecap for it.
+  learn 3171 "Elixir of Wisdom"
+  craft 3171 "Elixir of Wisdom" until 120
+  learn 3173 "Lesser Mana Potion"
+  craft 3173 "Lesser Mana Potion" until 130
+
+section Alchemy 130-150
+
+step Alchemy 130-150: Auction House
+  tip What Fire Oil takes that the Auction House sells: 40 Firefin Snapper. The counts drop by what your bags, bank and mail hold. This band needs no herbs, so use the time to pick Kingsblood and Stranglekelp ahead of the next one.
+  auction 6359 x40
+
+step Alchemy 130-150: fish
+  tip Firefin Snapper is fished in mid-level waters: catch them yourself, or take them from your bank.
+  collect 6359 x40 anywhere gather Fishing 75
+
+step Alchemy 130-150: vendor goods
+  tip Empty Vials come from Alchemy supply vendors; most trainers have one nearby.
+  buy 3371 x20 nearest
+
+step Fire Oil (130-150)
+  tip Fire Oil, 20 brews to 150. Each brew makes two oils, so you end with 40: keep 30 of them for the Elixir of Fire Power next. Fire Oil is cheaper here than more Lesser Mana Potions, and the next step needs it anyway.
+  learn 7837 "Fire Oil"
+  craft 7837 "Fire Oil" until 150
+
+# ---------------------------------------------------------------- Expert
+
+section Alchemy 150-195
+
+step Expert Herbalism
+  only Alliance
+  zone Ironforge
+  tip Expert Herbalism raises the cap to 225 and needs skill 125. Reyna Stonebranch in Ironforge teaches it: train it before heading for Darnassus.
+  train Herbalism Expert npc 5137
+
+step Expert Herbalism
+  only Horde
+  zone Orgrimmar
+  tip Expert Herbalism raises the cap to 225 and needs skill 125. Jandi in Orgrimmar teaches it: train it before heading for the Undercity.
+  train Herbalism Expert npc 3404
+
+step Expert Alchemy
+  only Alliance
+  zone Darnassus
+  tip Expert Alchemy raises the cap to 225; it needs skill 125 and character level 20, and costs 50 silver. Ainethil in Darnassus teaches it.
+  level 20
+  train Alchemy Expert npc 4160
+
+step Expert Alchemy
+  only Horde
+  zone Undercity
+  tip Expert Alchemy raises the cap to 225; it needs skill 125 and character level 20, and costs 50 silver. Doctor Herbert Halsey in the Undercity teaches it.
+  level 20
+  train Alchemy Expert npc 4611
+
+step Kingsblood to Khadgar's Whisker to 200 (Stranglethorn Vale)
+  zone Stranglethorn Vale
+  tip Take Herbalism from 150 to 200 here. Kingsblood and Liferoot feed the next two brew bands, and Khadgar's Whisker needs 185 for the one after. Arathi Highlands is the alternative zone. Stranglevine is the Forever Scarce bonus for this level range: it drops from Stranglethorn nodes, so keep every one for Viridian Dye at Alchemy 230.
+  goto 37.8,17.3 "Fadeleaf, Kingsblood" r 30
+  goto 38.1,22.4 "Liferoot, Fadeleaf" r 30
+  goto 37.0,32.2 "Kingsblood, Liferoot" r 30
+  goto 31.9,22.8 "Kingsblood, Fadeleaf" r 30
+  goto 29.3,9.1 "Kingsblood, Khadgar's Whisker" r 30
+  goto 43.3,16.9 "Kingsblood, Liferoot" r 30
+  goto 31.8,52.4 "Kingsblood, Khadgar's Whisker" r 30
+  skill Herbalism 200
+
+step Alchemy 150-195: Auction House
+  tip What the next potions take that the Auction House sells: 51 Kingsblood, 36 Stranglekelp. The counts drop by what your bags, bank and mail hold.
+  auction 3356 x51
+  auction 3820 x36
+
+step Alchemy 150-195: herbs
+  tip Kingsblood grows in the 20-35 zones; Stranglekelp grows along coasts and riverbanks in the 10-30 zones. Use what you picked, or take them from your bank.
+  collect 3356 x51 anywhere gather Herbalism 125
+  collect 3820 x36 anywhere gather Herbalism 85
+
+step Alchemy 150-195: vendor goods
+  tip Leaded Vials come from Alchemy supply vendors. Starting-zone vendors do not sell them: buy them in a capital city.
+  buy 3372 x51 nearest
+
+step Elixir of Fire Power, Mana Potion (150-195)
+  tip Elixir of Fire Power, 15 brews to 165: two of the kept Fire Oils in each. Then Mana Potion, 36 brews to 195.
+  learn 7845 "Elixir of Fire Power"
+  craft 7845 "Elixir of Fire Power" until 165
+  learn 3452 "Mana Potion"
+  craft 3452 "Mana Potion" until 195
+
+section Alchemy 195-225
+
+step Artisan Herbalism
+  only Alliance
+  zone Ironforge
+  tip Artisan Herbalism raises the cap to 300 and needs skill 200. Train it now, before heading out: there is no Herbalism trainer in Tanaris or Searing Gorge. Reyna Stonebranch in Ironforge teaches it.
+  skill Herbalism 200
+  train Herbalism Artisan npc 5137
+
+step Artisan Herbalism
+  only Horde
+  zone Orgrimmar
+  tip Artisan Herbalism raises the cap to 300 and needs skill 200. Train it now, before heading out: there is no Herbalism trainer in Tanaris or Searing Gorge. Jandi in Orgrimmar teaches it.
+  skill Herbalism 200
+  train Herbalism Artisan npc 3404
+
+step Purple Lotus and Firebloom to 230 (Tanaris)
+  zone Tanaris
+  tip Take Herbalism from 200 to 230 here: Purple Lotus and Firebloom give the points, and Sungrass unlocks at 230 for the last Alchemy bands. Liferoot and Stranglekelp for this brew band should already be in your bags from the earlier loops; pick extra Liferoot whenever you pass it. Searing Gorge is the alternative zone.
+  goto 58.6,24.1 "Purple Lotus, Firebloom" r 30
+  goto 60.5,23.0 "Purple Lotus" r 30
+  goto 53.0,44.6 "Purple Lotus" r 30
+  goto 46.4,63.5 "Purple Lotus, Firebloom" r 30
+  goto 47.0,67.0 "Purple Lotus, Firebloom" r 30
+  goto 38.7,73.4 "Purple Lotus, Firebloom" r 30
+  skill Herbalism 230
+
+step Alchemy 195-225: Auction House
+  tip What the Nature Protection Potions take that the Auction House sells: 36 Liferoot, 36 Stranglekelp. The counts drop by what your bags, bank and mail hold.
+  auction 3357 x36
+  auction 3820 x36
+
+step Alchemy 195-225: herbs
+  tip Liferoot grows along water in the 30-40 zones; Stranglekelp grows along coasts and riverbanks in the 10-30 zones. Use what you picked, or take them from your bank.
+  collect 3357 x36 anywhere gather Herbalism 150
+  collect 3820 x36 anywhere gather Herbalism 85
+
+step Alchemy 195-225: vendor goods
+  tip Leaded Vials come from Alchemy supply vendors in capital cities.
+  buy 3372 x36 nearest
+
+step Recipe: Nature Protection Potion
+  tip The recipe is sold by Bronk and Logannas in Feralas, Glyx Brewright in Stranglethorn Vale, and Alchemist Pestlezugg in Tanaris. It binds when picked up: buy it with the character leveling Alchemy.
+  buy 6057 x1 nearest
+
+step Nature Protection Potion (195-225)
+  tip Nature Protection Potion, 36 brews to 225. Use the recipe first to learn it.
+  learn 7259 "Nature Protection Potion"
+  craft 7259 "Nature Protection Potion" until 225
+
+# ---------------------------------------------------------------- Artisan
+
+section Alchemy 225-250
+
+step Artisan Alchemy
+  only Alliance
+  zone Feralas
+  tip Artisan Alchemy raises the cap to 300; it needs skill 200 and character level 35. Kylanna Windwhisper at Feathermoon Stronghold in Feralas teaches it.
+  level 35
+  train Alchemy Artisan npc 7948
+
+step Artisan Alchemy
+  only Horde
+  zone Swamp of Sorrows
+  tip Artisan Alchemy raises the cap to 300; it needs skill 200 and character level 35. Rogvar in Stonard, Swamp of Sorrows, teaches it.
+  level 35
+  train Alchemy Artisan npc 1386
+
+step Hinterlands Herbs to 250
+  zone The Hinterlands
+  tip Take Herbalism from 230 to 250 here. Sungrass and Purple Lotus give points, and Ghost Mushroom (skill 245) grows in caves and dark hollows. Blindweed needs skill 235 and grows in the Swamp of Sorrows: if you are passing through for Artisan Alchemy as Horde, pick it on the way. Keep any Stranglevine you meet, and brew Viridian Dye once Alchemy reaches 230.
+  goto 57.5,42.5 "Ghost Mushroom, Purple Lotus" r 30
+  goto 51.7,41.0 "Golden Sansam, Sungrass" r 30
+  goto 47.0,53.4 "Sungrass, Purple Lotus" r 30
+  goto 52.2,56.4 "Sungrass, Golden Sansam" r 30
+  goto 48.8,62.7 "Golden Sansam, Purple Lotus" r 30
+  goto 38.1,62.1 "Sungrass, Golden Sansam" r 30
+  skill Herbalism 250
+
+step Alchemy 225-250: Auction House
+  tip What the next potions take that the Auction House sells: 26 Liferoot, 26 Stranglekelp, 15 Blindweed, 15 Khadgar's Whisker. The counts drop by what your bags, bank and mail hold.
+  auction 3357 x26
+  auction 3820 x26
+  auction 8839 x15
+  auction 3358 x15
+
+step Alchemy 225-250: herbs
+  tip Liferoot grows along water in the 30-40 zones; Blindweed grows in the 40-50 zones and Khadgar's Whisker in the 25-40 zones. Use what you picked, or take them from your bank.
+  collect 3357 x26 anywhere gather Herbalism 150
+  collect 3820 x26 anywhere gather Herbalism 85
+  collect 8839 x15 anywhere gather Herbalism 235
+  collect 3358 x15 anywhere gather Herbalism 160
+
+step Alchemy 225-250: vendor goods
+  tip Leaded Vials and Crystal Vials come from Alchemy supply vendors in capital cities.
+  buy 3372 x26 nearest
+  buy 8925 x15 nearest
+
+step Nature Protection Potion, Elixir of Greater Intellect (225-250)
+  tip Nature Protection Potion, 26 more brews to 235, then Elixir of Greater Intellect, 15 brews to 250.
+  craft 7259 "Nature Protection Potion" until 235
+  learn 11465 "Elixir of Greater Intellect"
+  craft 11465 "Elixir of Greater Intellect" until 250
+
+section Alchemy 250-265
+
+step Alchemy 250-265: Auction House
+  tip What the next brews take that the Auction House sells: 47 Stonescale Eel, 10 Blindweed, 10 Khadgar's Whisker. The counts drop by what your bags, bank and mail hold.
+  auction 13422 x47
+  auction 8839 x10
+  auction 3358 x10
+
+step Alchemy 250-265: fish and herbs
+  tip Stonescale Eel is fished from Stonescale Eel schools on the coasts of the 40-55 zones. Blindweed grows in the 40-50 zones and Khadgar's Whisker in the 25-40 zones.
+  collect 13422 x47 anywhere gather Fishing 205
+  collect 8839 x10 anywhere gather Herbalism 235
+  collect 3358 x10 anywhere gather Herbalism 160
+
+step Alchemy 250-265: vendor goods
+  tip Leaded Vials and Crystal Vials come from Alchemy supply vendors in capital cities.
+  buy 3372 x47 nearest
+  buy 8925 x10 nearest
+
+step Stonescale Oil, Elixir of Greater Intellect (250-265)
+  tip Stonescale Oil, 47 brews to 260. Each brew makes two oils, so you end with 94: keep all of them for the Elixir of Greater Defense next. Then Elixir of Greater Intellect, 10 more brews to 265. If Stonescale Eel is expensive, skip the oil, keep making Elixir of Greater Intellect to 265 (about 21 more), and finish on Superior Mana Potions instead: 55 brews to 300 (110 Sungrass, 110 Blindweed, 55 Crystal Vial), recipe from Algernon in the Undercity or Ulthir in Darnassus.
+  learn 17551 "Stonescale Oil"
+  craft 17551 "Stonescale Oil" until 260
+  craft 11465 "Elixir of Greater Intellect" until 265
+
+section Alchemy 265-300
+
+step Sungrass to Plaguebloom to 300 (Felwood)
+  zone Felwood
+  tip Take Herbalism from 250 to 300 here. Sungrass, Gromsblood, Golden Sansam, Dreamfoil, Mountain Silversage and Plaguebloom all give points at this level, so pick everything you pass. Your last brew band eats 44 Sungrass: stock them now. Keep every Rosecap, Stranglevine and Frilled Lichen you collected for the dye recipes and for any crafting partner; they are what makes this pair worth running.
+  goto 52.9,27.4 "Gromsblood, Sungrass" r 30
+  goto 48.0,23.8 "Plaguebloom, Dreamfoil" r 30
+  goto 42.7,17.2 "Dreamfoil, Gromsblood" r 30
+  goto 53.3,17.2 "Sungrass, Dreamfoil" r 30
+  goto 56.5,21.8 "Golden Sansam, Plaguebloom" r 30
+  goto 56.0,8.5 "Sungrass, Gromsblood" r 30
+  goto 38.3,52.8 "Sungrass, Gromsblood" r 30
+  goto 41.0,58.1 "Dreamfoil, Sungrass" r 30
+  skill Herbalism 300
+
+step Alchemy 265-300: Auction House
+  tip What the last elixirs take that the Auction House sells: 44 Sungrass. The counts drop by what your bags, bank and mail hold.
+  auction 8838 x44
+
+step Alchemy 265-300: herbs
+  tip Sungrass grows in the 40-55 zones: use what you picked in Felwood, or take it from your bank.
+  collect 8838 x44 anywhere gather Herbalism 230
+
+step Alchemy 265-300: vendor goods
+  tip Crystal Vials come from Alchemy supply vendors in capital cities.
+  buy 8925 x44 nearest
+
+step Recipe: Elixir of Superior Defense
+  tip The recipe item is still called Recipe: Elixir of Superior Defense, and it teaches Elixir of Greater Defense: the elixir was renamed in Forever, the recipe item was not. Sold by Kor'geld in Orgrimmar and Soolie Berryfizz in Ironforge, limited stock.
+  buy 13478 x1 nearest
+
+step Elixir of Greater Defense (265-300)
+  tip Elixir of Greater Defense, 44 brews to 300: two of the kept Stonescale Oils in each. It turns yellow at 280, so make a few more if you come up short of 300. Use the recipe first to learn it. At 300 both professions are maxed: spend your Alchemy Legacy Points, and craft dyes from your stored Lichen, Rosecap and Stranglevine.
+  learn 17554 "Elixir of Greater Defense"
+  craft 17554 "Elixir of Greater Defense" until 300

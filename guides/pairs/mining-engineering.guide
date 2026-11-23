@@ -1,0 +1,501 @@
+# Paired Route: Mining + Engineering 1-300 (WoW: Forever)
+# Follows docs/MULTI_PROFESSION_RULES.md:
+# - Dedicated per-combination file: guides/pairs/mining-engineering.guide
+# - Single-anchor sections on Engineering (crafting anchor) in rising order,
+#   so Polestar's section auto-skip and remaining-material subtraction work
+#   cleanly; Mining trainers, skill checkpoints and ore loops are
+#   interleaved inside each Engineering bracket.
+# - Every `collect ... gather Mining <rank>` keeps its matching `auction`
+#   goal in the same section (carried over from guides/engineering.guide),
+#   so Mix / Gather / Buy modes all work.
+# - Engineering crafts, kept intermediates and spell ids follow
+#   guides/engineering.guide; Mining trainers, node loops and rank gates
+#   follow guides/mining.guide. Both were resolved from the Forever client
+#   tables (build 1.60.1).
+# - Forever scarce material: Bauxite (bonus drop from Gold Veins, Mithril
+#   Deposits and Indurium veins) feeds Sandpaper, an Engineering recipe
+#   that unlocks at 130 (2 Bauxite + 1 Bolt of Linen Cloth; ids resolved
+#   with `polestar find`: Bauxite 249425, Sandpaper 249432, spell 1249634,
+#   Bolt of Linen Cloth 2996). Sandpaper goes into 25 Blacksmithing
+#   recipes, so it sells well and is worth hoarding Bauxite for.
+# - Forever camp feature: the Engineering Reagent Bot (recipe from skill 20,
+#   item 279950) sits on a Basic Campfire as one of its three features.
+# - Tips are original prose for this pack.
+
+guide forever-professions/pair-mining-engineering
+title Mining + Engineering 1-300
+category Professions
+folder Paired Routes
+coords era
+levels 1-60
+zone Azeroth
+keywords mining, engineering, paired, bauxite, sandpaper
+
+pitch Level Mining and Engineering together from 1 to 300: your own picks supply the stone and bars every bomb, tube and widget eats.
+pro Mine the Rough, Coarse, Heavy, Solid and Dense Stone and every bar the Engineering route needs, so most of it costs nothing
+pro Scarce Bauxite from Gold, Mithril and Indurium nodes turns into Sandpaper (Engineering 130), a high-demand Blacksmithing input, and the Reagent Bot camp feature is yours
+con Uses both primary slots and Engineering is bar-hungry, so Mining sometimes lags behind the crafting bands; top up from the Auction House when it does
+
+# ---------------------------------------------------------------- Apprentice
+
+section Engineering 1-75
+
+step Learn Engineering
+  only Alliance
+  zone Ironforge
+  tip Engineering takes a primary slot and Mining takes the other one. Jemma Quikswitch in Ironforge teaches Apprentice Engineering at any character level. Buy a Blacksmith Hammer now: most recipes need one in your bags. From Engineering 20 you can also learn Reagent Bot, an Engineering camp feature: a Basic Campfire (Cooking 1) hosts up to three features, and this is one of them.
+  train Engineering Apprentice npc 11028
+
+step Learn Engineering
+  only Horde
+  zone Orgrimmar
+  tip Engineering takes a primary slot and Mining takes the other one. Thund in Orgrimmar teaches Apprentice Engineering at any character level. Buy a Blacksmith Hammer now: most recipes need one in your bags. From Engineering 20 you can also learn Reagent Bot, an Engineering camp feature: a Basic Campfire (Cooking 1) hosts up to three features, and this is one of them.
+  train Engineering Apprentice npc 2857
+
+step Learn Mining
+  only Alliance
+  zone Elwynn Forest
+  tip Kelsey Fargo in Elwynn Forest teaches Apprentice Mining at any character level. Buy a Mining Pick: keep it in your bags, it does not need to be equipped but you cannot mine without it. Switch on Find Minerals in the Mining box of the Professions window and drag it onto your bar; it turns itself off when you die, and you can only track minerals or herbs, not both.
+  train Mining Apprentice npc 247226
+  buy 2901 x1 nearest
+
+step Learn Mining
+  only Horde
+  zone Durotar
+  tip Norzsh in the Valley of Trials teaches Apprentice Mining at any character level. Buy a Mining Pick: keep it in your bags, it does not need to be equipped but you cannot mine without it. Switch on Find Minerals in the Mining box of the Professions window and drag it onto your bar; it turns itself off when you die, and you can only track minerals or herbs, not both.
+  train Mining Apprentice npc 267328
+  buy 2901 x1 nearest
+
+step Copper in Elwynn Forest
+  only Alliance
+  zone Elwynn Forest
+  tip Mine every Copper Vein and Poor Copper Vein on the loop until Mining 65. Poor Copper Veins give Copper Ore and Rough Stone from skill 1, which is exactly what the first Engineering crafts use, so save every Rough Stone and smelt the ore at the Goldshire forge. The cave veins regrow quickly; sweep them first if your level allows.
+  goto 47.3,32.3 "Poor Copper Vein" r 30
+  goto 52.1,32.4 "Poor Copper Vein" r 30
+  goto 56.2,37.9 "Poor Copper Vein" r 30
+  goto 57.3,50.4 "Poor Copper Vein" r 30
+  goto 48.9,48.8 "Poor Copper Vein" r 30
+  goto 30.2,54.0 "Copper Vein" r 30
+  goto 28.1,66.2 "Copper Vein" r 30
+  skill Mining 65
+
+step Copper in Durotar
+  only Horde
+  zone Durotar
+  tip Mine every Copper Vein and Poor Copper Vein on the loop until Mining 65. Poor Copper Veins give Copper Ore and Rough Stone from skill 1, which is exactly what the first Engineering crafts use, so save every Rough Stone and smelt the ore at the Razor Hill forge. Mulgore's cave is a quieter alternative.
+  goto 42.1,68.1 "Poor Copper Vein" r 30
+  goto 45.4,72.8 "Poor Copper Vein" r 30
+  goto 46.7,62.4 "Poor Copper Vein" r 30
+  goto 42.5,58.1 "Poor Copper Vein" r 30
+  goto 43.3,53.4 "Poor Copper Vein" r 30
+  goto 36.0,45.4 "Copper Vein" r 30
+  goto 35.6,35.5 "Copper Vein" r 30
+  skill Mining 65
+
+step Engineering 1-75: Auction House
+  tip What the first bombs take that the Auction House sells: 52 Rough Stone, 58 Copper Bar, 26 Linen Cloth. The counts drop by what your bags, bank and mail hold.
+  auction 2835 x52
+  auction 2840 x58
+  auction 2589 x26
+
+step Engineering 1-75: stone, bars and cloth
+  tip Rough Stone comes from Copper Veins while mining; Copper Bar is smelted from Copper Ore; Linen Cloth drops from humanoids of level 5-20. Gather them while you level, or take them from your bank.
+  collect 2835 x52 anywhere gather Mining 1
+  collect 2840 x58 anywhere gather Mining 1
+  collect 2589 x26 anywhere gather levels 5-20
+
+step Engineering 1-75: tools
+  tip A Blacksmith Hammer from any Blacksmithing or Engineering supply vendor, usually next to the trainer. Keep it in your bags: most recipes need it.
+  buy 5956 x1 nearest
+
+step Rough Blasting Powder, Copper Bolts, Arclight Spanner, Rough Copper Bomb (1-75)
+  tip Rough Blasting Powder, 52 crafts to 35: one Rough Stone each. Keep all of it. Then Handful of Copper Bolts, 26 crafts to 55: one Copper Bar each. Keep all of those too. Then one Arclight Spanner: six Copper Bars, and keep it, you need it to craft Engineering recipes. Then Rough Copper Bomb, 26 crafts to 75: a Copper Bar, a bolt, two powders and a Linen Cloth each. It turns yellow at 60, so make a few more if you come up short, and do not craft them all at once unless Journeyman is already learned: the bombs may carry you past 75.
+  learn 3918 "Rough Blasting Powder"
+  craft 3918 "Rough Blasting Powder" until 35
+  learn 3922 "Handful of Copper Bolts"
+  craft 3922 "Handful of Copper Bolts" until 55
+  learn 7430 "Arclight Spanner"
+  craft 7430 "Arclight Spanner" x1
+  learn 3923 "Rough Copper Bomb"
+  craft 3923 "Rough Copper Bomb" until 75
+
+# ---------------------------------------------------------------- Journeyman
+
+section Engineering 75-105
+
+step Journeyman Engineering
+  only Alliance
+  zone Ironforge
+  tip Journeyman Engineering raises the cap to 150; it needs skill 50 and character level 10. Trixie Quikswitch in Ironforge teaches it.
+  level 10
+  train Engineering Journeyman npc 11029
+
+step Journeyman Engineering
+  only Horde
+  zone Orgrimmar
+  tip Journeyman Engineering raises the cap to 150; it needs skill 50 and character level 10. Nogg in Orgrimmar teaches it.
+  level 10
+  train Engineering Journeyman npc 3412
+
+step Journeyman Mining
+  only Alliance
+  zone Ironforge
+  tip Journeyman Mining raises the cap to 150 and needs skill 50. Geofram Bouldertoe teaches it in Ironforge, a short walk from the Engineering trainers.
+  train Mining Journeyman npc 4254
+
+step Journeyman Mining
+  only Horde
+  zone Orgrimmar
+  tip Journeyman Mining raises the cap to 150 and needs skill 50. Makaru in Orgrimmar teaches it.
+  train Mining Journeyman npc 3357
+
+step Tin and Silver in the Wetlands
+  only Alliance
+  zone Wetlands
+  tip Tin Veins need Mining 65 and Silver Veins 75. The Wetlands cave is full of Tin Veins and Incendicite with a very fast regrow; its mobs are around level 20, so outlevel them by a few levels. Coarse Stone (for the Coarse Blasting Powder) comes off Tin Veins, so keep all of it, and smelt leftover Copper and Tin into Bronze: Bronze stops giving skill around 105.
+  goto 47.5,62.1 "Incendicite Mineral Vein, Tin Vein" r 30
+  goto 51.2,61.6 "Incendicite Mineral Vein, Tin Vein" r 30
+  goto 24.0,60.0 "Copper Vein, Tin Vein" r 30
+  goto 25.8,50.2 "Copper Vein, Tin Vein" r 30
+  goto 27.8,38.0 "Copper Vein, Tin Vein" r 30
+  skill Mining 105
+
+step Tin and Silver in Hillsbrad Foothills
+  only Horde
+  zone Hillsbrad Foothills
+  tip Tin Veins need Mining 65 and Silver Veins 75. Hillsbrad Foothills is the best open route for this band; expect company, and smelt at Tarren Mill. Coarse Stone (for the Coarse Blasting Powder) comes off Tin Veins, so keep all of it, and smelt leftover Copper and Tin into Bronze: Bronze stops giving skill around 105.
+  goto 31.5,57.5 "Tin Vein, Silver Vein" r 30
+  goto 27.6,57.5 "Tin Vein, Silver Vein" r 30
+  goto 31.4,52.7 "Tin Vein, Silver Vein" r 30
+  goto 40.7,53.4 "Copper Vein, Tin Vein" r 30
+  goto 38.5,63.8 "Copper Vein, Tin Vein" r 30
+  skill Mining 105
+
+step Engineering 75-105: Auction House
+  tip What the next explosives take that the Auction House sells: 51 Coarse Stone, 17 Linen Cloth, 5 Silver Bar. The counts drop by what your bags, bank and mail hold.
+  auction 2836 x51
+  auction 2589 x17
+  auction 2842 x5
+
+step Engineering 75-105: stone, cloth and bars
+  tip Coarse Stone comes from Tin Veins while mining; Linen Cloth drops from humanoids of level 5-20; Silver Bar is smelted from Silver Ore (Mining 75). Gather them while you level, or take them from your bank.
+  collect 2836 x51 anywhere gather Mining 65
+  collect 2589 x17 anywhere gather levels 5-20
+  collect 2842 x5 anywhere gather Mining 75
+
+step Coarse Blasting Powder, Coarse Dynamite, Silver Contact (75-105)
+  tip Coarse Blasting Powder, 51 crafts to 90: one Coarse Stone each. Keep all of it. Then Coarse Dynamite, 17 crafts to 100: three powders and a Linen Cloth each. It turns green at 97, so start the Silver Contacts if you come up short. Then Silver Contact, 5 crafts to 105: a Silver Bar each, five contacts a craft. If Silver Bar is expensive, make Flying Tiger Goggles instead (30 Light Leather, 10 Tigerseye).
+  learn 3929 "Coarse Blasting Powder"
+  craft 3929 "Coarse Blasting Powder" until 90
+  learn 3931 "Coarse Dynamite"
+  craft 3931 "Coarse Dynamite" until 100
+  learn 3973 "Silver Contact"
+  craft 3973 "Silver Contact" until 105
+
+section Engineering 105-135
+
+step Mining 105-125 (Bronze Bar and Moss Agate)
+  only Alliance
+  zone Wetlands
+  tip Keep working the same Wetlands loop up to Mining 125, which opens Iron Deposits and the Expert rank. Moss Agate turns up in Tin and Silver Veins; keep every one for the Standard Scopes, and make Bronze Bars from your leftover Copper and Tin.
+  goto 20.7,35.2 "Copper Vein, Tin Vein" r 30
+  goto 34.1,15.2 "Copper Vein, Tin Vein" r 30
+  goto 43.6,22.6 "Copper Vein, Tin Vein" r 30
+  goto 44.5,41.7 "Copper Vein, Tin Vein" r 30
+  skill Mining 125
+
+step Mining 105-125 (Bronze Bar and Moss Agate)
+  only Horde
+  zone Hillsbrad Foothills
+  tip Keep working the same Hillsbrad loop up to Mining 125, which opens Iron Deposits and the Expert rank. Moss Agate turns up in Tin and Silver Veins; keep every one for the Standard Scopes, and make Bronze Bars from your leftover Copper and Tin.
+  goto 17.1,56.3 "Copper Vein, Tin Vein" r 30
+  goto 21.8,40.9 "Copper Vein, Tin Vein" r 30
+  goto 26.2,31.8 "Copper Vein, Tin Vein" r 30
+  goto 37.5,25.9 "Copper Vein, Tin Vein" r 30
+  skill Mining 125
+
+step Engineering 105-135: Auction House
+  tip What the tubes and scopes take that the Auction House sells: 50 Bronze Bar, 10 Moss Agate. The counts drop by what your bags, bank and mail hold.
+  auction 2841 x50
+  auction 1206 x10
+
+step Engineering 105-135: bars and gems
+  tip Bronze Bar is smelted from a Copper Bar and a Tin Bar (Mining 65); Moss Agate turns up in Tin and Silver Veins. Gather them while you level, or take them from your bank.
+  collect 2841 x50 anywhere gather Mining 65
+  collect 1206 x10 anywhere gather Mining 65
+
+step Engineering 105-135: vendor goods
+  tip Weak Flux comes from Engineering supply vendors near the trainer.
+  buy 2880 x25 nearest
+
+step Bronze Tube, Standard Scope (105-135)
+  tip Bronze Tube, 25 crafts to 125: two Bronze Bars and a Weak Flux each. Keep 10 of them for the scopes. If you come up a few points short of 125, do not make more tubes: start the scopes. Then Standard Scope, 10 crafts to 135: a kept tube and a Moss Agate each. If Moss Agate is missing or very expensive, skip the scopes and start the Heavy Blasting Powder instead.
+  learn 3938 "Bronze Tube"
+  craft 3938 "Bronze Tube" until 125
+  learn 3978 "Standard Scope"
+  craft 3978 "Standard Scope" until 135
+
+# ---------------------------------------------------------------- Expert
+
+section Engineering 135-160
+
+step Expert Engineering
+  only Alliance
+  zone Ironforge
+  tip Expert Engineering raises the cap to 225; it needs skill 125 and character level 20, and costs 50 silver. Springspindle Fizzlegear in Ironforge teaches it.
+  level 20
+  train Engineering Expert npc 5174
+
+step Expert Engineering
+  only Horde
+  zone Orgrimmar
+  tip Expert Engineering raises the cap to 225; it needs skill 125 and character level 20, and costs 50 silver. Roxxik in Orgrimmar teaches it.
+  level 20
+  train Engineering Expert npc 11017
+
+step Expert Mining
+  only Alliance
+  zone Ironforge
+  tip Expert Mining raises the cap to 225 and needs skill 125 (it costs 50 silver at the trainer). Geofram Bouldertoe in Ironforge teaches it, so visit him right after the Engineering trainer.
+  train Mining Expert npc 4254
+
+step Expert Mining
+  only Horde
+  zone Orgrimmar
+  tip Expert Mining raises the cap to 225 and needs skill 125 (it costs 50 silver at the trainer). Makaru in Orgrimmar teaches it, so visit him right after the Engineering trainer.
+  train Mining Expert npc 3357
+
+step Iron and Gold in Arathi Highlands
+  zone Arathi Highlands
+  tip Mine up to Mining 155: Iron Deposits need 125 and Gold Veins need 155. This is the Forever Bauxite window: Gold Veins, Mithril Deposits and Indurium veins sometimes give a Bauxite as a bonus drop, so never skip a Gold Vein, and save every Bauxite you see for Sandpaper. Heavy Stone comes from Iron Deposits. Arathi has caves worth entering fully; low-level characters should stay outside or work Thousand Needles instead.
+  goto 19.2,93.3 "Tin Vein, Gold Vein" r 30
+  goto 28.4,88.2 "Tin Vein, Gold Vein" r 30
+  goto 26.8,69.6 "Tin Vein, Gold Vein" r 30
+  goto 15.8,63.2 "Tin Vein, Iron Deposit" r 30
+  goto 17.3,47.7 "Tin Vein, Iron Deposit" r 30
+  skill Mining 155
+
+step Engineering 135-160: Auction House
+  tip What the sheep parts take that the Auction House sells: 30 Heavy Stone, 60 Bronze Bar, 30 Wool Cloth, 15 Medium Leather. The counts drop by what your bags, bank and mail hold.
+  auction 2838 x30
+  auction 2841 x60
+  auction 2592 x30
+  auction 2319 x15
+
+step Engineering 135-160: stone, bars, cloth and leather
+  tip Heavy Stone comes from Iron Deposits while mining; Bronze Bar is smelted from a Copper Bar and a Tin Bar; Wool Cloth drops from humanoids of level 15-30; Medium Leather is skinned from beasts in the 15-30 zones. Gather them while you level, or take them from your bank.
+  collect 2838 x30 anywhere gather Mining 125
+  collect 2841 x60 anywhere gather Mining 65
+  collect 2592 x30 anywhere gather levels 15-30
+  collect 2319 x15 anywhere gather Skinning 100
+
+step Sandpaper: Auction House
+  tip Optional Forever scarce step. Sandpaper is two Bauxite and a Bolt of Linen Cloth. If you did not find Bauxite while mining Gold Veins, buy it here, or skip this step and come back when your bank holds some.
+  auction 249425 x10
+  auction 2996 x5
+
+step Sandpaper: Bauxite
+  tip Bauxite is a scarce bonus drop from Gold Veins, Mithril Deposits and Indurium veins, so it arrives one at a time while you mine. Keep every piece.
+  collect 249425 x10 anywhere gather Mining 155
+
+step Sandpaper (Engineering 130)
+  tip Sandpaper unlocks at Engineering 130 and gives skill points until about 155. Make 5: two Bauxite and a Bolt of Linen Cloth each. Hold them for Blacksmithing alts or the Auction House: 25 Blacksmithing recipes use them, so they sell well. A Bolt of Linen Cloth is two Linen Cloth woven at a tailor, or buy them.
+  learn 1249634 "Sandpaper"
+  craft 1249634 "Sandpaper" x5
+
+step Heavy Blasting Powder, Whirring Bronze Gizmo, Bronze Framework (135-160)
+  tip In this order. Heavy Blasting Powder, 30 crafts: one Heavy Stone each, keep them all for the sheep. Then Whirring Bronze Gizmo, 15 crafts to 150: two Bronze Bars and a Wool Cloth each, keep them all. Then Bronze Framework, 15 crafts to 160: two Bronze Bars, a Medium Leather and a Wool Cloth each, keep them all. The frameworks will probably carry you past 160; if they do not, make a few more, the sheep only need 15.
+  learn 3945 "Heavy Blasting Powder"
+  craft 3945 "Heavy Blasting Powder" x30
+  learn 3942 "Whirring Bronze Gizmo"
+  craft 3942 "Whirring Bronze Gizmo" until 150
+  learn 3953 "Bronze Framework"
+  craft 3953 "Bronze Framework" until 160
+
+section Engineering 160-175
+
+step Mining 155-175 (Gold and Iron)
+  zone Arathi Highlands
+  tip Finish Mining 175 before the Solid Stone band: Mithril Deposits open at 175. Gold Veins and Iron Deposits keep giving points on the way, and Gold Veins can still drop Bauxite. If the prices suit you, Smelt Gold from 155 takes you up toward 175 on roughly 22 Gold Ore.
+  goto 39.6,73.1 "Tin Vein, Gold Vein" r 30
+  goto 48.3,64.4 "Tin Vein, Gold Vein" r 30
+  goto 57.7,73.3 "Tin Vein, Gold Vein" r 30
+  goto 69.1,82.7 "Tin Vein, Gold Vein" r 30
+  goto 48.6,85.2 "Tin Vein, Gold Vein" r 30
+  skill Mining 175
+
+step Engineering 160-175: Auction House
+  tip What the sheep take that the Auction House sells: 30 Wool Cloth. The counts drop by what your bags, bank and mail hold.
+  auction 2592 x30
+
+step Engineering 160-175: cloth
+  tip Wool Cloth drops from humanoids of level 15-30. Gather it while you level, or take it from your bank.
+  collect 2592 x30 anywhere gather levels 15-30
+
+step Explosive Sheep (160-175)
+  tip Explosive Sheep, 15 crafts to 175: two kept Heavy Blasting Powders, a kept Whirring Bronze Gizmo, a kept Bronze Framework and two Wool Cloths each. Keep 5 of the sheep: they may be needed for Goblin Engineering at 200.
+  learn 3955 "Explosive Sheep"
+  craft 3955 "Explosive Sheep" until 175
+
+section Engineering 175-200
+
+step Mithril in the Hinterlands
+  zone The Hinterlands
+  tip Mithril Deposits need Mining 175 and Truesilver Deposits 230. Mine toward Mining 200 here: the 120 Solid Stone, 18 Mithril Bars and the Steel Bars all come off this loop, and Mithril is a good Bauxite source. Skip the red-marked route where level 62 elites patrol. Tanaris is the alternative for level 60s.
+  goto 20.8,58.8 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 25.1,68.8 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 33.3,60.6 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 41.0,66.1 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 35.5,74.8 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 50.1,71.6 "Mithril Deposit, Truesilver Deposit" r 30
+  skill Mining 200
+
+step Engineering 175-200: Auction House
+  tip What the next parts take that the Auction House sells: 120 Solid Stone, 4 Steel Bar, 18 Mithril Bar. The counts drop by what your bags, bank and mail hold.
+  auction 7912 x120
+  auction 3859 x4
+  auction 3860 x18
+
+step Engineering 175-200: stone and bars
+  tip Solid Stone comes from Mithril Deposits while mining; Steel Bar is smelted from an Iron Bar and a Coal (Mining 165); Mithril Bar is smelted from Mithril Ore (Mining 175). Gather them while you level, or take them from your bank.
+  collect 7912 x120 anywhere gather Mining 175
+  collect 3859 x4 anywhere gather Mining 165
+  collect 3860 x18 anywhere gather Mining 175
+
+step Solid Blasting Powder, Gyromatic Micro-Adjustor, Mithril Tube (175-200)
+  tip Solid Blasting Powder, 60 crafts to 194: two Solid Stone each. Keep all of it: the triggers and the bombs need it later. Then one Gyromatic Micro-Adjustor: four Steel Bars, and keep it, some Engineering recipes need it to craft. Then Mithril Tube, 6 crafts to 200: three Mithril Bars each. Keep all six: they may be needed for Gnomish Engineering at 200. If the Adjustor does not land the point to 195, craft a few Iron Grenades or any other recipe that still gives skill points. At 200 and level 30 you can pick a specialization, Gnomish or Goblin: optional, not needed to level.
+  learn 12585 "Solid Blasting Powder"
+  craft 12585 "Solid Blasting Powder" until 194
+  learn 12590 "Gyromatic Micro-Adjustor"
+  craft 12590 "Gyromatic Micro-Adjustor" x1
+  learn 12589 "Mithril Tube"
+  craft 12589 "Mithril Tube" until 200
+
+# ---------------------------------------------------------------- Artisan
+
+section Engineering 200-238
+
+step Artisan Engineering
+  zone Tanaris
+  tip Artisan Engineering raises the cap to 300; it needs skill 200 and character level 35. Buzzek Bracketswing in Gadgetzan, Tanaris, teaches both factions, right outside the inn near the mailbox. He also teaches the recipes above 200, so come as soon as you reach 200.
+  level 35
+  train Engineering Artisan npc 8736
+
+step Artisan Mining
+  only Alliance
+  zone Ironforge
+  tip Artisan Mining raises the cap to 300, needs skill 200 and costs 5 gold. Geofram Bouldertoe in Ironforge teaches it; sort it out before the Mithril farm, because Mining stalls at 225 otherwise.
+  train Mining Artisan npc 4254
+
+step Artisan Mining
+  only Horde
+  zone Orgrimmar
+  tip Artisan Mining raises the cap to 300, needs skill 200 and costs 5 gold. Makaru in Orgrimmar teaches it; sort it out before the Mithril farm, because Mining stalls at 225 otherwise.
+  train Mining Artisan npc 3357
+
+step Mithril and Truesilver in the Hinterlands
+  zone The Hinterlands
+  tip Run the same Hinterlands loop up to Mining 245; Truesilver Deposits open at 230. The 140 Mithril Bars for the casings come off this ground, and Mithril Deposits keep dropping Bauxite for later Sandpaper.
+  goto 52.4,59.7 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 50.0,48.2 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 39.0,49.8 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 33.5,41.2 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 46.9,33.4 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 55.2,84.9 "Mithril Deposit, Truesilver Deposit" r 30
+  skill Mining 245
+
+step Engineering 200-238: Auction House
+  tip What the triggers and casings take that the Auction House sells: 140 Mithril Bar, 20 Mageweave Cloth. The counts drop by what your bags, bank and mail hold.
+  auction 3860 x140
+  auction 4338 x20
+
+step Engineering 200-238: bars and cloth
+  tip Mithril Bar is smelted from Mithril Ore (Mining 175); Mageweave Cloth drops from humanoids of level 35-50. Gather them while you level, or take them from your bank.
+  collect 3860 x140 anywhere gather Mining 175
+  collect 4338 x20 anywhere gather levels 35-50
+
+step Unstable Trigger, Mithril Casing (200-238)
+  tip Unstable Trigger, 20 crafts to 215: a Mithril Bar, a Mageweave Cloth and one of the kept Solid Blasting Powders each. Keep all 20 for the bombs. Then Mithril Casing, 40 crafts to 238: three Mithril Bars each. Keep all 40 for the bombs.
+  learn 12591 "Unstable Trigger"
+  craft 12591 "Unstable Trigger" until 215
+  learn 12599 "Mithril Casing"
+  craft 12599 "Mithril Casing" until 238
+
+section Engineering 238-260
+
+step Small Thorium in Un'Goro Crater
+  zone Un'Goro Crater
+  tip Small Thorium Veins need Mining 245 and are where Dense Stone starts. Mine to Mining 275 here; the two marked caves hold two or three veins each, and lower levels usually skip the south cave. Felwood is the alternative: its marked cave is small and quiet, and the Jaedenar caves, Shadow Hold especially, are best skipped unless you can stealth.
+  goto 78.1,57.3 "Small Thorium Vein, Mithril Deposit" r 30
+  goto 61.0,66.2 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 52.3,64.9 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 50.3,71.1 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 23.4,61.0 "Small Thorium Vein, Truesilver Deposit" r 30
+  goto 32.9,49.2 "Mithril Deposit, Truesilver Deposit" r 30
+  skill Mining 275
+
+step Engineering 238-260: Auction House
+  tip What the next powder takes that the Auction House sells: 88 Dense Stone. The counts drop by what your bags, bank and mail hold.
+  auction 12365 x88
+
+step Engineering 238-260: stone
+  tip Dense Stone comes from Thorium Veins while mining. Pick it up as you level, or take it from your bank.
+  collect 12365 x88 anywhere gather Mining 250
+
+step Hi-Explosive Bomb, Dense Blasting Powder (238-260)
+  tip Hi-Explosive Bomb, 20 crafts to 250: two kept Mithril Casings, a kept Unstable Trigger and two kept Solid Blasting Powders each, four bombs a craft. Then Dense Blasting Powder, 44 crafts to 260: two Dense Stone each. Keep the powder: the Thorium Grenades of the PvP variant need it.
+  learn 12619 "Hi-Explosive Bomb"
+  craft 12619 "Hi-Explosive Bomb" until 250
+  learn 19788 "Dense Blasting Powder"
+  craft 19788 "Dense Blasting Powder" until 260
+
+section Engineering 260-280
+
+step Schematic: Thorium Widget
+  tip The schematic is sold by Sovik in Orgrimmar and Gearcutter Cogspinner in Ironforge, limited stock.
+  buy 16042 x1 nearest
+
+step Rich Thorium in Un'Goro Crater
+  zone Un'Goro Crater
+  tip Rich Thorium Veins open at Mining 275, and you want 186 Thorium Bars across the last two Engineering brackets, so settle into this loop. The veins cluster in the west and south of the crater. Winterspring is the alternative: mostly manageable caves, but the gorge has patrolling elites. Skip Eastern Plaguelands unless you are geared or stealthed.
+  goto 23.4,61.0 "Small Thorium Vein, Rich Thorium Vein" r 30
+  goto 24.7,49.8 "Small Thorium Vein" r 30
+  goto 52.7,47.3 "Rich Thorium Vein" r 30
+  goto 45.5,64.8 "Small Thorium Vein" r 30
+  goto 50.5,75.6 "Small Thorium Vein" r 30
+  goto 59.5,65.4 "Small Thorium Vein" r 30
+  skill Mining 300
+
+step Engineering 260-280: Auction House
+  tip What the widgets take that the Auction House sells: 60 Thorium Bar, 20 Runecloth. The counts drop by what your bags, bank and mail hold.
+  auction 12359 x60
+  auction 14047 x20
+
+step Engineering 260-280: bars and cloth
+  tip Thorium Bar is smelted from Thorium Ore (Mining 250); Runecloth drops from humanoids of level 45-60. Gather them while you level, or take them from your bank.
+  collect 12359 x60 anywhere gather Mining 250
+  collect 14047 x20 anywhere gather levels 45-60
+
+step Thorium Widget (260-280)
+  tip Thorium Widget, 20 crafts to 280: three Thorium Bars and a Runecloth each. Use the schematic first to learn it. PvP variant: make only 10 widgets (30 Thorium Bar, 10 Runecloth), then 10 Thorium Grenades (a widget, 3 Thorium Bars, 3 Dense Blasting Powders and 3 Runecloth each; Schematic: Thorium Grenade from the same two vendors). If the grenades sell well, keep making widgets and grenades to 290 (about 8 of each, needs 10 more Dense Blasting Powder), then only 12 Thorium Tubes are needed.
+  learn 19791 "Thorium Widget"
+  craft 19791 "Thorium Widget" until 280
+
+section Engineering 280-300
+
+step Schematic: Thorium Tube
+  tip The schematic is sold by Xizzer Fizzbolt in Everlook, Winterspring, first building on the right after the gate. It binds when picked up in Forever: buy it with the character leveling Engineering.
+  buy 16047 x1 nearest
+
+step Engineering 280-300: Auction House
+  tip What the tubes take that the Auction House sells: 126 Thorium Bar. The counts drop by what your bags, bank and mail hold.
+  auction 12359 x126
+
+step Engineering 280-300: bars
+  tip Thorium Bar is smelted from Thorium Ore (Mining 250). Smelt your own ore, or take the bars from your bank.
+  collect 12359 x126 anywhere gather Mining 250
+
+step Thorium Tube (280-300)
+  tip Thorium Tube, 21 crafts to 300: six Thorium Bars each. It turns yellow at 295, so make a few more if you come up short of 300. Use the schematic first to learn it. If you hold world-drop Schematic: Thorium Shells, make 5 tubes to 285, then 15 Thorium Shells (30 Thorium Bar, 15 Dense Blasting Powder; one craft makes 200 shells). With Mining at 300 as well, Pitchblende from Thorium veins is saved for Azerothium Bars, and any spare Sandpaper can go to your Blacksmith.
+  learn 19795 "Thorium Tube"
+  craft 19795 "Thorium Tube" until 300

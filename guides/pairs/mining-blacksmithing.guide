@@ -1,0 +1,586 @@
+# Paired Route: Mining + Blacksmithing 1-300 (WoW: Forever)
+# Follows docs/MULTI_PROFESSION_RULES.md:
+# - Dedicated per-combination file: guides/pairs/mining-blacksmithing.guide
+# - Single-anchor sections on Blacksmithing (crafting anchor) in rising order
+#   so Polestar's section auto-skip and remaining-material subtraction work;
+#   Mining trainers, skill checkpoints and smelting tips are interleaved
+#   inside each Blacksmithing bracket.
+# - The Blacksmithing recipes, bands, spell ids and material counts come
+#   straight from guides/blacksmithing.guide; the Mining trainers and
+#   node loops come from guides/mining.guide (NPC ids, coordinates and the
+#   Mining pick id were resolved from the Forever reference data there).
+# - Every `collect ... gather Mining <rank>` has a matching `auction` goal
+#   in the same section, with the same gather ranks the solo Blacksmithing
+#   guide uses, so Mix / Gather / Buy modes all work.
+# - Smelting is described in tips, not as craft steps: smelting also raises
+#   Mining skill, so pick whichever of mining or smelting suits you.
+# - Forever scarce drops (looked up with polestar find): Pyrite (Alchemy
+#   Sulfuric Acid 249410), Bauxite (Engineering Sandpaper 249432) and
+#   Pitchblende 249426 (Mining Azerothium Bar 249726, with Coal).
+#   Sulfuric Acid and Sandpaper are made by other professions, so this
+#   route points at the Auction House for them rather than assuming an alt.
+# - Original prose for this pack; external data sources keep their licenses.
+#
+# Mining-to-Blacksmithing skill map:
+#   Blacksmithing 1-50    Mining 1-65     copper veins, Rough Stone
+#   Blacksmithing 50-100  Mining 65-100   tin and silver, Bronze and Silver Bars
+#   Blacksmithing 100-140 Mining 125      iron, Heavy Stone
+#   Blacksmithing 140-175 Mining 175      iron bars, gold, Arathi
+#   Blacksmithing 175-225 Mining 200-245  mithril and truesilver
+#   Blacksmithing 225-300 Mining 275-300  thorium, Pitchblende
+guide forever-professions/pair-mining-blacksmithing
+title Mining + Blacksmithing 1-300
+category Professions
+folder Paired Routes
+coords era
+levels 1-60
+zone Azeroth
+keywords mining, blacksmithing, paired, ore, pitchblende
+
+pitch Level Mining and Blacksmithing together from 1 to 300: dig the ore, smelt it into bars and stone, and hammer it into plate.
+pro Mine and smelt nearly every stone and bar the Blacksmithing route needs, so there is very little Auction House spending
+pro Gets you Pitchblende and the Azerothium Bar at 300, plus the Pyrite and Bauxite that other crafters want
+con Uses both primary profession slots, and the Thorium bars for the last 100 points take a lot of mining
+
+# ---------------------------------------------------------------- Apprentice
+
+section Blacksmithing 1-50
+
+step Learn Blacksmithing
+  only Alliance
+  zone Ironforge
+  tip Blacksmithing and Mining take both of your primary profession slots. Groum Stonebeard in Ironforge teaches Apprentice Blacksmithing at any character level. Buy a Blacksmith Hammer now: most recipes need one in your bags.
+  train Blacksmithing Apprentice npc 10277
+
+step Learn Blacksmithing
+  only Horde
+  zone Orgrimmar
+  tip Blacksmithing and Mining take both of your primary profession slots. Ug'thok in Orgrimmar teaches Apprentice Blacksmithing at any character level. Buy a Blacksmith Hammer now: most recipes need one in your bags.
+  train Blacksmithing Apprentice npc 10266
+
+step Learn Mining and Buy a Pick
+  only Alliance
+  zone Ironforge
+  tip Geofram Bouldertoe in Ironforge teaches Apprentice Mining at any character level, and the capital trainer teaches every later rank too. Buy a Mining Pick: it stays in your bags and does not need to be equipped, but you cannot mine without one. Switch on Find Minerals from the Mining box of the Professions window (it is off by default and resets when you die; you can track minerals or herbs, not both). Mining also yields the Scarce drops Pyrite, Bauxite and Pitchblende.
+  train Mining Apprentice npc 4254
+  buy 2901 x1 nearest
+
+step Learn Mining and Buy a Pick
+  only Horde
+  zone Orgrimmar
+  tip Makaru in Orgrimmar teaches Apprentice Mining at any character level, and the capital trainer teaches every later rank too. Buy a Mining Pick: it stays in your bags and does not need to be equipped, but you cannot mine without one. Switch on Find Minerals from the Mining box of the Professions window (it is off by default and resets when you die; you can track minerals or herbs, not both). Mining also yields the Scarce drops Pyrite, Bauxite and Pitchblende.
+  train Mining Apprentice npc 3357
+  buy 2901 x1 nearest
+
+step Blacksmithing 1-50: tools
+  tip A Blacksmith Hammer from any Blacksmithing supply vendor, usually next to the trainer. Keep it in your bags: most recipes need it.
+  buy 5956 x1 nearest
+
+step Copper in Elwynn Forest
+  only Alliance
+  zone Elwynn Forest
+  tip Mine every Copper Vein and Poor Copper Vein you pass until Mining 65; Poor Copper Veins give Copper Ore and Rough Stone from skill 1. The Rough Stone is what Blacksmithing 1-50 eats, so keep all of it. Hold on to the Copper Ore too: smelted into Copper Bars it becomes your Bronze Bars at 75 and 125. Stop at a forge in Goldshire to smelt.
+  goto 47.3,32.3 "Poor Copper Vein" r 30
+  goto 52.1,32.4 "Poor Copper Vein" r 30
+  goto 49.2,26.9 "Poor Copper Vein" r 30
+  goto 56.2,37.9 "Poor Copper Vein" r 30
+  goto 57.3,50.4 "Poor Copper Vein" r 30
+  goto 52.7,52.7 "Poor Copper Vein" r 30
+  goto 48.9,48.8 "Poor Copper Vein" r 30
+  goto 44.4,42.2 "Poor Copper Vein" r 30
+  goto 30.2,54.0 "Copper Vein" r 30
+  goto 28.1,66.2 "Copper Vein" r 30
+  goto 20.8,77.7 "Copper Vein" r 30
+  goto 29.2,88.1 "Copper Vein" r 30
+  skill Mining 65
+
+step Copper in Durotar
+  only Horde
+  zone Durotar
+  tip Mine every Copper Vein and Poor Copper Vein you pass until Mining 65; Poor Copper Veins give Copper Ore and Rough Stone from skill 1. The Rough Stone is what Blacksmithing 1-50 eats, so keep all of it. Hold on to the Copper Ore too: smelted into Copper Bars it becomes your Bronze Bars at 75 and 125. Stop at Razor Hill to smelt.
+  goto 42.1,68.1 "Poor Copper Vein" r 30
+  goto 41.6,71.6 "Poor Copper Vein" r 30
+  goto 45.4,72.8 "Poor Copper Vein" r 30
+  goto 46.5,67.6 "Poor Copper Vein" r 30
+  goto 46.7,62.4 "Poor Copper Vein" r 30
+  goto 46.4,58.3 "Poor Copper Vein" r 30
+  goto 42.5,58.1 "Poor Copper Vein" r 30
+  goto 41.8,61.1 "Poor Copper Vein" r 30
+  goto 43.3,53.4 "Poor Copper Vein" r 30
+  goto 36.0,45.4 "Copper Vein" r 30
+  goto 35.6,35.5 "Copper Vein" r 30
+  goto 36.1,28.9 "Copper Vein" r 30
+  skill Mining 65
+
+step Blacksmithing 1-50: Auction House
+  tip What the first stones take that the Auction House sells: 90 Rough Stone. The counts drop by what your bags, bank and mail hold.
+  auction 2835 x90
+
+step Blacksmithing 1-50: stone
+  tip Rough Stone comes from Copper Veins while mining. You should already hold plenty from the copper loop above, or take it from your bank.
+  collect 2835 x90 anywhere gather Mining 1
+
+step Rough Sharpening Stone, Rough Grinding Stone (1-50)
+  tip Rough Sharpening Stone, 30 crafts to 25, then Rough Grinding Stone, 30 crafts to 50: two Rough Stone in each of the second. Keep 10 of the grinding stones: the Silver Rods at 75 need them. Both are taught with Apprentice Blacksmithing.
+  learn 2660 "Rough Sharpening Stone"
+  craft 2660 "Rough Sharpening Stone" until 25
+  learn 3320 "Rough Grinding Stone"
+  craft 3320 "Rough Grinding Stone" until 50
+
+# ---------------------------------------------------------------- Journeyman
+
+section Blacksmithing 50-75
+
+step Journeyman Blacksmithing
+  only Alliance
+  zone Ironforge
+  tip Journeyman Blacksmithing raises the cap to 150; it needs skill 50 and character level 10. Rotgath Stonebeard in Ironforge teaches it. Train now: the next recipe is taught from 50.
+  level 10
+  train Blacksmithing Journeyman npc 10276
+
+step Journeyman Blacksmithing
+  only Horde
+  zone Orgrimmar
+  tip Journeyman Blacksmithing raises the cap to 150; it needs skill 50 and character level 10. Snarl in Orgrimmar teaches it. Train now: the next recipe is taught from 50.
+  level 10
+  train Blacksmithing Journeyman npc 1383
+
+step Journeyman Mining
+  only Alliance
+  zone Ironforge
+  tip Journeyman Mining raises the Mining cap to 150 and needs skill 50. Geofram Bouldertoe is in the same city, so do both trainers on one trip. Tin Veins need Mining 65 and Silver Veins 75.
+  train Mining Journeyman npc 4254
+
+step Journeyman Mining
+  only Horde
+  zone Orgrimmar
+  tip Journeyman Mining raises the Mining cap to 150 and needs skill 50. Makaru is in the same city, so do both trainers on one trip. Tin Veins need Mining 65 and Silver Veins 75.
+  train Mining Journeyman npc 3357
+
+step Tin and Incendicite in the Wetlands
+  only Alliance
+  zone Wetlands
+  tip The Wetlands cave is full of Tin Veins and Incendicite Mineral Veins and regrows quickly; the mobs inside are around level 20, so outlevel them a little. Keep every Tin Vein's Coarse Stone for this band and every Silver Vein's ore for the Silver Rods. Smelt your Copper and Tin into Bronze, and Silver Ore into Silver Bars, before you leave: Smelt Bronze stops giving skill points around 105.
+  goto 47.5,62.1 "Incendicite Mineral Vein, Tin Vein" r 30
+  goto 48.9,59.3 "Incendicite Mineral Vein" r 30
+  goto 51.3,58.6 "Incendicite Mineral Vein, Copper Vein" r 30
+  goto 51.2,61.6 "Incendicite Mineral Vein, Tin Vein" r 30
+  goto 47.3,66.4 "Incendicite Mineral Vein, Copper Vein" r 30
+  goto 24.0,60.0 "Copper Vein, Tin Vein" r 30
+  goto 25.8,50.2 "Copper Vein, Tin Vein" r 30
+  goto 27.8,38.0 "Copper Vein, Tin Vein" r 30
+  skill Mining 100
+
+step Tin in Hillsbrad Foothills
+  only Horde
+  zone Hillsbrad Foothills
+  tip Hillsbrad Foothills is the best open route for this band and it is popular, so expect company near Tarren Mill. Keep every Tin Vein's Coarse Stone for this band and every Silver Vein's ore for the Silver Rods. Smelt your Copper and Tin into Bronze, and Silver Ore into Silver Bars, before you leave: Smelt Bronze stops giving skill points around 105. The Barrens and Ashenvale are quieter alternatives.
+  goto 31.5,57.5 "Tin Vein, Silver Vein" r 30
+  goto 27.6,57.5 "Tin Vein, Silver Vein" r 30
+  goto 31.4,52.7 "Tin Vein, Silver Vein" r 30
+  goto 40.7,53.4 "Copper Vein, Tin Vein" r 30
+  goto 38.5,63.8 "Copper Vein, Tin Vein" r 30
+  goto 17.1,56.3 "Copper Vein, Tin Vein" r 30
+  goto 21.8,40.9 "Copper Vein, Tin Vein" r 30
+  skill Mining 100
+
+step Blacksmithing 50-75: Auction House
+  tip What the next stones take that the Auction House sells: 72 Coarse Stone. The counts drop by what your bags, bank and mail hold.
+  auction 2836 x72
+
+step Blacksmithing 50-75: stone
+  tip Coarse Stone comes from Tin Veins while mining. You should already hold plenty from the tin loop above, or take it from your bank.
+  collect 2836 x72 anywhere gather Mining 65
+
+step Coarse Grinding Stone (50-75)
+  tip Coarse Grinding Stone, 36 crafts to 75: two Coarse Stone in each. Make all 36 and keep them: 10 go into the bracers at 95 and 26 into the bracers at 112.
+  learn 3326 "Coarse Grinding Stone"
+  craft 3326 "Coarse Grinding Stone" until 75
+
+section Blacksmithing 75-100
+
+step Blacksmithing 75-100: Auction House
+  tip What the next pieces take that the Auction House sells: 5 Silver Bar, 115 Bronze Bar. The counts drop by what your bags, bank and mail hold.
+  auction 2842 x5
+  auction 2841 x115
+
+step Blacksmithing 75-100: bars
+  tip Smelt Silver at a forge for the Silver Bars (Silver Ore, Mining 75). Smelt Bronze from one Copper Bar and one Tin Bar (Mining 65): smelt the Copper Ore first, then the Tin. Smelting raises Mining as well, so it is free skill if you are still under 125. Smelt your own ore, or take the bars from your bank.
+  collect 2842 x5 anywhere gather Mining 75
+  collect 2841 x115 anywhere gather Mining 65
+
+step Silver Rod, Rough Bronze Leggings, Patterned Bronze Bracers (75-100)
+  tip Silver Rod, 5 crafts to 80: a Silver Bar and two of the kept Rough Grinding Stones each. Then Rough Bronze Leggings, 15 crafts to 95. Then Patterned Bronze Bracers, 5 crafts to 100: five Bronze Bars and two of the kept Coarse Grinding Stones each. If one Silver Bar costs more than 10 Copper Bars, make Runed Copper Belts instead of the rods (10 Copper Bars each).
+  learn 7818 "Silver Rod"
+  craft 7818 "Silver Rod" x5
+  learn 2668 "Rough Bronze Leggings"
+  craft 2668 "Rough Bronze Leggings" until 95
+  learn 2672 "Patterned Bronze Bracers"
+  craft 2672 "Patterned Bronze Bracers" until 100
+
+section Blacksmithing 100-125
+
+step Tin and Iron toward Mining 125 (Alliance)
+  only Alliance
+  zone Wetlands
+  tip Finish Mining 125 on the same Wetlands loop; Iron Deposits open at 125, and Heavy Stone is dropped only by Iron Deposits. Keep the ore for Bronze Bars, since this band and the shortsword band both want Bronze.
+  goto 20.7,35.2 "Copper Vein, Tin Vein" r 30
+  goto 34.1,15.2 "Copper Vein, Tin Vein" r 30
+  goto 43.6,22.6 "Copper Vein, Tin Vein" r 30
+  goto 44.5,41.7 "Copper Vein, Tin Vein" r 30
+  skill Mining 125
+
+step Tin and Iron toward Mining 125 (Horde)
+  only Horde
+  zone Hillsbrad Foothills
+  tip Finish Mining 125 on the same Hillsbrad loop; Iron Deposits open at 125, and Heavy Stone is dropped only by Iron Deposits. Keep the ore for Bronze Bars, since this band and the shortsword band both want Bronze.
+  goto 26.2,31.8 "Copper Vein, Tin Vein" r 30
+  goto 37.5,25.9 "Copper Vein, Tin Vein" r 30
+  goto 39.0,36.7 "Copper Vein, Tin Vein" r 30
+  goto 54.9,23.7 "Copper Vein, Tin Vein" r 30
+  goto 13.5,79.2 "Copper Vein, Tin Vein" r 30
+  skill Mining 125
+
+step Blacksmithing 100-125: Auction House
+  tip What the next pieces take that the Auction House sells: 60 Heavy Stone, 65 Bronze Bar. The counts drop by what your bags, bank and mail hold.
+  auction 2838 x60
+  auction 2841 x65
+
+step Blacksmithing 100-125: stone and bars
+  tip Heavy Stone comes from Iron Deposits while mining; Bronze Bar is smelted from a Copper Bar and a Tin Bar. Iron Deposits are rare in the Wetlands and Hillsbrad, so top up at Arathi Highlands in the next band if you come up short, or take them from your bank.
+  collect 2838 x60 anywhere gather Mining 125
+  collect 2841 x65 anywhere gather Mining 65
+
+step Heavy Grinding Stone, Patterned Bronze Bracers (100-125)
+  tip Heavy Grinding Stone, 20 crafts to 112: three Heavy Stone in each. Keep all 20: the Golden Scale Bracers at 180 need them. Then Patterned Bronze Bracers, 13 more crafts to 125, using the last 26 kept Coarse Grinding Stones.
+  learn 3337 "Heavy Grinding Stone"
+  craft 3337 "Heavy Grinding Stone" until 112
+  craft 2672 "Patterned Bronze Bracers" until 125
+
+section Blacksmithing 125-140
+
+step Blacksmithing 125-140: Auction House
+  tip What the shortswords take that the Auction House sells: 120 Bronze Bar, 48 Medium Leather. The counts drop by what your bags, bank and mail hold.
+  auction 2841 x120
+  auction 2319 x48
+
+step Blacksmithing 125-140: bars and leather
+  tip Bronze Bar is smelted from a Copper Bar and a Tin Bar; Medium Leather is skinned from beasts in the 15-30 zones. Gather them while you level, or take them from your bank. If you still hold loose Copper and Tin Ore, smelt it now, since Bronze needs both in equal numbers.
+  collect 2841 x120 anywhere gather Mining 65
+  collect 2319 x48 anywhere gather Skinning 100
+
+step Blacksmithing 125-140: vendor goods
+  tip Weak Flux comes from the Blacksmithing supply vendor next to the trainer in every capital city.
+  buy 2880 x96 nearest
+
+step Bronze Shortsword (125-140)
+  tip Bronze Shortsword, 24 crafts to 140: five Bronze Bars, four Weak Flux and two Medium Leather each. They sell to vendors for more than twice the bracers, so the route is cheaper overall. Disenchanters can make Patterned Bronze Bracers instead (120 Bronze Bar, 48 Coarse Grinding Stone).
+  learn 2742 "Bronze Shortsword"
+  craft 2742 "Bronze Shortsword" until 140
+
+# ---------------------------------------------------------------- Expert
+
+section Blacksmithing 140-175
+
+step Expert Blacksmithing
+  only Alliance
+  zone Ironforge
+  tip Expert Blacksmithing raises the cap to 225; it needs skill 125 and character level 20, and costs 50 silver. Bengus Deepforge in Ironforge teaches it. Train before crafting the bracers: no skill above 150 without it.
+  level 20
+  train Blacksmithing Expert npc 4258
+
+step Expert Blacksmithing
+  only Horde
+  zone Orgrimmar
+  tip Expert Blacksmithing raises the cap to 225; it needs skill 125 and character level 20, and costs 50 silver. Saru Steelfury in Orgrimmar teaches it. Train before crafting the bracers: no skill above 150 without it.
+  level 20
+  train Blacksmithing Expert npc 3355
+
+step Expert Mining
+  only Alliance
+  zone Ironforge
+  tip Expert Mining raises the Mining cap to 225 and needs skill 125. Geofram Bouldertoe teaches it in the same city as your Blacksmithing trainer. Without it, Mining stalls at 150 and you cannot mine Gold or Mithril.
+  train Mining Expert npc 4254
+
+step Expert Mining
+  only Horde
+  zone Orgrimmar
+  tip Expert Mining raises the Mining cap to 225 and needs skill 125. Makaru teaches it in the same city as your Blacksmithing trainer. Without it, Mining stalls at 150 and you cannot mine Gold or Mithril.
+  train Mining Expert npc 3357
+
+step Iron and Gold in Arathi Highlands
+  zone Arathi Highlands
+  tip Iron Deposits need 125 and Gold Veins 155; this band burns 240 Iron Bar, so mine a lot of Iron Ore. Arathi Highlands has four caves worth going all the way into: you will not see every vein from the entrance. Low-level characters should skip the caves and work the open ground south of Hammerfall, or try Thousand Needles. Smelt Iron to Iron Bars as you go; at 155 Smelt Gold is useful skill if prices are kind. Keep any Pyrite and Bauxite you get: Sulfuric Acid and Sandpaper both feed later Blacksmithing recipes.
+  goto 19.2,93.3 "Tin Vein, Gold Vein" r 30
+  goto 28.4,88.2 "Tin Vein, Gold Vein" r 30
+  goto 26.8,69.6 "Tin Vein, Gold Vein" r 30
+  goto 15.8,63.2 "Tin Vein, Iron Deposit" r 30
+  goto 17.3,47.7 "Tin Vein, Iron Deposit" r 30
+  goto 39.6,73.1 "Tin Vein, Gold Vein" r 30
+  goto 48.3,64.4 "Tin Vein, Gold Vein" r 30
+  goto 57.7,73.3 "Tin Vein, Gold Vein" r 30
+  goto 69.1,82.7 "Tin Vein, Gold Vein" r 30
+  goto 48.6,85.2 "Tin Vein, Gold Vein" r 30
+  goto 78.8,43.6 "Tin Vein, Gold Vein" r 30
+  goto 29.1,15.2 "Tin Vein, Gold Vein" r 30
+  skill Mining 175
+
+step Blacksmithing 140-175: Auction House
+  tip What the bracers take that the Auction House sells: 240 Iron Bar. The counts drop by what your bags, bank and mail hold.
+  auction 3575 x240
+
+step Blacksmithing 140-175: bars
+  tip Iron Bar is smelted from Iron Ore (Mining 125) at any forge: Smelt Iron is a quick skill gain on the way past 125. Smelt your own ore, or take the bars from your bank.
+  collect 3575 x240 anywhere gather Mining 125
+
+step Blacksmithing 140-175: vendor goods
+  tip Green Dye comes from Tamar in Orgrimmar and Bombus Finespindle in Ironforge, and from other dye vendors.
+  buy 2605 x40 nearest
+
+step Green Iron Bracers (140-175)
+  tip Green Iron Bracers, 40 crafts to 175: six Iron Bars and a Green Dye each.
+  learn 3501 "Green Iron Bracers"
+  craft 3501 "Green Iron Bracers" until 175
+
+section Blacksmithing 175-195
+
+step Mithril in the Hinterlands
+  zone The Hinterlands
+  tip Mithril Deposits need Mining 175, which you now have. The Hinterlands loop is the pick for this band: mine Mithril for the Solid Stone, Mithril Bars and Citrine the next three brackets burn. Skip the stretch with level 62 elites, and lower levels may want to skip the cave. Keep every Pyrite, Bauxite and Pitchblende that drops: it is Scarce and worth far more than the stone it comes with. Tanaris is the alternative zone, but its caves are for level 60s.
+  goto 20.8,58.8 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 25.1,68.8 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 33.3,60.6 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 41.0,66.1 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 35.5,74.8 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 50.1,71.6 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 52.4,59.7 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 50.0,48.2 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 39.0,49.8 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 33.5,41.2 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 46.9,33.4 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 55.2,84.9 "Mithril Deposit, Truesilver Deposit" r 30
+  skill Mining 200
+
+step Blacksmithing 175-195: Auction House
+  tip What the next pieces take that the Auction House sells: 32 Solid Stone, 100 Steel Bar, 60 Heavy Stone. The counts drop by what your bags, bank and mail hold.
+  auction 7912 x32
+  auction 3859 x100
+  auction 2838 x60
+
+step Blacksmithing 175-195: stone and bars
+  tip Solid Stone comes from Mithril Deposits while mining; Steel Bar is smelted from an Iron Bar and a Coal (Mining 165, Coal from the Blacksmithing supply vendor); Heavy Stone comes from Iron Deposits. Smelt Steel from your Iron Bars as soon as you reach a forge. Gather them while you level, or take them from your bank.
+  collect 7912 x32 anywhere gather Mining 175
+  collect 3859 x100 anywhere gather Mining 165
+  collect 2838 x60 anywhere gather Mining 125
+
+step Solid Grinding Stone, Golden Scale Bracers (175-195)
+  tip Solid Grinding Stone, 8 crafts to 180: four Solid Stone in each. Keep 6 of them for the Heavy Mithril Axes at 210. Then make 20 more Heavy Grinding Stones from the Heavy Stone, and Golden Scale Bracers, 20 crafts to 195: five Steel Bars and two Heavy Grinding Stones each, using the 20 kept stones and the 20 new ones. Alliance: keep 6 bracers, they may be needed for Armorsmithing later.
+  learn 9920 "Solid Grinding Stone"
+  craft 9920 "Solid Grinding Stone" until 180
+  craft 3337 "Heavy Grinding Stone" x20
+  learn 7223 "Golden Scale Bracers"
+  craft 7223 "Golden Scale Bracers" until 195
+
+section Blacksmithing 195-215
+
+step Artisan Mining
+  only Alliance
+  zone Ironforge
+  tip Artisan Mining raises the Mining cap to 300 and needs skill 200. Geofram Bouldertoe in Ironforge teaches it. Train it now: the Hinterlands loop stalls at 225 without it.
+  train Mining Artisan npc 4254
+
+step Artisan Mining
+  only Horde
+  zone Orgrimmar
+  tip Artisan Mining raises the Mining cap to 300 and needs skill 200. Makaru in Orgrimmar teaches it. Train it now: the Hinterlands loop stalls at 225 without it.
+  train Mining Artisan npc 3357
+
+step Mithril and Truesilver in the Hinterlands
+  zone The Hinterlands
+  tip Run the same Hinterlands loop again up to Mining 245; Truesilver Deposits open at 230 and carry the Aquamarine and Star Ruby the Imperial Plate brackets will want. This band alone eats 276 Mithril Bars, so mine plenty of Mithril Ore and smelt it at a forge as you go.
+  goto 20.8,58.8 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 25.1,68.8 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 33.3,60.6 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 41.0,66.1 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 35.5,74.8 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 50.1,71.6 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 52.4,59.7 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 50.0,48.2 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 39.0,49.8 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 33.5,41.2 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 46.9,33.4 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 55.2,84.9 "Mithril Deposit, Truesilver Deposit" r 30
+  skill Mining 245
+
+step Blacksmithing 195-215: Auction House
+  tip What the next pieces take that the Auction House sells: 276 Mithril Bar, 12 Citrine, 24 Heavy Leather. The counts drop by what your bags, bank and mail hold.
+  auction 3860 x276
+  auction 3864 x12
+  auction 4234 x24
+
+step Blacksmithing 195-215: bars, gems and leather
+  tip Mithril Bar is smelted from Mithril Ore (Mining 175); Citrine turns up in Mithril Deposits; Heavy Leather is skinned from beasts in the 25-40 zones. Gather them while you level, or take them from your bank.
+  collect 3860 x276 anywhere gather Mining 175
+  collect 3864 x12 anywhere gather Mining 175
+  collect 4234 x24 anywhere gather Skinning 150
+
+step Mithril Plate Pants, Heavy Mithril Axe (195-215)
+  tip Mithril Plate Pants, 17 crafts to 210: twelve Mithril Bars each. They sell to vendors for more than three times the Heavy Mithril Gauntlets. Then Heavy Mithril Axe, 6 crafts to 215: twelve Mithril Bars, two Citrine, one of the kept Solid Grinding Stones and four Heavy Leather each. Keep 2 axes, they may be needed for Weaponsmithing later. At 200 and level 40 you can pick a specialization, Armorsmithing or Weaponsmithing: optional, not needed to level, and it can wait.
+  learn 9931 "Mithril Plate Pants"
+  craft 9931 "Mithril Plate Pants" until 210
+  learn 9993 "Heavy Mithril Axe"
+  craft 9993 "Heavy Mithril Axe" until 215
+
+# ---------------------------------------------------------------- Artisan
+
+section Blacksmithing 215-225
+
+step Artisan Blacksmithing
+  zone Stranglethorn Vale
+  tip Artisan Blacksmithing raises the cap to 300; it needs skill 200 and character level 35. Brikk Keencraft in Booty Bay teaches both factions, and he alone teaches the Mithril Coif, so this trip does both jobs.
+  level 35
+  train Blacksmithing Artisan npc 2836
+
+step Blacksmithing 215-225: Auction House
+  tip What the coifs take that the Auction House sells: 100 Mithril Bar, 60 Mageweave Cloth. The counts drop by what your bags, bank and mail hold.
+  auction 3860 x100
+  auction 4338 x60
+
+step Blacksmithing 215-225: bars and cloth
+  tip Mithril Bar is smelted from Mithril Ore (Mining 175); Mageweave Cloth drops from humanoids of level 35-50. Top up Mithril Ore on the Hinterlands loop if you used most of it on the pants and axes. Gather them while you level, or take them from your bank.
+  collect 3860 x100 anywhere gather Mining 175
+  collect 4338 x60 anywhere gather levels 35-50
+
+step Mithril Coif (215-225)
+  tip Mithril Coif, 10 crafts to 225: ten Mithril Bars and six Mageweave Cloth each. Only Brikk Keencraft teaches it. Keep 2 coifs, they may be needed for Armorsmithing later. With world-drop Plans: Mithril Spurs you could make spurs here instead (40 Mithril Bar, 30 Solid Grinding Stone to 225, then 28 more spurs to 245) and skip the Belt quest; the Imperial Plate steps after are the same.
+  learn 9961 "Mithril Coif"
+  craft 9961 "Mithril Coif" until 225
+
+section Blacksmithing 225-240
+
+step Small Thorium in Un'Goro Crater
+  zone Un'Goro Crater
+  tip Small Thorium Veins need Mining 245, and Dense Stone and Thorium Ore come from Thorium Veins. Un'Goro Crater is the pick for this band; the two marked caves hold two or three veins each, though lower levels will probably skip the south cave. Felwood is the alternative: its marked cave is small, with few mobs. Keep any Pitchblende, Pyrite and Bauxite that drops, and smelt Thorium Ore into Thorium Bars at a forge (Smelt Thorium needs Mining 250).
+  goto 78.1,57.3 "Small Thorium Vein, Mithril Deposit" r 30
+  goto 61.0,66.2 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 52.3,64.9 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 50.3,71.1 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 44.3,88.5 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 23.4,61.0 "Small Thorium Vein, Truesilver Deposit" r 30
+  goto 32.9,49.2 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 40.9,35.3 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 34.7,20.9 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 43.5,15.7 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 57.3,15.4 "Mithril Deposit, Truesilver Deposit" r 30
+  goto 60.0,34.9 "Mithril Deposit, Truesilver Deposit" r 30
+  skill Mining 275
+
+step Blacksmithing 225-240: Auction House
+  tip What the next pieces take that the Auction House sells: 16 Dense Stone, 154 Mithril Bar, 44 Thick Leather. The counts drop by what your bags, bank and mail hold.
+  auction 12365 x16
+  auction 3860 x154
+  auction 4304 x44
+
+step Blacksmithing 225-240: stone, bars and leather
+  tip Dense Stone comes from Thorium Veins while mining; Mithril Bar is smelted from Mithril Ore; Thick Leather is skinned from beasts of level 38-50. Gather them while you level, or take them from your bank.
+  collect 12365 x16 anywhere gather Mining 250
+  collect 3860 x154 anywhere gather Mining 175
+  collect 4304 x44 anywhere gather Skinning 190
+
+step Dense Sharpening Stone, Heavy Mithril Boots (225-240)
+  tip Dense Sharpening Stone, 16 crafts to 235: one Dense Stone each. Then Heavy Mithril Boots, 11 crafts to 240: fourteen Mithril Bars and four Thick Leather each. Keep 2 boots, they may be needed for Armorsmithing later.
+  learn 16641 "Dense Sharpening Stone"
+  craft 16641 "Dense Sharpening Stone" until 235
+  learn 9968 "Heavy Mithril Boots"
+  craft 9968 "Heavy Mithril Boots" until 240
+
+section Blacksmithing 240-270
+
+step Rich Thorium in Un'Goro Crater
+  zone Un'Goro Crater
+  tip Rich Thorium Veins open at Mining 275, and the last three Blacksmithing brackets burn nearly 1,900 Thorium Bars, so this loop is where you will spend most of your time. The veins cluster in the west and south of the crater. Winterspring is the alternative: its caves are mostly manageable, but the gorge has patrolling elites. Eastern Plaguelands has a run of level 57 to 58 elites; skip it unless geared or stealthed. Pitchblende drops from these veins in Forever: keep every one for the Azerothium Bar at the end of the route.
+  goto 23.4,61.0 "Small Thorium Vein, Rich Thorium Vein" r 30
+  goto 24.7,49.8 "Small Thorium Vein" r 30
+  goto 32.9,49.2 "Mithril Deposit" r 30
+  goto 37.8,35.3 "Small Thorium Vein" r 30
+  goto 40.9,35.3 "Mithril Deposit" r 30
+  goto 52.7,47.3 "Rich Thorium Vein" r 30
+  goto 45.5,64.8 "Small Thorium Vein" r 30
+  goto 37.9,64.5 "Mithril Deposit" r 30
+  goto 50.3,71.1 "Mithril Deposit" r 30
+  goto 50.5,75.6 "Small Thorium Vein" r 30
+  goto 59.5,65.4 "Small Thorium Vein" r 30
+  goto 37.8,81.1 "Mithril Deposit" r 30
+  skill Mining 300
+
+step Blacksmithing 240-270: Auction House
+  tip What the Imperial Plate pieces and their quests take that the Auction House sells: 790 Thorium Bar, 30 Rugged Leather, 5 Aquamarine, 27 Star Ruby. The Thorium covers the 140 bars the four quests ask for plus the 650 the belt and bracers take. The counts drop by what your bags, bank and mail hold.
+  auction 12359 x790
+  auction 8170 x30
+  auction 7909 x5
+  auction 7910 x27
+
+step Blacksmithing 240-270: bars, leather and gems
+  tip Thorium Bar is smelted from Thorium Ore (Mining 250); Rugged Leather is skinned from beasts of level 48-60; Aquamarine and Star Ruby turn up in Truesilver Deposits. Gather them while you level, or take them from your bank. Smelting Thorium at a forge also pushes Mining toward 300.
+  collect 12359 x790 anywhere gather Mining 250
+  collect 8170 x30 anywhere gather Skinning 240
+  collect 7909 x5 anywhere gather Mining 230
+  collect 7910 x27 anywhere gather Mining 230
+
+step The Imperial Plate quests
+  zone Tanaris
+  tip Derotain Mudsipper in Tanaris trades the four Imperial Plate plans for Thorium Bars: A Blue Light Bargain first (it asks for nothing), then the Belt (20 bars), Bracer (20), Boots (40) and Leggings (60). Take all five in one trip. The quests need character level 50. One caution: the reference data lists them as needing Blacksmithing 265, while this route takes them at 240; if Derotain will not offer them yet, bridge with Thorium Bracers (world-drop plans, 12 Thorium Bar and 4 Blue Power Crystal each) to 265 and come back.
+  level 50
+  accept 7652
+  turnin 7652
+  accept 7653
+  turnin 7653
+  accept 7655
+  turnin 7655
+  accept 7654
+  turnin 7654
+  accept 7658
+  turnin 7658
+
+step Imperial Plate Belt, Imperial Plate Bracers (240-270)
+  tip Imperial Plate Belt, 5 crafts to 245: twenty-two Thorium Bars, six Rugged Leather and an Aquamarine each. Then Imperial Plate Bracers, 27 crafts to 270: twenty Thorium Bars and a Star Ruby each. Use the plans first to learn each recipe. World-drop alternatives for 240-255, if the quests are out of reach: Dazzling Mithril Rapier (27 crafts: 378 Mithril Bar, 27 Aquamarine, 54 Lesser Moonstone, 54 Moss Agate, 27 Solid Grinding Stone, 54 Mageweave Cloth), Runed Mithril Hammer (20 crafts: 360 Mithril Bar, 40 Core of Earth, 20 Solid Grinding Stone, 80 Thick Leather), or Thorium Bracers (20 crafts: 204 Thorium Bar, 68 Blue Power Crystal).
+  learn 16647 "Imperial Plate Belt"
+  craft 16647 "Imperial Plate Belt" until 245
+  learn 16649 "Imperial Plate Bracers"
+  craft 16649 "Imperial Plate Bracers" until 270
+
+section Blacksmithing 270-290
+
+step Blacksmithing 270-290: Auction House
+  tip What the boots take that the Auction House sells: 680 Thorium Bar, 20 Star Ruby, 20 Aquamarine. The counts drop by what your bags, bank and mail hold.
+  auction 12359 x680
+  auction 7910 x20
+  auction 7909 x20
+
+step Blacksmithing 270-290: bars and gems
+  tip Thorium Bar is smelted from Thorium Ore (Mining 250); Star Ruby and Aquamarine turn up in Truesilver Deposits. Gather them while you level, or take them from your bank. Run the Un'Goro loop again if you are short of ore. Forever caveat: some later plate recipes also consume Sulfuric Acid (made by Alchemy from Pyrite) and Sandpaper (made by Engineering from Bauxite). Unless you have an Alchemist or Engineer alt, buy both from the Auction House rather than hoping to craft them.
+  collect 12359 x680 anywhere gather Mining 250
+  collect 7910 x20 anywhere gather Mining 230
+  collect 7909 x20 anywhere gather Mining 230
+
+step Imperial Plate Boots (270-290)
+  tip Imperial Plate Boots, 20 crafts to 290: thirty-four Thorium Bars, a Star Ruby and an Aquamarine each. Use the plans first to learn the recipe. World-drop alternatives: Radiant Boots (22 crafts: 308 Thorium Bar, 88 Heart of Fire), or Thorium Leggings from 275 (15 crafts: 390 Thorium Bar, 60 Red Power Crystal); if you hold both plans, make Radiant Boots.
+  learn 16657 "Imperial Plate Boots"
+  craft 16657 "Imperial Plate Boots" until 290
+
+section Blacksmithing 290-300
+
+step Blacksmithing 290-300: Auction House
+  tip What the leggings take that the Auction House sells: 440 Thorium Bar, 20 Star Ruby. The counts drop by what your bags, bank and mail hold.
+  auction 12359 x440
+  auction 7910 x20
+
+step Blacksmithing 290-300: bars and gems
+  tip Thorium Bar is smelted from Thorium Ore (Mining 250); Star Ruby turns up in Truesilver Deposits. Gather them while you level, or take them from your bank. Endgame note: Pitchblende is Scarce, so hoard every one you found on the Rich Thorium loop. At a forge, Mining smelts it with Coal into an Azerothium Bar, the Forever-only bar that thirteen high-end recipes ask for; sell it or save it for your next crafts.
+  collect 12359 x440 anywhere gather Mining 250
+  collect 7910 x20 anywhere gather Mining 230
+
+step Imperial Plate Leggings (290-300)
+  tip Imperial Plate Leggings, 10 crafts to 300: forty-four Thorium Bars and two Star Rubies each. Use the plans first to learn the recipe. World-drop alternatives: Radiant Leggings (10 crafts: 200 Thorium Bar, 40 Heart of Fire), or Thorium Leggings (12 crafts: 312 Thorium Bar, 48 Red Power Crystal); if you hold both plans, make Radiant Leggings, orange to 300.
+  learn 16730 "Imperial Plate Leggings"
+  craft 16730 "Imperial Plate Leggings" until 300

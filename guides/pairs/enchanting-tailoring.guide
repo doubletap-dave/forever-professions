@@ -1,0 +1,615 @@
+# Paired Dual-Craft Route: Enchanting + Tailoring 1-300 (WoW: Forever)
+# Follows docs/MULTI_PROFESSION_RULES.md:
+# - Dedicated per-combination file: guides/pairs/enchanting-tailoring.guide
+# - Dual-Craft pair: Tailoring is the Producer (its crafted greens and the
+#   cloth-band loot feed Enchanting disenchanting), so every `section` header
+#   is Tailoring in rising order. Enchanting steps (train / learn / craft /
+#   buy / auction / collect) are interleaved inside the Tailoring brackets
+#   and there is never a `section Enchanting` header, so lint and the
+#   Materials tracker see one anchor profession.
+# - Every `collect ... gather` has a matching `auction` goal in the same
+#   section so Mix / Gather / Buy modes all work.
+# - Tailoring steps, ids and counts follow guides/tailoring.guide; Enchanting
+#   steps, ids and counts follow guides/enchanting.guide (Strange Dust tab).
+#   All NPC, item, spell and quest ids are copied from those two verified
+#   solo guides (Forever client tables, build 1.60.1).
+# - Disenchant is not a spellbook spell in Forever (it ships with Apprentice
+#   Enchanting and lives in the Enchanting box of the Professions window), so
+#   disenchanting is taught in tips and not as a learn step.
+# - The Forever dye recipes (Cerulean, Magenta, Viridian) are Alchemy
+#   products; this pair has no Herbalism or Alchemy, so the tips point you
+#   at the Auction House for them. The recipes on this route use the vendor
+#   Red Dye, not the Alchemy dyes.
+
+guide forever-professions/pair-enchanting-tailoring
+title Enchanting + Tailoring 1-300
+category Professions
+folder Paired Routes
+coords era
+levels 1-60
+zone Azeroth
+keywords enchanting, tailoring, paired, cloth, disenchant, dyes
+
+pitch Level Tailoring and Enchanting together from 1 to 300: turn your own cloth into gear, then turn the gear into enchanting dust.
+pro Two crafting professions means 6 Legacy Points (3 each at skill 150, 225 and 300) from a single character
+pro No gathering profession needed: cloth drops from humanoids while you level, and crafted and looted greens become Enchanting dust and essence
+con Forever's Alchemy dyes (Cerulean, Magenta, Viridian) must come from the Auction House unless you have an Alchemy alt
+con Both professions eat gold early; Strange Dust, rods and 2000-odd Runecloth are the bulk of the shopping list
+
+# ---------------------------------------------------------------- Apprentice
+
+section Tailoring 1-55
+
+step Learn Tailoring
+  only Alliance
+  zone Stormwind City
+  tip Tailoring and Enchanting take both primary slots, and neither needs a gatherer: cloth drops from humanoids. Lawrence Schneider in Stormwind teaches Apprentice Tailoring, at any character level. The starting trainer in Elwynn (Eldrin Eastvale, Eastvale Logging Camp) teaches it too; Dwarves, Gnomes and Night Elves come to the capital. Buy Coarse Thread from the Tailoring Supply vendor nearby.
+  train Tailoring Apprentice npc 1300
+
+step Learn Tailoring
+  only Horde
+  zone Orgrimmar
+  tip Tailoring and Enchanting take both primary slots, and neither needs a gatherer: cloth drops from humanoids. Snang in Orgrimmar teaches Apprentice Tailoring, at any character level. The starting trainer in Tirisfal (Bowen Brisboise, Cold Hearth Manor, south-west of Brill) teaches it too; Orcs, Trolls and Tauren come to the capital. Buy Coarse Thread from the Tailoring Supply vendor nearby; the Tirisfal trainer has none, so buy it in Brill from Abigail Shiel.
+  train Tailoring Apprentice npc 2855
+
+step Learn Enchanting
+  only Alliance
+  zone Stormwind City
+  tip Lucan Cordell in Stormwind teaches Apprentice Enchanting, at any character level, and Journeyman too, so you return to the same trainer. Disenchant comes with Apprentice Enchanting: in Forever it is in the Enchanting box of the Professions window, not the spellbook. From now on, never vendor a green (uncommon) weapon or armor piece: disenchant it instead. Mote of Magic comes only from Enchanting Supply vendors.
+  train Enchanting Apprentice npc 1317
+
+step Learn Enchanting
+  only Horde
+  zone Orgrimmar
+  tip Jhag in Orgrimmar teaches Apprentice Enchanting, at any character level. (The Durotar starting trainer is Pa'zula in Sen'jin Village.) Disenchant comes with Apprentice Enchanting: in Forever it is in the Enchanting box of the Professions window, not the spellbook. From now on, never vendor a green (uncommon) weapon or armor piece: disenchant it instead. Mote of Magic comes only from Enchanting Supply vendors.
+  train Enchanting Apprentice npc 11066
+
+step Tailoring 1-55: vendor goods
+  tip Coarse Thread for the Linen Belts: 28, from any Tailoring Supply vendor.
+  buy 2320 x28 nearest
+
+step Enchanting 1-70: vendor goods
+  tip Mote of Magic (19) and a Copper Rod (1), both from the Enchanting Supply vendor near the Enchanting trainer, not the Auction House.
+  buy 247786 x19 nearest
+  buy 6217 x1 nearest
+
+step Tailoring 1-55: Auction House
+  tip What 1-55 takes that the Auction House sells: 60 Linen Cloth for the Tailoring bolts and 50 Strange Dust for the Enchanting stretch. The counts drop by what your bags, bank and mail hold.
+  auction 2589 x60
+  auction 10940 x50
+
+step Linen Cloth
+  tip Linen Cloth drops from humanoids of level 5-20: keep what you loot as you level, or take it from your bank.
+  collect 2589 x60 anywhere gather levels 5-20
+
+step Strange Dust
+  tip Strange Dust comes from disenchanting green items of item level 1-20. Disenchant the early greens you loot or win in quests, or take dust from your bank.
+  collect 10940 x50 anywhere gather Enchanting 1
+
+step Bolt of Linen Cloth (1-30)
+  tip Bolt of Linen Cloth, 30 bolts to about 30: 2 Linen Cloth each. Keep every bolt: the Linen Belts take 28 of them.
+  learn 2963 "Bolt of Linen Cloth"
+  craft 2963 "Bolt of Linen Cloth" x30
+
+step Linen Belt (30-55)
+  tip Linen Belt, 28 belts to 55: 1 Bolt of Linen Cloth and 1 Coarse Thread each. Vendor the belts: whites give no dust.
+  learn 8776 "Linen Belt"
+  craft 8776 "Linen Belt" until 55
+
+step Runed Copper Rod (Enchanting 1-2)
+  tip Runed Copper Rod, 1 craft to Enchanting 2: 1 Copper Rod and 1 Mote of Magic. Keep it in your bags: every enchant to 110 needs a runed rod in hand, and the Copper one is it until the Silver Rod at 109.
+  learn 7421 "Runed Copper Rod"
+  craft 7421 "Runed Copper Rod" x1
+
+step Enchant Bracer - Inferior Stamina (Enchanting 2-20)
+  tip Enchant Bracer - Inferior Stamina, 18 to Enchanting 20: 1 Mote of Magic each. Enchant any bracers in your bags, even grey ones.
+  learn 7418 "Enchant Bracer - Inferior Stamina"
+  craft 7418 "Enchant Bracer - Inferior Stamina" until 20
+
+step Enchant Chest - Inferior Stamina (Enchanting 20-70)
+  tip Enchant Chest - Inferior Stamina, 50 to Enchanting 70: 1 Strange Dust each. Apprentice Enchanting caps at 75, so stop here until you have Journeyman.
+  learn 7420 "Enchant Chest - Inferior Stamina"
+  craft 7420 "Enchant Chest - Inferior Stamina" until 70
+
+# ---------------------------------------------------------------- Journeyman
+
+section Tailoring 55-125
+
+step Journeyman Tailoring
+  only Alliance
+  zone Stormwind City
+  tip Journeyman Tailoring raises the cap to 150; it needs skill 50 and level 10. Sellandus in Stormwind teaches it (Jormund Stonebrow in Ironforge and Me'lynn in Darnassus do too). Learn it before the Woolen Bolts: points stop at 75 without it.
+  level 10
+  train Tailoring Journeyman npc 5567
+
+step Journeyman Tailoring
+  only Horde
+  zone Orgrimmar
+  tip Journeyman Tailoring raises the cap to 150; it needs skill 50 and level 10. Magar in Orgrimmar teaches it (Rhiannon Davis in Undercity and Tepa in Thunder Bluff do too). Learn it before the Woolen Bolts: points stop at 75 without it.
+  level 10
+  train Tailoring Journeyman npc 3363
+
+step Journeyman Enchanting
+  only Alliance
+  zone Stormwind City
+  tip Journeyman Enchanting raises the cap to 150; it needs skill 50 and level 10. Lucan Cordell in Stormwind teaches it, while you are already in the capital for Tailoring (Gimble Thistlefuzz in Ironforge and Taladan in Darnassus do too).
+  level 10
+  train Enchanting Journeyman npc 1317
+
+step Journeyman Enchanting
+  only Horde
+  zone Orgrimmar
+  tip Journeyman Enchanting raises the cap to 150; it needs skill 50 and level 10. Godan in Orgrimmar teaches it (Lavinia Crowe in Undercity and Teg Dawnstrider in Thunder Bluff do too). Note the change of trainer: Jhag, who taught Apprentice, does not teach Journeyman.
+  level 10
+  train Enchanting Journeyman npc 3345
+
+step Tailoring 55-125: vendor goods
+  tip Fine Thread for the capes, shoulders and gloves: 47, from any Tailoring Supply vendor.
+  buy 2321 x47 nearest
+
+step Tailoring 55-125: Auction House
+  tip What 55-125 takes that the Auction House sells: 171 Wool Cloth, 772 Silk Cloth and 5 Elixir of Wisdom (an Alchemy product) for Tailoring; 120 Strange Dust, 4 Lesser Magic Essence, 1 Shadowgem and 1 Silver Rod for Enchanting. The counts drop by what your bags, bank and mail hold. Forever's Alchemy dye patterns (Cerulean, Magenta, Viridian Dye) are not needed on this route; if you want them later, buy them here too.
+  auction 2592 x171
+  auction 4306 x772
+  auction 3383 x5
+  auction 10940 x120
+  auction 10938 x4
+  auction 1210 x1
+  auction 6338 x1
+
+step Wool Cloth
+  tip Wool Cloth drops from humanoids of level 15-30: keep what you loot as you level, or take it from your bank.
+  collect 2592 x171 anywhere gather levels 15-30
+
+step Silk Cloth
+  tip Silk Cloth drops from humanoids of level 25-45: keep what you loot as you level, or take it from your bank.
+  collect 4306 x772 anywhere gather levels 25-45
+
+step Strange Dust and Lesser Magic Essence
+  tip Disenchant every green of item level 1-20 you loot, and the Double-stitched Woolen Shoulders and Gloves of Meditation you craft below if they come out green rather than white. Strange Dust and Lesser Magic Essence come from low-level greens; the Shadowgem and Silver Rod are bought, not gathered.
+  collect 10940 x120 anywhere gather Enchanting 1
+  collect 10938 x4 anywhere gather Enchanting 1
+
+step Bolt of Woolen Cloth (55-80)
+  tip Bolt of Woolen Cloth, 57 bolts: 3 Wool Cloth each. About 45 of them take you to 80; make all 57 now, the capes, shoulders and gloves take the rest. Keep every bolt.
+  learn 2964 "Bolt of Woolen Cloth" npc 5567 only Alliance
+  learn 2964 "Bolt of Woolen Cloth" npc 3363 only Horde
+  craft 2964 "Bolt of Woolen Cloth" x57
+
+step Woolen Cape (80-95)
+  tip Woolen Cape, 22 capes to 95: 1 Bolt of Woolen Cloth and 1 Fine Thread each. If the bolts already took you past 80, just make capes until 95. Capes can be enchanted too: put a Minor Protection or other cloak enchant on the first one to see what the Enchanting skill buys you.
+  learn 2402 "Woolen Cape"
+  craft 2402 "Woolen Cape" until 95
+
+step Double-stitched Woolen Shoulders (95-100)
+  tip Double-stitched Woolen Shoulders, 5 to 100: 3 Bolt of Woolen Cloth and 2 Fine Thread each. If they come out green, disenchant them for Strange Dust; if white, vendor them.
+  learn 3848 "Double-stitched Woolen Shoulders"
+  craft 3848 "Double-stitched Woolen Shoulders" until 100
+
+step Enchant Chest - Inferior Stamina (Enchanting 70-85)
+  tip Enchant Chest - Inferior Stamina, 15 more to Enchanting 85: 1 Strange Dust each. You need Journeyman Enchanting for points beyond 75.
+  craft 7420 "Enchant Chest - Inferior Stamina" until 85
+
+step Enchant Bracer - Minor Stamina (Enchanting 85-100)
+  tip Enchant Bracer - Minor Stamina, 15 to Enchanting 100: 2 Strange Dust each.
+  learn 7457 "Enchant Bracer - Minor Stamina"
+  craft 7457 "Enchant Bracer - Minor Stamina" until 100
+
+step Bolt of Silk Cloth (100-120)
+  tip Bolt of Silk Cloth, 193 bolts: 4 Silk Cloth each. About 54 of them take you to 120; make all 193 now, the packs, vests and pantaloons take the rest. Keep every bolt.
+  learn 3839 "Bolt of Silk Cloth"
+  craft 3839 "Bolt of Silk Cloth" x193
+
+step Gloves of Meditation (120-125)
+  tip Gloves of Meditation, 5 to 125: 4 Bolt of Woolen Cloth, 3 Fine Thread and 1 Elixir of Wisdom each. The elixirs are the Alchemy ones. Disenchant the gloves for dust and essence if they come out green.
+  learn 3852 "Gloves of Meditation"
+  craft 3852 "Gloves of Meditation" until 125
+
+step Enchant Cloak - Minor Protection (Enchanting 100-109)
+  tip Enchant Cloak - Minor Protection, 9 to Enchanting 109: 2 Strange Dust each. The formula (Formula: Imbue Cloak - Protection) is a world drop: buy it on the Auction House. Your Woolen Capes from above are good targets if you kept any.
+  learn 7771 "Enchant Cloak - Minor Protection"
+  craft 7771 "Enchant Cloak - Minor Protection" until 109
+
+step Runed Silver Rod (Enchanting 109-110)
+  tip Runed Silver Rod, 1 craft to Enchanting 110: 1 Silver Rod, 3 Strange Dust, 4 Lesser Magic Essence and 1 Shadowgem. The Silver Rod and every later rod are made by Blacksmiths: buy them on the Auction House. Keep the runed rod in your bags: the recipes from 130 need it.
+  learn 7795 "Runed Silver Rod"
+  craft 7795 "Runed Silver Rod" x1
+
+step Enchant Cloak - Minor Protection (Enchanting 110-125)
+  tip Enchant Cloak - Minor Protection again, to Enchanting 125 so Expert Enchanting unlocks alongside Expert Tailoring: 2 Strange Dust each. Yellow the whole way.
+  craft 7771 "Enchant Cloak - Minor Protection" until 125
+
+# ---------------------------------------------------------------- Expert
+
+section Tailoring 125-150
+
+step Expert Tailoring
+  only Alliance
+  zone Stormwind City
+  tip Expert Tailoring raises the cap to 225; it needs skill 125 and level 20. Georgio Bolero in Stormwind teaches it. Train it now: only the Expert trainers teach Bolt of Mageweave.
+  level 20
+  train Tailoring Expert npc 1346
+
+step Expert Tailoring
+  only Horde
+  zone Undercity
+  tip Expert Tailoring raises the cap to 225; it needs skill 125 and level 20. Josef Gregorian in Undercity teaches it. Train it now: only the Expert trainers teach Bolt of Mageweave.
+  level 20
+  train Tailoring Expert npc 4576
+
+step Expert Enchanting
+  only Alliance
+  zone Elwynn Forest
+  tip Expert Enchanting raises the cap to 225; it needs Enchanting 125 and level 20, and costs 50 silver. Kitta Firewind, at the top of the Tower of Azora in Elwynn Forest, is the only Alliance Expert trainer. Elwynn is a short walk from Stormwind, so do it on the way back from the Expert Tailoring trainer.
+  level 20
+  train Enchanting Expert npc 11072
+
+step Expert Enchanting
+  only Horde
+  zone Stonetalon Mountains
+  tip Expert Enchanting raises the cap to 225; it needs Enchanting 125 and level 20, and costs 50 silver. Hgarth, up on the hill above Sun Rock Retreat in Stonetalon Mountains, is the only Horde Expert trainer.
+  level 20
+  train Enchanting Expert npc 11074
+
+step Tailoring 125-150: vendor goods
+  tip Fine Thread for the Small Silk Packs: 45, from any Tailoring Supply vendor.
+  buy 2321 x45 nearest
+
+step Tailoring 125-150: Auction House
+  tip What 125-150 takes that the Auction House sells: 30 Heavy Leather and 635 Mageweave Cloth for Tailoring. The counts drop by what your bags, bank and mail hold. The Enchanting cloaks and boots below need 90 Strange Dust: buy it or disenchant low-level greens.
+  auction 4234 x30
+  auction 4338 x635
+  auction 10940 x90
+
+step Heavy Leather
+  tip Heavy Leather comes from skinning beasts of level 28-40, or take it from your bank.
+  collect 4234 x30 anywhere gather Skinning 140
+
+step Mageweave Cloth
+  tip Mageweave Cloth drops from humanoids of level 35-50: keep what you loot as you level, or take it from your bank.
+  collect 4338 x635 anywhere gather levels 35-50
+
+step Strange Dust for Boots
+  tip Strange Dust from disenchanting greens of item level 1-20, or from your bank.
+  collect 10940 x90 anywhere gather Enchanting 1
+
+step Small Silk Pack (125-140)
+  tip Small Silk Pack, 15 packs to 140: 3 Bolt of Silk Cloth, 2 Heavy Leather and 3 Fine Thread each. Bags are not disenchantable: sell or keep them.
+  learn 3813 "Small Silk Pack"
+  craft 3813 "Small Silk Pack" until 140
+
+step Bolt of Mageweave (140-150)
+  tip Bolt of Mageweave, 127 bolts: 5 Mageweave Cloth each. About 23 of them take you to 150; make all 127 now, the leggings, shoulders and bags take the rest. Keep every bolt. Note: the page this route follows says 144 bolts, counting 5 a bag for the Red Mageweave Bags, but the game's own tables say the bag takes 4, so 127 is the right count.
+  learn 3865 "Bolt of Mageweave" npc 1346 only Alliance
+  learn 3865 "Bolt of Mageweave" npc 4576 only Horde
+  craft 3865 "Bolt of Mageweave" x127
+
+step Enchant Cloak - Minor Protection (Enchanting 125-130)
+  tip Enchant Cloak - Minor Protection, a few more to Enchanting 130: 2 Strange Dust each. If you come up short of 130, start the boots from the next step.
+  craft 7771 "Enchant Cloak - Minor Protection" until 130
+
+step Enchant Boots - Minor Stamina (Enchanting 130-150)
+  tip Enchant Boots - Minor Stamina, 20 to Enchanting 150: 4 Strange Dust each. The formula is a world drop: buy it on the Auction House. Enchanting 150 gives your first 3 Legacy Points from this profession, alongside Tailoring 150 in the next band.
+  learn 7863 "Enchant Boots - Minor Stamina"
+  craft 7863 "Enchant Boots - Minor Stamina" until 150
+
+section Tailoring 150-200
+
+step Formula: Minor Mana Oil
+  tip Formula: Minor Mana Oil, for the Enchanting stretch in this band. Sold by Kithas (Orgrimmar), Nata Dawnstrider (Thunder Bluff), Thaddeus Webb (Undercity), Vaean (Darnassus), Tilli Thistlefuzz (Ironforge) and Jessara Cordell (Stormwind) for 30 silver.
+  buy 20752 x1 nearest
+
+step Formula: Lesser Wizard Oil
+  tip Formula: Lesser Wizard Oil, needed at Enchanting 200. Same six vendors as the Minor Mana Oil formula, 40 silver.
+  buy 20753 x1 nearest
+
+step Tailoring 150-200: vendor goods
+  tip Red Dye (74), Fine Thread (40) and Silken Thread (100) for the vests, pantaloons and leggings, from any Tailoring Supply vendor. Maple Seed (32) from Reagent vendors and Leaded Vial (41) from Alchemy Supply vendors go to the Minor Mana Oil.
+  buy 2604 x74 nearest
+  buy 2321 x40 nearest
+  buy 4291 x100 nearest
+  buy 17034 x32 nearest
+  buy 3372 x41 nearest
+
+step Tailoring 150-200: Auction House
+  tip What the Enchanting stretch of this band takes that the Auction House sells: 61 Soul Dust, 1 Golden Rod, 1 Iridescent Pearl and 1 Greater Astral Essence. The counts drop by what your bags, bank and mail hold. The Tailoring crafts below use only vendor goods and bolts you already made.
+  auction 11083 x61
+  auction 11128 x1
+  auction 5500 x1
+  auction 11082 x1
+
+step Soul Dust and Greater Astral Essence
+  tip Soul Dust and the greater essences come from disenchanting greens of item level 21-40. The Crimson Silk Vests, Crimson Silk Pantaloons and Black Mageweave Leggings you craft below are your own supply: disenchant every green one that is not an upgrade for you. Pearls turn up inside clams and a Blacksmith makes the Golden Rod, so the Auction House is the sane way to get those.
+  collect 11083 x61 anywhere gather Enchanting 1
+  collect 11082 x1 anywhere gather Enchanting 1
+
+step Crimson Silk Vest (150-170)
+  tip Crimson Silk Vest, 20 vests to 170: 4 Bolt of Silk Cloth, 2 Red Dye and 2 Fine Thread each. Disenchant the green ones for Soul Dust.
+  learn 8791 "Crimson Silk Vest"
+  craft 8791 "Crimson Silk Vest" until 170
+
+step Runed Golden Rod (Enchanting 150-151)
+  tip Runed Golden Rod, 1 craft to Enchanting 151: 1 Golden Rod, 1 Iridescent Pearl, 1 Greater Astral Essence and 1 Soul Dust. Keep it in your bags: the recipes from 165 need it.
+  learn 13628 "Runed Golden Rod"
+  craft 13628 "Runed Golden Rod" x1
+
+step Minor Mana Oil (Enchanting 151-165)
+  tip Minor Mana Oil, 16 to Enchanting 165: 1 Soul Dust, 2 Maple Seed and 1 Leaded Vial each.
+  learn 25125 "Minor Mana Oil"
+  craft 25125 "Minor Mana Oil" until 165
+
+step Crimson Silk Pantaloons (170-185)
+  tip Crimson Silk Pantaloons, 17 to 185: 4 Bolt of Silk Cloth, 2 Red Dye and 2 Silken Thread each. Disenchant the green ones.
+  learn 8799 "Crimson Silk Pantaloons"
+  craft 8799 "Crimson Silk Pantaloons" until 185
+
+step Enchant Boots - Lesser Agility (Enchanting 165-200)
+  tip Enchant Boots - Lesser Agility, 44 to Enchanting 200: 1 Soul Dust each. Yellow from 180: make a few more if you come up short of 200. Pause for Black Mageweave Leggings whenever the dust runs dry, then come back to this step.
+  learn 13637 "Enchant Boots - Lesser Agility"
+  craft 13637 "Enchant Boots - Lesser Agility" until 200
+
+step Black Mageweave Leggings (185-200)
+  tip Black Mageweave Leggings, 22 to 200: 2 Bolt of Mageweave and 3 Silken Thread each. Yellow the whole way: make a few more if you come up short of 200. These are green: disenchant them, since the dust funds the boots above.
+  learn 12049 "Black Mageweave Leggings"
+  craft 12049 "Black Mageweave Leggings" until 200
+
+# ---------------------------------------------------------------- Artisan
+
+section Tailoring 200-225
+
+step Artisan Tailoring
+  only Alliance
+  zone Dustwallow Marsh
+  tip Artisan Tailoring raises the cap to 300; it needs skill 200 and level 35. Timothy Worthington in Theramore, Dustwallow Marsh, teaches it. Train it now: only the Artisan trainers teach the Black Mageweave Shoulders.
+  level 35
+  train Tailoring Artisan npc 11052
+
+step Artisan Tailoring
+  only Horde
+  zone Hillsbrad Foothills
+  tip Artisan Tailoring raises the cap to 300; it needs skill 200 and level 35. Daryl Stack in Tarren Mill, Hillsbrad Foothills, teaches it. Train it now: only the Artisan trainers teach the Black Mageweave Shoulders.
+  level 35
+  train Tailoring Artisan npc 2399
+
+step Tailoring 200-225: vendor goods
+  tip Heavy Silken Thread (44) and Red Dye (34) for the shoulders and bags, from any Tailoring Supply vendor. Stranglethorn Seed (50) from Reagent vendors goes to the Lesser Wizard Oil; the Leaded Vials you bought for the Minor Mana Oil cover it.
+  buy 8343 x44 nearest
+  buy 2604 x34 nearest
+  buy 17035 x50 nearest
+
+step Tailoring 200-225: Auction House
+  tip What 200-225 takes that the Auction House sells: 1585 Runecloth for Tailoring, plus 31 Vision Dust, 1 Truesilver Rod, 1 Black Pearl and 1 Greater Mystic Essence for Enchanting. The counts drop by what your bags, bank and mail hold.
+  auction 14047 x1585
+  auction 11137 x31
+  auction 11144 x1
+  auction 7971 x1
+  auction 11135 x1
+
+step Runecloth
+  tip Runecloth drops from humanoids of level 45-60: keep what you loot as you level, or take it from your bank.
+  collect 14047 x1585 anywhere gather levels 45-60
+
+step Vision Dust and Greater Mystic Essence
+  tip Vision Dust and the greater essences come from disenchanting greens of item level 21-40. The Black Mageweave Shoulders below are green: disenchant them. A Blacksmith makes the Truesilver Rod.
+  collect 11137 x31 anywhere gather Enchanting 1
+  collect 11135 x1 anywhere gather Enchanting 1
+
+step Black Mageweave Shoulders (200-205)
+  tip Black Mageweave Shoulders, 5 to 205: 3 Bolt of Mageweave and 2 Heavy Silken Thread each. Only the Artisan trainers teach this one. Disenchant them for Vision Dust.
+  learn 12074 "Black Mageweave Shoulders" npc 11052 only Alliance
+  learn 12074 "Black Mageweave Shoulders" npc 2399 only Horde
+  craft 12074 "Black Mageweave Shoulders" until 205
+
+step Runed Truesilver Rod (Enchanting 200-201)
+  tip Runed Truesilver Rod, 1 craft to Enchanting 201: 1 Truesilver Rod, 1 Black Pearl, 1 Greater Mystic Essence and 1 Vision Dust. Keep it in your bags: the recipes from 220 need it.
+  learn 13702 "Runed Truesilver Rod"
+  craft 13702 "Runed Truesilver Rod" x1
+
+step Lesser Wizard Oil (Enchanting 201-220)
+  tip Lesser Wizard Oil, 25 to Enchanting 220: 1 Vision Dust, 2 Stranglethorn Seed and 1 Leaded Vial each. You still hold the Leaded Vials from the Minor Mana Oil shopping; buy a few more if you ran short.
+  learn 25126 "Lesser Wizard Oil"
+  craft 25126 "Lesser Wizard Oil" until 220
+
+step Bolt of Runecloth (205-215)
+  tip Bolt of Runecloth, 317 bolts: 5 Runecloth each. About 23 of them take you to 215; make all 317 now, the belts, gloves and cuffs take 311 of them, and the last 6 go to the Threading a Solution quest below (Horde). Keep every bolt.
+  learn 18401 "Bolt of Runecloth"
+  craft 18401 "Bolt of Runecloth" x317
+
+step Red Mageweave Bag (215-225)
+  tip Red Mageweave Bag, 17 bags to 225: 4 Bolt of Mageweave, 2 Red Dye and 2 Heavy Silken Thread each. The bags sell well to a vendor, which is why the route picks them; bags cannot be disenchanted. If you would rather not make bags, 10 Runecloth Belts (30 Bolt of Runecloth, 10 Rune Thread) cover the same points and give you something to disenchant.
+  learn 12079 "Red Mageweave Bag"
+  craft 12079 "Red Mageweave Bag" until 225
+
+step Enchant Cloak - Greater Defense (Enchanting 220-225)
+  tip Enchant Cloak - Greater Defense, 5 to Enchanting 225: 1 Vision Dust each. Both professions now sit at 225: claim the Legacy Points for Tailoring and for Enchanting.
+  learn 13746 "Enchant Cloak - Greater Defense"
+  craft 13746 "Enchant Cloak - Greater Defense" until 225
+
+section Tailoring 225-280
+
+step Annora in Uldaman
+  zone Badlands
+  tip Artisan Enchanting raises the cap to 300; it needs skill 200 and level 35, and costs 5 gold. Annora in Uldaman is the only Artisan Enchanting trainer. Uldaman is in the Badlands: use the back entrance, in the south of the zone. It cannot be soloed at level 35: go with a party, or ask a level 60 to help. Annora only spawns once you kill every mob in the area she is in. Bring enough gold to learn every recipe and enough materials to reach 250 (around 50 Vision Dust), or you must return for the higher recipes. Do not leave without learning them all: the recipes from 230 up are taught nowhere else.
+  goto 65.2,43.5 live "Uldaman back entrance"
+  enter "Uldaman"
+  level 35
+  train Enchanting Artisan npc 11073
+  learn 13815 "Enchant Gloves - Agility" npc 11073
+  learn 13917 "Enchant Chest - Superior Intellect" npc 11073
+  learn 13905 "Enchant Shield - Greater Spirit" npc 11073
+  learn 13935 "Enchant Boots - Agility" npc 11073
+  learn 13937 "Enchant 2H Weapon - Greater Impact" npc 11073
+  learn 13939 "Enchant Bracer - Greater Strength" npc 11073
+  learn 13941 "Enchant Chest - Stats" npc 11073
+  learn 13943 "Enchant Weapon - Greater Striking" npc 11073
+  learn 13948 "Enchant Gloves - Minor Haste" npc 11073
+  learn 17181 "Enchanted Leather" npc 11073
+  learn 17180 "Enchanted Thorium" npc 11073
+
+step Formula: Lesser Mana Oil
+  tip Formula: Lesser Mana Oil, for the Enchanting 250 band. Kania in Silithus (upstairs in the inn) sells it for 1 gold. Both of her formulas need level 40. Buy Formula: Wizard Oil from her too: it is needed at Enchanting 275.
+  buy 20754 x1 nearest
+
+step Formula: Wizard Oil
+  tip Formula: Wizard Oil, needed at Enchanting 275. Kania in Silithus sells it for 2 gold.
+  buy 20755 x1 nearest
+
+step Formula: Enchant Shield - Greater Stamina
+  tip Formula: Enchant Shield - Greater Stamina, for the Enchanting 270 band. Sold by Daniel Bartlett (Undercity) and Mythrin'dir (Darnassus) for 1 gold 20 silver. It binds when picked up: do not buy it on an alt.
+  buy 16217 x1 nearest
+
+step Tailoring 225-280: vendor goods
+  tip Rune Thread for the belts, gloves and cuffs: 74, from any Tailoring Supply vendor. Crystal Vial for the Lesser Mana Oil: 26, from any Alchemy Supply vendor (Mishta in Silithus sells them too).
+  buy 14341 x74 nearest
+  buy 8925 x26 nearest
+
+step Tailoring 225-280: Auction House
+  tip What 225-280 takes that the Auction House sells: 44 Rugged Leather and 39 Ironweb Spider Silk for Tailoring; 34 Vision Dust, 56 Dream Dust and 26 Purple Lotus for Enchanting. The counts drop by what your bags, bank and mail hold.
+  auction 8170 x44
+  auction 14227 x39
+  auction 11137 x34
+  auction 11176 x56
+  auction 8831 x26
+
+step Rugged Leather
+  tip Rugged Leather comes from skinning beasts of level 47-60, or take it from your bank.
+  collect 8170 x44 anywhere gather Skinning 240
+
+step Ironweb Spider Silk
+  only Alliance
+  zone Western Plaguelands
+  tip Ironweb Spider Silk drops from Plague Lurkers (level 54-55) at the marked spot in Western Plaguelands.
+  collect 14227 x39 @57.1,53.5 era gather levels 54-55
+
+step Ironweb Spider Silk
+  only Horde
+  zone Silithus
+  tip Ironweb Spider Silk drops from Rock Stalkers (level 57-59) at the marked spot in Silithus.
+  collect 14227 x39 @24.7,81.8 era gather levels 57-59
+
+step Vision Dust and Dream Dust
+  tip Vision Dust and Dream Dust come from disenchanting greens and blues of item level 31 and up. Your Runecloth Belts, Gloves and Cuffs below are green: disenchant them, and treat the dust as a rebate on the cloth.
+  collect 11137 x34 anywhere gather Enchanting 1
+  collect 11176 x56 anywhere gather Enchanting 1
+
+step Runecloth Belt (225-240)
+  tip Runecloth Belt, 24 belts to 240: 3 Bolt of Runecloth and 1 Rune Thread each. Disenchant them for Vision and Dream Dust.
+  learn 18402 "Runecloth Belt" npc 11052 only Alliance
+  learn 18402 "Runecloth Belt" npc 2399 only Horde
+  craft 18402 "Runecloth Belt" until 240
+
+step Pattern: Runecloth Gloves
+  tip Pattern: Runecloth Gloves, for the next band. Qia in Winterspring sells it for 1g 60s.
+  buy 14481 x1 nearest
+
+step Runecloth Gloves (240-250)
+  tip Runecloth Gloves, 11 to 250: 4 Bolt of Runecloth, 4 Rugged Leather and 1 Rune Thread each. If you hold Pattern: Brightcloth Cloak instead, 11 Brightcloth Cloaks (44 Bolt of Runecloth, 22 Gold Bar, 11 Rune Thread) cover the same points.
+  learn 18417 "Runecloth Gloves"
+  craft 18417 "Runecloth Gloves" until 250
+
+step Enchant Gloves - Agility (Enchanting 225-250)
+  tip Enchant Gloves - Agility, 34 to Enchanting 250: 1 Vision Dust each. Annora taught it: learn it on that visit. Yellow from 230: make a few more if you come up short of 250. Do these in between the Tailoring crafts above whenever the dust is in your bags.
+  craft 13815 "Enchant Gloves - Agility" until 250
+
+step Threading a Solution
+  only Horde
+  zone Mount Hyjal
+  tip Threading a Solution: Kal'tinzan in Elderwild, Mount Hyjal, wants 6 Bolt of Runecloth (made with the bulk bolts above). It needs level 54, and you should finish Blight No More in Mount Hyjal first. The reward is Pattern: Runecloth Cuffs. Alliance players skip this step and buy the pattern from Pexmit instead.
+  level 54
+  accept 95769
+  collect 14048 x6 quest 95769.1
+  turnin 95769
+  learn 1257487 "Runecloth Cuffs"
+
+step Pattern: Runecloth Cuffs
+  when !knows 1257487
+  tip Pattern: Runecloth Cuffs, for the next band. Pexmit in Mount Hyjal sells it for 10g. It binds when picked up, so buy it with the leveling character. Horde players who did Threading a Solution above already have it and skip this step.
+  buy 254124 x1 npc 266901
+  learn 1257487 "Runecloth Cuffs"
+
+step Runecloth Cuffs (250-280)
+  tip Runecloth Cuffs, 39 to 280: 5 Bolt of Runecloth, 1 Ironweb Spider Silk and 1 Rune Thread each. Disenchant the cuffs as you go to feed the Enchanting 250-300 stretch. If the Cuffs pattern cannot be got at all, buy Pattern: Runecloth Shoulders on the Auction House instead: make Runecloth Gloves to 260 (19 more: 76 Bolt of Runecloth, 76 Rugged Leather, 19 Rune Thread), then Runecloth Shoulders to 280 (21: 147 Bolt of Runecloth, 42 Ironweb Spider Silk, 84 Rugged Leather, 21 Rune Thread). More expensive, but the Shoulders continue to 300.
+  craft 1257487 "Runecloth Cuffs" until 280
+
+step Lesser Mana Oil (Enchanting 250-270)
+  tip Lesser Mana Oil, 26 to Enchanting 270: 1 Dream Dust, 1 Purple Lotus and 1 Crystal Vial each. If you have no Purple Lotus, make Enchant Bracer - Greater Strength instead (1 Dream Dust, 2 Lesser Nether Essence each); Annora teaches it.
+  learn 25127 "Lesser Mana Oil"
+  craft 25127 "Lesser Mana Oil" until 270
+
+step Enchant Shield - Greater Stamina (Enchanting 270-275)
+  tip Enchant Shield - Greater Stamina, 5 to Enchanting 275: 6 Dream Dust each. These are made again at 295.
+  learn 20017 "Enchant Shield - Greater Stamina"
+  craft 20017 "Enchant Shield - Greater Stamina" until 275
+
+section Tailoring 280-300
+
+step Tailoring 280-300: vendor goods
+  tip Rune Thread for the Shoulders: 58. Crystal Vial for the Wizard Oil: 26. Both from vendors (Alchemy Supply for the vials).
+  buy 14341 x58 nearest
+  buy 8925 x26 nearest
+
+step Tailoring 280-300: Auction House
+  tip What 280-300 takes that the Auction House sells: 2030 Runecloth, 232 Rugged Leather and 116 Ironweb Spider Silk for Tailoring; 48 Dream Dust, 88 Illusion Dust, 52 Firebloom, 1 Arcanite Rod, 1 Golden Pearl, 4 Greater Eternal Essence, 4 Small Brilliant Shard and 2 Large Brilliant Shard for Enchanting. The counts drop by what your bags, bank and mail hold.
+  auction 14047 x2030
+  auction 8170 x232
+  auction 14227 x116
+  auction 11176 x48
+  auction 16204 x88
+  auction 4625 x52
+  auction 16206 x1
+  auction 13926 x1
+  auction 16203 x4
+  auction 14343 x4
+  auction 14344 x2
+
+step Rugged Leather
+  tip Rugged Leather comes from skinning beasts of level 47-60, or take it from your bank.
+  collect 8170 x232 anywhere gather Skinning 240
+
+step Ironweb Spider Silk
+  only Alliance
+  zone Western Plaguelands
+  tip Ironweb Spider Silk drops from Plague Lurkers (level 54-55) at the marked spot in Western Plaguelands.
+  collect 14227 x116 @57.1,53.5 era gather levels 54-55
+
+step Ironweb Spider Silk
+  only Horde
+  zone Silithus
+  tip Ironweb Spider Silk drops from Rock Stalkers (level 57-59) at the marked spot in Silithus.
+  collect 14227 x116 @24.7,81.8 era gather levels 57-59
+
+step Runecloth
+  tip Runecloth drops from humanoids of level 45-60: keep what you loot as you level, or take it from your bank.
+  collect 14047 x2030 anywhere gather levels 45-60
+
+step Illusion Dust and Essences
+  tip Illusion Dust, Dream Dust, the Greater Eternal Essence and the Brilliant Shards all come from disenchanting greens and blues of item level 31 and up: your Runecloth Shoulders below are green, and every drop in the 50s adds to the pile. Firebloom and the rods are bought; the Arcanite Rod comes from a Blacksmith.
+  collect 11176 x48 anywhere gather Enchanting 1
+  collect 16204 x88 anywhere gather Enchanting 1
+  collect 16203 x4 anywhere gather Enchanting 1
+  collect 14343 x4 anywhere gather Enchanting 1
+  collect 14344 x2 anywhere gather Enchanting 1
+
+step Wizard Oil (Enchanting 275-295)
+  tip Wizard Oil, 26 to Enchanting 295: 3 Illusion Dust, 2 Firebloom and 1 Crystal Vial each. If Illusion Dust is expensive, make 23 Shields instead (138 Dream Dust). From 290 the Runed Arcanite Rod can be made.
+  learn 25128 "Wizard Oil"
+  craft 25128 "Wizard Oil" until 295
+
+step Runecloth Shoulders (280-300)
+  tip Runecloth Shoulders, 58 to 300: 7 Bolt of Runecloth, 2 Ironweb Spider Silk, 4 Rugged Leather and 1 Rune Thread each. Pattern: Runecloth Shoulders is a world drop: buy it on the Auction House. Make the 406 bolts first; they give no points this late, they are just the material. Disenchant the green shoulders for Illusion Dust. Alternatives for the same band: 58 Wizardweave Turbans (348 Bolt of Runecloth, 232 Dream Dust, 58 Star Ruby) if that rare pattern turns up on the Auction House. To 290 only: 42 Runecloth Headbands (168 Bolt of Runecloth, 84 Ironweb Spider Silk) or 42 Runecloth Cuffs (210 Bolt of Runecloth, 42 Ironweb Spider Silk). The Loom recipes need another tailor's Loom (you can only make one at 300): with Cenarion Circle standing and Mishta's patterns from Silithus, Swarmtender's or Venomspew Gloves 285-290, Cords 290-295, Footpads 295-300.
+  learn 18449 "Runecloth Shoulders"
+  craft 18401 "Bolt of Runecloth" x406
+  craft 18449 "Runecloth Shoulders" until 300
+
+step Enchant Shield - Greater Stamina (Enchanting 295-299)
+  tip Enchant Shield - Greater Stamina, 8 more to Enchanting 299: 6 Dream Dust each. If Wizard Oil sells well, keep making oils instead (around 15).
+  craft 20017 "Enchant Shield - Greater Stamina" until 299
+
+step Formula: Runed Arcanite Rod
+  tip Formula: Runed Arcanite Rod, for the last Enchanting point. Lorelae Wintersong in Moonglade (Nighthaven) sells it for 2 gold 20 silver.
+  buy 16243 x1 nearest
+
+step Runed Arcanite Rod (Enchanting 299-300)
+  tip Runed Arcanite Rod, 1 craft to Enchanting 300: 1 Arcanite Rod, 1 Golden Pearl, 10 Illusion Dust, 4 Greater Eternal Essence, 4 Small Brilliant Shard and 2 Large Brilliant Shard. It can be made from 290, and most recipes at 300 need it in your bags. With Tailoring 300 and Enchanting 300 you now hold all 6 Legacy Points from the two crafters.
+  learn 20051 "Runed Arcanite Rod"
+  craft 20051 "Runed Arcanite Rod" x1
