@@ -1,0 +1,61 @@
+# Research outline: Mining + Herbalism farming pack (WoW: Forever only)
+# Updated per user: keep gather nodes/routes; fishing = leveling add-on later; Forever-only time range.
+
+topic: Mining + Herbalism farming routes (WoW: Forever)
+game_scope: World of Warcraft: Forever (1.60.1 / Interface 16001) ONLY
+time_range: Forever-only
+time_range_notes: >
+  All research, node lists, routes, and web supplements use Forever client /
+  QuestieDB Forever / Forever TDB / Forever community sources only.
+  Do NOT use Retail, Classic Era, or Season of Discovery time ranges,
+  node tables, or farm guides unless a fact is re-verified in Forever data.
+  Flag any non-Forever source as out-of-scope and discard or re-check.
+
+# (1) Gathering node / route list — KEPT AS-IS (do not remove or replace)
+items:
+  - id: mining-nodes-tiered
+    name: Mining nodes (Copper → Thorium + Forever scarce Pyrite / Bauxite / Pitchblende)
+  - id: herb-nodes-tiered
+    name: Herbalism nodes (Peacebloom → high-tier + Forever scarce Frilled Lichen / Rosecap / Stranglevine)
+  - id: zone-farm-circuits
+    name: Per-zone farm circuits (Elwynn, Barrens, STV, Hinterlands, Un'Goro, Winterspring, …)
+  - id: skill-band-routes
+    name: Skill-band routes (1–75, 75–150, 150–225, 225–300)
+  - id: dual-gather-gold-routes
+    name: Dual-gather gold routes (best zones for both Mining + Herbalism node types)
+  - id: faction-start-variants
+    name: Faction / starting-zone variants
+  - id: tracker-toggle-patterns
+    name: Tracker-toggle / lap-alternation patterns (Find Minerals vs Find Herbs)
+  - id: generator-vs-handauthored
+    name: Polestar profession gathering generator outputs vs hand-authored community pack
+
+  # (2) Fishing — NOT a separate pool-list research item
+  # Placement decision: fold into existing forever-professions Fishing leveling
+  # content later (guides/fishing.guide and/or guides/pairs/fishing-cooking.guide),
+  # as optional loop/skill waypoints derived from fishing-pool spawn data.
+  # Do not create a standalone "fishing pools" item list or a Mining+Herb+Fish
+  # monolith in this farming pack research.
+  - id: fishing-pools-leveling-addon
+    name: Fishing pools (leveling add-on — deferred)
+    status: deferred
+    placement: >
+      Cleanest home: forever-professions guides/fishing.guide (solo leveling)
+      with optional shared pool loops also referenced from
+      guides/pairs/fishing-cooking.guide. Use Polestar fishing pool spawns /
+      profession gathering fishing helpers when that work is scheduled.
+      Out of scope for Mining+Herbalism farming pack deliverables.
+    note: Not researched as its own pool catalogue in this outline.
+
+execution:
+  batch_size: 4
+  items_per_agent: 2
+  output_dir: ./mining-herbalism-farming/results
+  forever_data: C:/Users/axolatl-tank/Projects/polestar/data/forever
+  polestar_gathering_tools: C:/Users/axolatl-tank/Projects/polestar/tools/lib/professions/gathering
+
+pack_shape_notes: >
+  Prefer guides/mining.guide + guides/herbalism.guide farm-circuit enrichment
+  and/or guides/pairs/herbalism-mining.guide for dual-gather gold routes.
+  Single-anchor / dual-gather caveats apply (tracker exclusivity).
+  Fishing stays outside this pack's file set until leveling add-on phase.

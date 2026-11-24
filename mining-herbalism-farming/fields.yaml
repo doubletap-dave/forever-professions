@@ -1,0 +1,105 @@
+# Field definitions — Mining + Herbalism farming (Forever-only)
+# Non-Forever time ranges are out of scope; do not populate fields from them.
+
+meta:
+  game: WoW Forever
+  build_target: "1.60.1"
+  time_range: Forever-only
+  excluded_time_ranges:
+    - Retail (Dragonflight / TWW / Midnight) — out of scope
+    - Vanilla Classic Era — out of scope unless re-verified in Forever data
+    - Season of Discovery — out of scope
+  source_policy: >
+    Prefer polestar data/forever (objects.json spawns, professions.json),
+    QuestieDB Forever, Forever TDB abundance, Wowhead Forever pages.
+    Preserve licenses. Original guide prose only.
+
+categories:
+  identity:
+    - name: object_name
+      description: In-game node / herb / vein name
+      detail_level: brief
+    - name: object_id
+      description: Forever object id (polestar find / objects.json)
+      detail_level: moderate
+    - name: profession
+      description: Mining or Herbalism
+      detail_level: brief
+    - name: req_skill
+      description: Minimum Forever gather skill for the node
+      detail_level: moderate
+
+  spawns:
+    - name: maps_zones
+      description: uiMap / zone list where the node spawns in Forever
+      detail_level: detailed
+    - name: spawn_points
+      description: Coordinate clusters from objects.json pts/more
+      detail_level: detailed
+    - name: abundance_up
+      description: Nodes of this kind up at once per zone (node-abundance.json / TDB)
+      detail_level: moderate
+
+  route:
+    - name: loop_waypoints
+      description: Ordered goto list for a Polestar loop + skill step
+      detail_level: detailed
+    - name: lap_length_yards
+      description: Estimated closed-tour length (prefer >= respawn-friendly laps)
+      detail_level: moderate
+    - name: skill_band
+      description: From–to skill band this circuit serves
+      detail_level: brief
+    - name: tracker_mode
+      description: Find Minerals, Find Herbs, or alternate-lap dual pattern
+      detail_level: moderate
+
+  forever_specific:
+    - name: scarce_materials
+      description: Forever scarce bonus drops tied to the node (Pyrite, Bauxite, Pitchblende, Frilled Lichen, Rosecap, Stranglevine)
+      detail_level: moderate
+    - name: camping_manual_tips
+      description: Forever camping / gathering manual quest tips if relevant
+      detail_level: brief
+
+  pack_shape:
+    - name: guide_path
+      description: Target .guide path under forever-professions (solo vs pairs/)
+      detail_level: brief
+    - name: guide_id
+      description: forever-professions/<slug> or pair-<partner>-<anchor>
+      detail_level: brief
+    - name: section_strategy
+      description: How section headers / skill checkpoints are anchored
+      detail_level: moderate
+
+  fishing_addon_deferred:
+    description: >
+      Fishing pools are NOT a parallel research catalogue here.
+      When scheduled, fields below attach to Fishing leveling guides only.
+    fields:
+      - name: pool_object_id
+        description: Forever fishing pool object id
+        detail_level: brief
+      - name: pool_zones
+        description: Zones/waters for leveling loops
+        detail_level: moderate
+      - name: target_guide
+        description: guides/fishing.guide and/or guides/pairs/fishing-cooking.guide
+        detail_level: brief
+        placement_decision: >
+          Cleanest placement — solo Fishing leveling first; mirror useful
+          pool loops into the Fishing+Cooking paired route tips/steps later.
+
+  validation:
+    - name: lint_status
+      description: forge guide lint errors/warnings
+      detail_level: brief
+    - name: playtest_status
+      description: polestar playtest results
+      detail_level: brief
+
+uncertain:
+  - Exact Forever scarce drop rates per node (need live / sniff confirmation)
+  - Whether dual-gather pair file uses rising Mining sections, Herbalism sections, or zone-only skill steps
+  - Best abundance table freshness vs live 1.60.1 realms
